@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticleBody from '../components/sections/ArticleBody.astro';
+
+const title = 'THCA vs THC: What Is the Difference? | Baked Brand Thailand';
+const description =
+  "THCA vs THC — one gets you high, one doesn't. Learn how decarboxylation works and what 1.6mg THC feels like. Thailand's only Thai FDA-approved microdose edible.";
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'THCA vs THC: What Is the Difference and Which One Gets You High?',
+  description,
+  image: 'https://bakedthailand.com/images/logo-color.png',
+  datePublished: '2026-07-17',
+  author: { '@type': 'Organization', name: 'Baked Brand Edibles in Thailand' },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Baked Brand Edibles in Thailand',
+    logo: { '@type': 'ImageObject', url: 'https://bakedthailand.com/images/logo-color.png' },
+  },
+};
+
+const sections = [
+  {
+    h2: 'THCA is not psychoactive on its own',
+    html: 'Raw cannabis contains mostly THCA, not THC. THCA does not produce a high by itself — it needs heat to convert into THC, a process called decarboxylation.',
+  },
+  {
+    h2: 'How decarboxylation works',
+    html: 'Heating cannabis — through baking, smoking, or vaping — converts THCA into THC, the compound responsible for the psychoactive effect. This conversion process has been studied in detail, including research published in the <a href="https://www.sciencedirect.com/scien

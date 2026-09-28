@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticleBody from '../components/sections/ArticleBody.astro';
+
+const title = 'THC vs CBD Edibles in Thailand: Which Is Right? (2026)';
+const description =
+  "THC edibles get you high. CBD edibles don't. Here's what that actually means in Thailand, what's legal, and how Baked's 1.6mg microdose fits in.";
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  image: 'https://bakedthailand.com/images/logo-color.png',
+  datePublished: '2026-07-17',
+  author: { '@type': 'Organization', name: 'Baked Brand Edibles in Thailand' },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Baked Brand Edibles in Thailand',
+    logo: { '@type': 'ImageObject', url: 'https://bakedthailand.com/images/logo-color.png' },
+  },
+};
+
+const sections = [
+  {
+    h2: 'The core difference',
+    html: 'THC is psychoactive — it produces the "high." CBD is not psychoactive and is typically used for relaxation or wellness without any intoxicating effect. The right choice depends on whether you actually want that effect or not.',
+  },
+  {
+    h2: 'What Baked makes',
+    html: 'Baked’s cookies and caramels are THC products, formulated as a microdose — up to 1.6mg THC per piece — for a light, controllable effect rather than a strong high. <a href="/microdosing-guide/">Read the full microdosing guide &rarr;</a>',
+  },
+  {
+    h2: 'Is either legal in Thailand?',
+    html: 'CBD

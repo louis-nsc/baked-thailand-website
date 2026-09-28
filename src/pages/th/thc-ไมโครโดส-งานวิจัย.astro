@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleBody from '../../components/sections/ArticleBody.astro';
+
+const title = 'THC ไมโครโดส: งานวิจัยที่ผ่านการตรวจสอบ | Baked Brand';
+const description =
+  'สำรจแนวทางงานวิจัยเกี่ยวกับ THC ไมโครโดส ครอบคลุมประเด็นการนอนหลับ ความเครียด และระบบ Endocannabinoid พร้อมข้อควรระวังในการตีความข้อมูลทางวิทยาศาสตร์';
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'THC ไมโครโดส: งานวิจัยที่ได้รับการตรวจสอบโดยผู้เชี่ยวชาญ (2026)',
+  description,
+  image: 'https://bakedthailand.com/images/logo-color.png',
+  datePublished: '2026-07-17',
+  author: { '@type': 'Organization', name: 'Baked Brand Edibles in Thailand' },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Baked Brand Edibles in Thailand',
+    logo: { '@type': 'ImageObject', url: 'https://bakedthailand.com/images/logo-color.png' },
+  },
+};
+
+const sections = [
+  {
+    h2: 'ระบบ Endocannabinoid คืออะไร',
+    html: 'ร่างกายมนุษย์มีระบบ Endocanna

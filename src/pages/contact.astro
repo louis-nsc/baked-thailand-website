@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactForm from '../components/interactive/ContactForm';
+import { business } from '../data/business';
+import { lineUrl, lineOrderUrl, shopeeUrl } from '../data/navigation';
+
+const title = 'Contact Baked Brand | Baked Brand Edibles in Thailand';
+const description =
+  "Get in touch with Baked Brand — LINE, email, phone, or our Chiang Mai address. We usually reply fastest on LINE.";
+
+const addressLine = `${business.address.streetAddress}, ${business.address.addressLocality} ${business.address.postalCode}`;
+
+const structuredData = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    name: title,
+    description,
+    url: 'https://bakedthailand.com/contact/',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://bakedthailand.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Contact', item: 'https://bakedthailand.com/contact/' },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    {structuredData.map((sd) => <script type="application/ld+json" set:html={JSON.stringify(sd)} />)}
+  </Fragment>
+
+  <section class="bk-contact-hero">
+    <p class="bk-eyebrow">Get In Touch</p>
+    <h1>Contact Baked Brand</h1>
+    <p class="bk-sub">We usually reply fastest on LINE — for orders, wholesale questions, or anything else.</p>
+    <

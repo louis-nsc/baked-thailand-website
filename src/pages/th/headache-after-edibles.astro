@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { lineUrl, shopeeUrl } from '../../data/navigation';
+
+const title = 'ทำไมกินขนมกัญชาแล้วปวดหัว? สาเหตุและวิธีป้องกัน | Baked Brand';
+const description =
+  'ทำไมบางคนปวดหัวหลังกินขนมกัญชา? สาเหตุที่พบบ่อยและวิธีลดความเสี่ยง พร้อมคำแนะนำปริมาณไมโครโดสที่เหมาะสมจาก Baked Brand';
+
+const structuredData = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: title,
+    description,
+    image: 'https://bakedthailand.com/images/logo-color.png',
+    datePublished: '2026-07-17',
+    author: { '@type': 'Organization', name: 'Baked Brand Edibles in Thailand' },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Baked Brand Edibles in Thailand',
+      logo: { '@type': 'ImageObject', url: 'https://bakedthailand.com/images/logo-color.png' },
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'หน้าแรก', item: 'https://bakedthailand.com/' },
+      { '@type': 'ListItem', position: 2, n

@@ -1,0 +1,65 @@
+---
+import { featuredIn } from '../../data/press';
+
+interface Props {
+  lang?: 'en' | 'th';
+  heading?: string;
+}
+
+const { lang = 'en', heading } = Astro.props;
+const defaultHeading = lang === 'th' ? 'สื่อที่กล่าวถึงเรา' : 'Featured In';
+const resolvedHeading = heading ?? defaultHeading;
+---
+
+<section class="bk-featured-in" aria-label={resolvedHeading}>
+  <h2>{resolvedHeading}</h2>
+  <ul>
+    {featuredIn.map((mention) => (
+      <li>
+        <a href={mention.url} target="_blank" rel="noopener noreferrer" aria-label={mention.name}>
+          <img
+            src={mention.logo}
+            width={mention.logoWidth}
+            height={mention.logoHeight}
+            alt={mention.name}
+            loading="lazy"
+            class:list={[mention.invertOnDark && 'bk-invert-dark']}
+          />
+        </a>
+      </li>
+    ))}
+  </ul>
+</section>
+
+<style>
+  .bk-featured-in {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 48px 56px;
+    text-align: center;
+  }
+  .bk-featured-in h2 {
+    font-size: 1.6rem;
+    margin: 0 0 24px;
+  }
+  .bk-featured-in ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
+  }
+  .bk-featured-in a {
+    display: block;
+  }
+  .bk-featured-in img {
+    height: 52px;
+    width: auto;
+    max-width: 200px;
+    object-fit: contain;
+    filter: grayscale(1);
+    opacity: 0.8;
+    transition: filter 0.2s e

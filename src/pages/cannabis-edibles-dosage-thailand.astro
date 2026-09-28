@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticleBody from '../components/sections/ArticleBody.astro';
+
+const title = 'Cannabis Edibles Dosage in Thailand | Baked Brand';
+const description =
+  'How much THC should you actually take? A practical dosage guide for cannabis edibles in Thailand, from first-timers to experienced consumers.';
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Cannabis Edibles Dosage in Thailand',
+  description,
+  image: 'https://bakedthailand.com/images/logo-color.png',
+  datePublished: '2026-07-17',
+  author: { '@type': 'Organization', name: 'Baked Brand Edibles in Thailand' },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Baked Brand Edibles in Thailand',
+    logo: { '@type': 'ImageObject', url: 'https://bakedthailand.com/images/logo-color.png' },
+  },
+};
+
+const sections = [
+  {
+    h2: 'For first-time consumers',
+    html: 'Start with a true microdose — 1 to 5mg THC. One Baked cookie is up to 1.6mg THC, formulated specifically for this range. Wait at least two hours before considering more.',
+  },
+  {
+    h2: 'For experienced consumers',
+    html: 'Even with a higher tolerance, edibles take longer to kick in and last longer than smoking — it’s easy to underestimate a dose because the onset is slow. Track how much you’ve taken and give it time before adjusting up.',
+  },
+  {
+    h2: 'Why microdosing works for most people',
+    html: 'A measured, lab-tested microd

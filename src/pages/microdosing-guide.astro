@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { lineUrl, shopeeUrl } from '../data/navigation';
+
+const title = "Microdosing THC: The Complete Beginner's Guide | Baked";
+const description =
+  "A complete guide to microdosing THC — what it means, how much to take, and what to expect. Thailand's first Thai FDA-approved microdose edible, explained.";
+
+const structuredData = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: "Microdosing THC: The Complete Beginner's Guide",
+    description,
+    image: 'https://bakedthailand.com/images/logo-color.png',
+    datePublished: '2026-07-17',
+    author: { '@type': 'Organization', name: 'Baked Brand Edibles in Thailand' },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Baked Brand Edibles in Thailand',
+      logo: { '@type': 'ImageObject', url: 'https://bakedthailand.com/images/logo-color.png' },
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://bakedthailand.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Microdosing Guide', item: 'https://bakedthailand.com/microdosing-guide/' },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    {structuredData.map((sd) => <script type="application/ld+json" set:html={JSON.stringify(sd)} />)}
+  </Fragment>
+
+  <section class="bk-article-hero">
+    <p clas

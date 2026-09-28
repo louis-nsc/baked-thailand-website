@@ -1,0 +1,32 @@
+---
+import { lineUrl } from '../../data/navigation';
+import { venueTypes, type VenueType } from '../../data/venueTypes';
+
+interface Props {
+  venue: VenueType;
+}
+
+const { venue } = Astro.props;
+const otherVenues = venueTypes.filter((v) => v.slug !== venue.slug);
+---
+
+<section class="bk-venue-hero">
+  <p class="bk-eyebrow">สำหรับ{venue.label}</p>
+  <h1>{venue.title.split(' | ')[0]}</h1>
+  <p class="bk-sub">{venue.pitch}</p>
+  <a class="bk-cta" href={lineUrl} target="_blank" rel="noopener">คุยกับทีมงานทาง LINE &rarr;</a>
+</section>
+
+{venue.example && (
+  <div class="bk-trust">
+    <span class="bk-trust-mark">ตัวอย่างจริง</span>
+    <p>{venue.example}</p>
+  </div>
+)}
+
+<section class="bk-why">
+  <h2>ทำไมต้อง Baked</h2>
+  <p>
+    คุกกี้และคาราเมลของ Baked ผ่านการรับรองจาก อย. ไทย ทุกล็อตผ่านการทดสอบในห้องปฏิบัติการ
+    และระบุปริมาณ THC คงที่ 1.6mg ต่อชิ้น ใบกัญชาสดสั่งตรงจากโครงการปลูกกัญชาของ
+    มหาวิทยาลัยแม่โจ้ เชียงใหม่ แต่เพียงผู้เดียว ทำให้คุณมั่นใจได้ว่าสินค้าที่นำไปเฤ�

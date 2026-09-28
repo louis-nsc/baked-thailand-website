@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticleBody from '../components/sections/ArticleBody.astro';
+
+const title = 'Mr. Miyagi Edibles in Thailand? What to Know | Baked Brand';
+const description =
+  'Looking for Mr. Miyagi edibles in Thailand? Here\'s what to know about availability and regulation — plus Baked\'s Thai FDA-approved alternative.';
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://bakedthailand.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Mr. Miyagi Edibles in Thailand', item: 'https://bakedthailand.com/mr-miyagi-edibles-thailand/' },
+  ],
+};
+
+const sections = [
+  {
+    h2: 'Is Mr. Miyagi available in Thailand?',
+    html: 'Baked Brand is not affiliated with Mr. Miyagi and can\'t speak to that specific brand\'s availability or regulatory status in Thailand. If you\'re considering any imported edible brand, check that it\'s actually approved for sale here — Thailand\'s 2026 crackdown specifically targets unlicensed and non-compliant products.',
+  },
+  {
+    h2: 'A Thai FDA-approved alternative',
+    html: 'Baked\'s cookies and caramels are made in Chiang Mai, Thai FDA-approved, lab-tested every batch, up to 1.6mg THC per piece. <a href="/cannabis-cookies-thailand/">See our cookies &rarr;</a> or <a href="/cannabis-caramels-thailand/">our caramels &rarr;</a>.',
+  },
+];
+---
+
+<BaseLayout title={tit

@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FeaturedIn from '../../components/patterns/FeaturedIn.astro';
+import StockistList from '../../components/patterns/StockistList.astro';
+import { lineOrderUrl, shopeeUrl } from '../../data/navigation';
+
+// Title/H1 deliberately echo the live page's proven title (which earns real
+// clicks for "คุกกี้กัญชา" per GSC) rather than a fresh rewrite - protect the
+// winner, don't just change it.
+const title = 'คุกกี้กัญชา & ขนมกัญชาไมโครโดส อย.รับรอง | Baked Brand';
+const description =
+  'Baked Brand ผลิตขนมกัญชาไมโครโดสคุณภาพสูง ได้รับการรับรองจาก อย. ครอบคลุมทั้งคุกกี้กัญชาและคาราเมลกัญชา ทำจากใบกัญชาจากมหาวิทยาลัยแม่โจ้ ส่งทั่วประเทศไทย';
+---
+
+<BaseLayout title={title} description={description} lang="th">
+  <section class="bk-hero">
+    <div>
+      <p class="bk-eyebrow">ผ่านการรับรองจาก อย. ไทย &middot; 1.6mg THC</p>
+      <h1>Baked Brand — ขนมกัญชา อย.รับรอง ไมโครโดสที่ไว้ใจได้</h1>
+      <p class="bk-sub">
+        คุกกี้และค�

@@ -1,0 +1,34 @@
+---
+import { business } from '../../data/business';
+
+interface Props {
+  lang?: 'en' | 'th';
+}
+
+const { lang = 'en' } = Astro.props;
+const year = new Date().getFullYear();
+const addressLine = `${business.address.streetAddress}, ${business.address.addressLocality} ${business.address.postalCode}`;
+
+const copy = lang === 'th'
+  ? {
+      tagline: 'ขนมกัญชาไมโครโดส THC ผ่านการรับรองจาก อย. ไทย ใบกัญชาสดสั่งตรงจากโครงการกัญชาของมหาวิทยาลัยแม่โจ้ เชียงใหม่ แต่เพียงผู้เดียว',
+      privacy: 'นโยบายความเป็นส่วนตัว',
+      terms: 'ข้อกำหนดและเงื่อนไข',
+      contact: 'ติดต่อเรา',
+      maejo: 'แหล่งที่มาจากแม่โจ้',
+      copyright: `Baked Brand Edibles in Thailand`,
+    }
+  : {
+      tagline: "Thai FDA-approved THC microdose edibles. Leaf sourced exclusively from Maejo University's cannabis program, Chiang Mai.",
+      privacy: 'Privacy Policy',
+      terms: 'Terms & Conditions',
+      contact: 'Contact',
+      blog: 'Blog',
+      wholesale: 'Wholesale',
+      copyright: 'Baked Brand Edibles in Thailand.',
+    };
+---
+
+<footer class="bk-footer">
+  <div class="bk-footer-inner">
+    <img src="/images/logo-white.png" alt="Baked" widt

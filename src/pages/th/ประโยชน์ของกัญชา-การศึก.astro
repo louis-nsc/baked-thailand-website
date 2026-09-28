@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleBody from '../../components/sections/ArticleBody.astro';
+
+const title = 'ประโยชน์ของกัญชา: การศึกษาเชิงวิชาการ | Baked Brand';
+const description =
+  'เรียนรู้เพิ่มเติมของประโยชน์กัญชาได้จากบทความนี้ คุณจะได้เปิดโลกเรียนรู้เกี่ยวกับพืชมหัศจรรย์นี้มากขึ้น อ่านต่อเพื่อเรียนรู้เพิ่มเติม';
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'ประโยชน์ของกัญชา: การศึกษาเชิงวิชาการเกี่ยวกับพืชที่มีประโยชน์นานาประการ',
+  description,
+  image: 'https://bakedthailand.com/images/logo-color.png',
+  datePublished: '2026-07-17',
+  author: { '@type': 'Organization', name: 'Baked Brand Edibles in Thailand' },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Baked Brand Edibles in Thailand',
+    logo: { '@type': 'ImageObject', url: 'https://bakedthailand.com/images/logo-color.png' },
+  },
+};
+
+const sections = [
+  {
+    h2: 'กัญชาในงานวิจัยทางการแพทย์',
+    

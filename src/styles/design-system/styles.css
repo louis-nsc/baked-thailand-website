@@ -1,0 +1,51 @@
+@font-face {
+  font-family: 'Fraunces';
+  src: url('./assets/fonts/fraunces-variable.woff2') format('woff2');
+  font-weight: 500 800;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('./assets/fonts/inter-variable.woff2') format('woff2');
+  font-weight: 400 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src: url('./assets/fonts/ibm-plex-mono-500.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src: url('./assets/fonts/ibm-plex-mono-600.woff2') format('woff2');
+  font-weight: 600;
+  font-display: swap;
+}
+
+:root {
+  /* Color — one canonical forest green, consolidated from the two drifting
+     shades (#1B4D2E / #13533B) found on the live site. --gold marks one thing
+     per element, same rule as Vera Visa's --signal — never a wash. */
+  --forest: #1B4D2E;
+  --forest-deep: #123B22;
+  --cream: #F7F3EC;
+  --paper: #FFFFFF;
+  --ink: #211E19;
+  --ink-soft: #524C42;
+  --gold: #C89B3C;
+  --line: rgba(33, 30, 25, 0.12);
+
+  /* Type */
+  --font-display: 'Fraunces', ui-serif, Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', monospace;
+
+  /* Shape */
+  --radius-pill: 999px;
+  --radius-card: 14px;
+}
+
+/* Dark-mode tokens: same brand, same contrast intent — the greens go deeper,
+   the ground goes to a warm near-black rather than pure black. */
+@media (prefers-color-scheme: d

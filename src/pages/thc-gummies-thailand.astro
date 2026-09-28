@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { lineUrl, shopeeUrl } from '../data/navigation';
+
+const title = 'THC Gummies in Thailand — What to Know | Baked Brand';
+const description =
+  "Thinking about THC gummies in Thailand? What to know about regulation and quality, plus why Baked's FDA-approved cookies are more reliably regulated.";
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://bakedthailand.com/' },
+    { '@type': 'ListItem', position: 2, name: 'THC Gummies in Thailand', item: 'https://bakedthailand.com/thc-gummies-thailand/' },
+  ],
+};
+---
+
+<BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  </Fragment>
+
+  <section class="bk-article-hero">
+    <p class="bk-eyebrow">Before You Buy</p>
+    <h1>THC Gummies in Thailand — What to Know Before You Buy</h1>
+    <p class="bk-sub">
+      Baked doesn&rsquo;t currently make gummies &mdash; but here&rsquo;s what
+      to know if you&rsquo;re considering them, and what we do offer instead.
+    </p>
+  </section>
+
+  <article class="bk-article-body">
+    <section>
+      <h2>What are THC gummies?</h2>
+      <p>
+        THC gummies are cannabis-infused chewable candies, similar in format to
+        regular gummy candy but dosed with THC. Quality and regulation vary a
+   

@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticleBody from '../components/sections/ArticleBody.astro';
+
+const title = 'What Is a 1mg THC Edible? Effects and Microdosing';
+const description =
+  'A 1mg THC edible is one of the lightest, most controllable ways to try cannabis. What to expect, and how it compares to Baked’s 1.6mg microdose cookie.';
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  image: 'https://bakedthailand.com/images/logo-color.png',
+  datePublished: '2026-07-17',
+  author: { '@type': 'Organization', name: 'Baked Brand Edibles in Thailand' },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Baked Brand Edibles in Thailand',
+    logo: { '@type': 'ImageObject', url: 'https://bakedthailand.com/images/logo-color.png' },
+  },
+};
+
+const sections = [
+  {
+    h2: 'Why go this low?',
+    html: 'When you hear "THC edible," it\'s easy to picture something potent — the kind of product that makes people anxious or unable to function for hours. A 1mg dose is designed to avoid exactly that: a light, manageable effect rather than a strong high.',
+  },
+  {
+    h2: 'What to expect',
+    html: 'At this range, most people report a mild sense of ease rather than a noticeable psychoactive effect. It’s a reasonable starting point if you’re new to edibles or sensitive to THC.',
+  },
+  {
+    h2: 'Where Baked fits in',
+    html: 'Baked’s cookies and caramels are formulated at 

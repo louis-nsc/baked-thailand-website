@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { lineOrderUrl } from '../data/navigation';
+
+const title = 'Vegan Coconut Cannabis Caramels Thailand | Baked Brand';
+const description =
+  "Baked Brand's vegan coconut cannabis caramels — dairy-free, delivered across Thailand. A separate line from our Thai FDA-approved microdose cookies.";
+
+const structuredData = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: 'Baked Brand Vegan Coconut Caramels',
+    description,
+    brand: { '@type': 'Brand', name: 'Baked Brand' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://bakedthailand.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Coconut Caramels', item: 'https://bakedthailand.com/coconut-caramels-thailand/' },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    {structuredData.map((sd) => <script type="application/ld+json" set:html={JSON.stringify(sd)} />)}
+  </Fragment>
+
+  <section class="bk-hero">
+    <p class="bk-eyebrow">Vegan &middot; Dairy-Free</p>
+    <h1>Vegan Coconut Cannabis Caramels — Delivered Across Thailand</h1>
+    <p class="bk-sub">
+      Silky, coconut-forward, and completely dairy-free &mdash; a vegan caramel made for
+      anyone who wants a plant-based option alongside our regular lineup.
+    </p>
+    <div class="bk-actions">
+      

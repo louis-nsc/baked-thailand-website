@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleBody from '../../components/sections/ArticleBody.astro';
+
+const title = 'กัญชาแปรรูปอะไรได้ บ้าง | Baked Brand';
+const description =
+  'หลายคนอาจมีความสงสัยเกี่ยวกับกัญชาแปรรูปอะไรได้บ้าง อ่านต่อเพิ่มเติมได้จากบทความนี้เพื่อไขข้อกระจ่าง รวมถึงผู้อ่านจะได้ทำความรู้จักสรรพคุณของกัญชา';
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'กัญชาแปรรูปอะไรได้ บ้าง',
+  description,
+  image: 'https://bakedthailand.com/images/logo-color.png',
+  datePublished: '2026-07-17',
+  author: { '@type': 'Organization', name: 'Baked Brand Edibles in Thailand' },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Baked Brand Edibles in Thailand',
+    logo: { '@type': 'ImageObject', url: 'https://bakedthailand.com/images/logo-color.png' },
+  },
+};
+
+const sections = [
+  {
+    h2: 'กัญชาแปรรูปเป็นอะไรได้บ้าง',
+    html: 'กัญชาสามารถแปรรูปได้หลายรูปแบบ เช่น คุกกี้ คาราเ�

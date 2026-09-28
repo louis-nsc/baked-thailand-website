@@ -1,0 +1,39 @@
+---
+import { lineOrderUrl } from '../../data/navigation';
+
+interface Props {
+  lang?: 'en' | 'th';
+}
+
+const { lang = 'en' } = Astro.props;
+const label = lang === 'th' ? 'สั่งซื้อขนมกัญชาเลย' : 'Order Edibles Now';
+---
+
+<a class="bk-floating-widget" href={lineOrderUrl} target="_blank" rel="noopener" aria-label={`${label} — LINE`}>
+  <span class="bk-floating-label">{label}</span>
+  <span class="bk-floating-icon" aria-hidden="true">
+    <svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="19.4395" cy="19.4395" r="19.4395" fill="#38B900"></circle>
+      <path d="M24 9.36561C24 4.19474 18.6178 0 12 0C5.38215 0 0 4.19474 0 9.36561C0 13.9825 4.25629 17.8606 10.0229 18.5993C10.4073 18.6785 10.9565 18.8368 11.0664 19.1797C11.1762 19.4699 11.1487 19.9184 11.0938 20.235C11.0938 20.235 10.9565 21.0528 10.9291 21.2111C10.8741 21.5013 10.6819 22.3456 11.9725 21.8443C13.2632 21.3167 18.8924 17.9398 21.3913 15.1433C23.1487 13.2702 24 11.4234 24 9.36561Z" transform="translate(7 10)" fill="white"></path>
+    </svg>
+  </span>
+</a>
+
+<style>
+  .bk-floating-widget {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+  .bk-floating-label {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 12p

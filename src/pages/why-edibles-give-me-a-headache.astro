@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticleBody from '../components/sections/ArticleBody.astro';
+
+const title = 'Why Edibles Give Me a Headache | Baked Brand';
+const description =
+  "Why do some edibles cause a headache? Common causes and how to avoid it, plus the right microdose to start with from Baked Brand.";
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Why Edibles Give Me a Headache',
+  description,
+  image: 'https://bakedthailand.com/images/logo-color.png',
+  datePublished: '2026-07-17',
+  author: { '@type': 'Organization', name: 'Baked Brand Edibles in Thailand' },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Baked Brand Edibles in Thailand',
+    logo: { '@type': 'ImageObject', url: 'https://bakedthailand.com/images/logo-color.png' },
+  },
+};
+
+const sections = [
+  {
+    h2: 'Common causes',
+    html: 'A headache after edibles is usually linked to taking more than your tolerance handles, dehydration, or eating on an empty stomach. THC’s effect on blood vessels may also play a role for some people.',
+  },
+  {
+    h2: 'How to reduce the risk',
+    html: 'Start low — one Baked cookie is up to 1.6mg THC, a microdose — stay hydrated, and avoid eating on a very empty stomach. Wait at least two hours before considering more; edibles take longer to kick in than most people expect. <a href="/microdosing-guide/">Read the full microdosing guide &rarr;</a>',
+  },
+  {
+    h2: 'When to se

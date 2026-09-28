@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import VenuePageBody from '../../../components/sections/VenuePageBody.astro';
+import { venueTypes } from '../../../data/venueTypes';
+
+const venue = venueTypes.find((v) => v.slug === 'cafes')!;
+
+const structuredData = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: `ขายส่งขนมกัญชาไมโครโดสสำหรับ${venue.label}`,
+    provider: { '@type': 'LocalBusiness', name: 'Baked Brand Edibles in Thailand' },
+    description: venue.description,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'หน้าแรก', item: 'https://bakedthailand.com/' },
+      { '@type': 'ListItem', position: 2, name: 'สำหรับธุรกิจ', item: 'https://bakedthailand.com/th/business/' },
+      { '@type': 'ListItem', position: 3, name: venue.label, item: `https://bakedthailand.com/th/business/${venue.slug}/` },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'มีขั้นต่ำในการสั่งซื้อหรือไม่?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'ขั้นต่ำขึ้นอยู่กับประเภทสินค้าและพื้นที่จึ��q�^

@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleBody from '../../components/sections/ArticleBody.astro';
+
+const title = 'แนวโน้มและนวัตกรรมการทำอาหารจากกัญชา | Baked Brand';
+const description =
+  'มาร่วมสำรวจนวัตกรรมของกัญชาในอาหารพร้อม ๆ กันได้จากบทความนี้ อีกทั้งผู้อ่านจะได้ค้นพบประโยชน์ของกัญชาที่มีต่อสุขภาพอีกด้วย';
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'แนวโน้มและนวัตกรรมการทำอาหารจากกัญชา',
+  description,
+  image: 'https://bakedthailand.com/images/logo-color.png',
+  datePublished: '2026-07-17',
+  author: { '@type': 'Organization', name: 'Baked Brand Edibles in Thailand' },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Baked Brand Edibles in Thailand',
+    logo: { '@type': 'ImageObject', url: 'https://bakedthailand.com/images/logo-color.png' },
+  },
+};
+
+const sections = [
+  {
+    h2: 'นวัตกรรมด้านการแปรรูปกัญชา',
+    html: 'อุตสาหกรรมขนมกัญชาพัฒนาอย่างต่อเนื่อง ตั้งแต�

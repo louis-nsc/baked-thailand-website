@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const title = 'Cannabis Edibles Blog Thailand | Baked Brand';
+const description =
+  "Guides on THC dosing, edibles safety, and what's legal in Thailand right now, from Thailand's first Thai FDA-approved microdose edibles brand.";
+
+const posts = await getCollection('blog');
+---
+
+<BaseLayout title={title} description={description}>
+  <section class="bk-blog-hero">
+    <p class="bk-eyebrow">Blog</p>
+    <h1>Cannabis Edibles Guides for Thailand</h1>
+    <p class="bk-sub">
+      Dosing guides, safety tips, and straight answers on what's actually
+      legal in Thailand right now &mdash; written by the team behind
+      Thailand's first Thai FDA-approved microdose edibles.
+    </p>
+  </section>
+
+  {posts.length > 0 ? (
+    <ul class="bk-post-list">
+      {posts.map((post) => (
+        <li>
+          <a href={`/blog/${post.id}/`}>{post.data.title}</a>
+          <p>{post.data.description}</p>
+        </li>
+      ))}
+    </ul>
+  ) : (
+    <p class="bk-empty">New guides are on the way &mdash; in the meantime, start with our <a href="/microdosing-guide/">microdosing guide</a> or the <a href="/cannabis-legal-thailand/">legal status explainer</a>.</p>
+  )}
+</BaseLayout>
+
+<style>
+  .bk-blog-hero {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 48px 32px;
+    text-align: center;
+  }
+  .bk-blog-hero .bk-eyebrow { justify-content: center; }
+  .bk-blog-hero h1 { font-weight

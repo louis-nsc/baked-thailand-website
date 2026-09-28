@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleBody from '../../components/sections/ArticleBody.astro';
+
+const title = 'ประโยชน์และโทษของกัญชง | Baked Brand';
+const description =
+  'ทำความเข้าใจฤวามแตกต่างระหว่างกัญชงและกัญชง ประโยชน์ของเส้นใยและเมล็ดกัญชง และข้อควรระวังเมื่อเลือกผลิตภัณฑ์ที่มี THC หรือ CBD';
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'ประโยชน์และโทษของกัญชง',
+  description,
+  image: 'https://bakedthailand.com/images/logo-color.png',
+  datePublished: '2026-07-17',
+  author: { '@type': 'Organization', name: 'Baked Brand Edibles in Thailand' },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Baked Brand Edibles in Thailand',
+    logo: { '@type': 'ImageObject', url: 'https://bakedthailand.com/images/logo-color.png' },
+  },
+};
+
+const sections = [
+  {
+    h2: 'กัญชงต่างจากกัญชาอย่างไร',
+    html: '"กัญชง" (Hemp) และ "กัญชา" (Cannabis/Marijuana) เป็นพืชตระกูลเดียวกัน แต่กัญชงถูกปลูกเพื่อเส้นใย เม�

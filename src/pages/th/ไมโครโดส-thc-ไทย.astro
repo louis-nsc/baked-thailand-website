@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleBody from '../../components/sections/ArticleBody.astro';
+
+const title = 'ไมโครโดส THC คืออะไร? คู่มือสำหรับคนไทย (2026) | Baked Brand';
+const description =
+  'ไมโครโดส THC คืออะไร เหมาะกับใคร และควรเริ่มต้นอย่างไรให้ปลอดภัย คู่มือฉบับพื้นฐานสำหรับคนไทยที่สนใจอาหารผสมกัญชาแบบวัดปริมาณได้';
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'ไมโครโดส THC คืออะไร? คู่มือสำหรับคนไทย',
+  description,
+  image: 'https://bakedthailand.com/images/logo-color.png',
+  datePublished: '2026-07-17',
+  author: { '@type': 'Organization', name: 'Baked Brand Edibles in Thailand' },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Baked Brand Edibles in Thailand',
+    logo: { '@type': 'ImageObject', url: 'https://bakedthailand.com/images/logo-color.png' },
+  },
+};
+
+const sections = [
+  {
+    h2: 'ไมโครโดสคืออะไร',
+    html: '"ไมโครโดส" หมายถึงการทาน THC ในปริมาณต่ำมาก เพื่อให้รู้สึกผ

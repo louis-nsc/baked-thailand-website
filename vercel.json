@@ -1,0 +1,60 @@
+{
+  "redirects": [
+    {
+      "source": "/thai",
+      "destination": "/th/thai/",
+      "permanent": true
+    },
+    {
+      "source": "/wholesale-order",
+      "destination": "/wholesale-thc-edibles-thailand/",
+      "permanent": true
+    },
+    {
+      "source": "/thc-cookies-thailand",
+      "destination": "/cannabis-cookies-thailand/",
+      "permanent": true
+    },
+    {
+      "source": "/1mg-thc-edible-guide",
+      "destination": "/1mg-thc-edible/",
+      "permanent": true
+    },
+    {
+      "source": "/thc-edibles-beginners-guide-thailand",
+      "destination": "/thc-edibles-beginners-guide/",
+      "permanent": true
+    },
+    {
+      "source": "/thc-edibles-beginners",
+      "destination": "/thc-edibles-beginners-guide/",
+      "permanent": true
+    },
+    {
+      "source": "/microdose-thc-legal-thailand",
+      "destination": "/microdose-edibles-legal-in-thailand/",
+      "permanent": true
+    },
+    {
+      "source": "/cannabis-edibles-gummies-brownies-delivery-bangkok",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/how-much-cbd-should-you-vape-for-anxiety",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/where-can-you-find-the-best-cbd-oil-in-thailand",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/microdose-thc-thai",
+      "destination": "/th/microdose-thc-guide/",
+      "permanent": true
+    },
+    {
+      "source": "/th",
+      "destination": "/th/thai/",

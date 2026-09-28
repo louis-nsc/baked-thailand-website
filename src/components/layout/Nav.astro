@@ -1,0 +1,55 @@
+---
+import { primaryNav, primaryNavTh, lineUrl } from '../../data/navigation';
+
+interface Props {
+  lang?: 'en' | 'th';
+}
+
+const { lang = 'en' } = Astro.props;
+const nav = lang === 'th' ? primaryNavTh : primaryNav;
+const homeHref = lang === 'th' ? '/th/thai/' : '/';
+const langSwitchHref = lang === 'th' ? '/' : '/th/thai/';
+const langSwitchLabel = lang === 'th' ? 'EN' : 'ไทย';
+---
+
+<header class="bk-header">
+  <a class="bk-brand" href={homeHref} aria-label="Baked home">
+    <img src="/images/logo-white.png" alt="Baked" width="1024" height="1024" />
+  </a>
+  <button
+    class="bk-nav-toggle"
+    type="button"
+    aria-expanded="false"
+    aria-controls="bk-primary-nav"
+    aria-label="Open menu"
+  >
+    <span class="bk-nav-toggle-bars" aria-hidden="true"></span>
+  </button>
+  <nav class="bk-nav" id="bk-primary-nav" aria-label="Primary">
+    <ul>
+      {nav.map((item) => (
+        <li><a href={item.href}>{item.label}</a></li>
+      ))}
+    </ul>
+  </nav>
+  <div class="bk-header-actions">
+    <a class="bk-lang-switch" href={langSwitchHref}>{langSwitchLabel}</a>
+    <a class="bk-cta" href={lineUrl} target="_blank" rel="noopener">{lang === 'th' ? 'แชททาง LINE' : 'Chat on LINE'}</a>
+  </div>
+</header>
+
+<style>
+  .bk-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 18px 32px;
+    background: var(--forest);
+    color: #fff;
+  }
+  .bk-brand {
+    display: flex;
+    align-items: center;
+  }
+  .bk-brand

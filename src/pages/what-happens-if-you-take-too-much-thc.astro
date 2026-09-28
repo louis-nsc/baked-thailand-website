@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticleBody from '../components/sections/ArticleBody.astro';
+
+const title = 'What Happens If You Take Too Much THC? | Baked Brand';
+const description =
+  'Taking too much THC is unpleasant but not dangerous in the way many people fear. What actually happens, and how to avoid it.';
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'What Happens If You Take Too Much THC?',
+  description,
+  image: 'https://bakedthailand.com/images/logo-color.png',
+  datePublished: '2026-07-17',
+  author: { '@type': 'Organization', name: 'Baked Brand Edibles in Thailand' },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Baked Brand Edibles in Thailand',
+    logo: { '@type': 'ImageObject', url: 'https://bakedthailand.com/images/logo-color.png' },
+  },
+};
+
+const sections = [
+  {
+    h2: 'What it actually feels like',
+    html: 'Taking too much THC typically causes anxiety, a racing heart, paranoia, or feeling physically "stuck" — unpleasant, but it passes. It is not the same as an overdose in the way that term is used for other substances.',
+  },
+  {
+    h2: 'Why this happens more with edibles',
+    html: 'Edibles take 45–90 minutes to kick in, which leads many people to take more before the first dose has actually taken effect — then feel the full combined amount all at once.',
+  },
+  {
+    h2: 'How to avoid it',
+    html: 'Start with a true microdose — one Baked cookie is

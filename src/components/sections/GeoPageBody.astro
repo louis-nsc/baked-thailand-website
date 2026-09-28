@@ -1,0 +1,43 @@
+---
+import { lineOrderUrl, shopeeUrl } from '../../data/navigation';
+import { geoPages, type GeoPage } from '../../data/geoPages';
+
+interface Props {
+  page: GeoPage;
+}
+
+const { page } = Astro.props;
+const otherCities = geoPages.filter((p) => p.slug !== page.slug);
+---
+
+<section class="bk-geo-hero">
+  <p class="bk-eyebrow">Thai FDA-Approved &middot; 1.6mg THC</p>
+  <h1>{page.h1 ?? `Cannabis Edibles in ${page.city}`}</h1>
+  <p class="bk-sub">{page.intro}</p>
+  <div class="bk-actions">
+    <a class="bk-cta" href={lineOrderUrl} target="_blank" rel="noopener">Order on LINE &rarr;</a>
+    <a class="bk-cta-secondary" href={shopeeUrl} target="_blank" rel="noopener">Order on Shopee</a>
+  </div>
+</section>
+
+<div class="bk-cards">
+  <div class="bk-card">
+    <p class="bk-eyebrow">Still Legal</p>
+    <h2>Thai FDA-approved</h2>
+    <p>Baked remains legal after Thailand's 2026 crackdown on unlicensed cannabis shops &mdash; every batch is lab-tested and FDA-approved.</p>
+  </div>
+  <div class="bk-card">
+    <p class="bk-eyebrow">Dosage</p>
+    <h2>Up to 1.6mg per piece</h2>
+    <p>A measured microdose &mdash; consistent, lab-tested, easy to titrate.</p>
+  </div>
+  <div class="bk-card">
+    <p class="bk-eyebrow">Delivery</p>
+    <h2>To your door in {page.city}</h2>
+    <p>Free delivery on orders 1,000 THB+, Cash on Delivery available, hotel or home.</p>
+  </div>
+</div>
+
+{page.localStockists && page.localStockists.length > 0 && (
+  <section class="bk-local-stockists">
+    <h2>Find Us In {pag

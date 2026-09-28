@@ -1,0 +1,54 @@
+---
+import { stockists } from '../../data/stockists';
+
+interface Props {
+  lang?: 'en' | 'th';
+}
+
+const { lang = 'en' } = Astro.props;
+const copy = lang === 'th'
+  ? { label: 'มีจำหน่ายที่', heading: 'วางจำหน่ายที่คาเฟ่ ร้านค้า และบาร์ทั่วประเทศไทย' }
+  : { label: 'Available At', heading: 'Carried by cafes, dispensaries, and bars across Thailand' };
+---
+
+<section class="bk-stockists" aria-label={copy.label}>
+  <p class="bk-eyebrow">{copy.label}</p>
+  <h2>{copy.heading}</h2>
+  <ul>
+    {stockists.map((s) => (
+      <li>
+        <img src={s.photo} alt={`${s.name}, ${s.city}${s.note ? ' — ' + s.note : ''}`} width="84" height="84" loading="lazy" />
+        <div>
+          <span class="bk-stockist-name">{s.name}</span>
+          <span class="bk-stockist-city">{s.city}</span>
+          {s.note && <p class="bk-stockist-note">{s.note}</p>}
+        </div>
+      </li>
+    ))}
+  </ul>
+</section>
+
+<style>
+  .bk-stockists {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 48px 56px;
+  }
+  .bk-stockists h2 {
+    font-size: 1.3rem;
+    margin: 0 0 24px;
+  }
+  .bk-stockists ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  .bk-stockists li {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    padding: 18px 20px;
+    display:

@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FeaturedIn from '../components/patterns/FeaturedIn.astro';
+import StockistList from '../components/patterns/StockistList.astro';
+import { lineUrl, shopeeUrl } from '../data/navigation';
+
+const title = "Baked Brand — Thailand's No. 1 THC Microdose Edibles";
+const description =
+  "Thailand's first FDA-approved THC microdose edibles — cookies and caramels, up to 1.6mg THC per piece. Legal, lab-tested, delivered nationwide.";
+---
+
+<BaseLayout title={title} description={description}>
+  <section class="bk-hero">
+    <div>
+      <p class="bk-eyebrow">Thai FDA-Approved &middot; 1.6mg THC</p>
+      <h1>Baked Brand Edibles in Thailand</h1>
+      <h2 class="bk-hero-h2">Thailand's 1st Thai FDA-Approved THC Microdose Edibles</h2>
+      <p class="bk-sub">
+        Thailand&rsquo;s original Thai FDA-approved THC microdose edibles: legal,
+        lab-tested, and delivered nationwide.
+      </p>
+      <div class="bk-actions">
+        <a class="bk-cta" href={lineUrl} target="_blank" rel="noopener">Chat on LINE &rarr;</a>
+        <a class="bk-cta-secondary" href={shopeeUrl} target="_blank" rel="noopener">Order on Shopee</a>
+      </div>
+    </div>
+    <div class="bk-hero-art">
+      <img
+        src="/images/hero-cookies.jpg"
+        alt="Baked Brand chocolate chip cannabis cookies"
+        width="1200"
+        height="1200"
+        fetchpriority="high"
+      />
+    </div>
+  </section>
+
+  <div class="bk-trust">
+    <span class=

@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleBody from '../../components/sections/ArticleBody.astro';
+
+const title = 'สุดยอดเมนูกัญชาไทย | Baked Brand';
+const description =
+  'สำรวจเมนูกัญชาในอาหารและเมนูยอดนิยมของคนไทย ตลอดจนเรียนรู้ข้อดี ข้อเสีย ของการบริโภคกัญชา พร้อมทั้งไอเดียบริโภคกัญชาในอาหารอย่างไรให้ปลอดภัย';
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'สุดยอดเมนูกัญชาไทย : เปิดประสบการณ์สำรวจกัญชาใน อาหาร',
+  description,
+  image: 'https://bakedthailand.com/images/logo-color.png',
+  datePublished: '2026-07-17',
+  author: { '@type': 'Organization', name: 'Baked Brand Edibles in Thailand' },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Baked Brand Edibles in Thailand',
+    logo: { '@type': 'ImageObject', url: 'https://bakedthailand.com/images/logo-color.png' },
+  },
+};
+
+const sections = [
+  {
+    h2: 'กัญชาในอาหารไทย',
+    html: 'กัญชา ถูกนำมาผสมฃนอาหารไทยหลากหลายเมนู ตั้งผู้อ่านจะได้ค้นพบประโยชน์ของกัญชาที่มีต่อสุขภาพอีกด้ว�

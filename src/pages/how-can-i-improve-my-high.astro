@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticleBody from '../components/sections/ArticleBody.astro';
+
+const title = 'How Can I Improve My High? A Practical Guide | Baked Brand';
+const description =
+  'Simple, practical ways to have a better experience with THC edibles — dosing, setting, and timing tips from Baked Brand.';
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'How Can I Improve My High?',
+  description,
+  image: 'https://bakedthailand.com/images/logo-color.png',
+  datePublished: '2026-07-17',
+  author: { '@type': 'Organization', name: 'Baked Brand Edibles in Thailand' },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Baked Brand Edibles in Thailand',
+    logo: { '@type': 'ImageObject', url: 'https://bakedthailand.com/images/logo-color.png' },
+  },
+};
+
+const sections = [
+  {
+    h2: 'Get the dose right first',
+    html: 'The single biggest factor is dose. Too much THC too fast is the most common reason people have an unpleasant experience, not too little. A measured microdose — like Baked\'s 1.6mg cookies — gives you a much easier baseline to work from.',
+  },
+  {
+    h2: 'Setting matters more than people expect',
+    html: 'A comfortable, familiar environment tends to produce a better experience than somewhere new or stressful. Simple as it sounds, this is one of the most consistent factors people report.',
+  },
+  {
+    h2: 'Give it time',
+    html: 'Edibles take 45–90 minutes t

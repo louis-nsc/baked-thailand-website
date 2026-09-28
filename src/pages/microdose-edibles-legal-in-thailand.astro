@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticleBody from '../components/sections/ArticleBody.astro';
+
+const title = 'Are Microdose Edibles Legal in Thailand? | Baked Brand';
+const description =
+  'Microdose THC edibles occupy a specific legal category in Thailand — what makes them different from recreational cannabis, and why Baked’s products remain legal.';
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'What Are Microdose Edibles and Why Are They Legal in Thailand?',
+  description,
+  image: 'https://bakedthailand.com/images/logo-color.png',
+  datePublished: '2026-07-17',
+  author: { '@type': 'Organization', name: 'Baked Brand Edibles in Thailand' },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Baked Brand Edibles in Thailand',
+    logo: { '@type': 'ImageObject', url: 'https://bakedthailand.com/images/logo-color.png' },
+  },
+};
+
+const sections = [
+  {
+    h2: 'What makes an edible a "microdose"',
+    html: 'A microdose edible contains a small, precisely measured amount of THC — Baked’s cookies and caramels are formulated at up to 1.6mg per piece, well below the dose associated with a strong recreational high.',
+  },
+  {
+    h2: 'Why that distinction matters legally',
+    html: 'Thailand’s current framework is medical/approved-product only, not a general recreational market. Baked’s products are Thai FDA-approved microdose items, lab-tested and sold through a licensed supply chain 

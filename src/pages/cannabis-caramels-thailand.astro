@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { lineOrderUrl, shopeeUrl } from '../data/navigation';
+
+const title = 'Cannabis Caramels Thailand | Microdose THC | Baked Brand';
+const description =
+  'Thai FDA-approved microdose THC caramels in vanilla, chocolate, and mango. Up to 1.6mg THC per piece, lab-tested, delivered nationwide across Thailand.';
+
+const faqs = [
+  {
+    q: 'What flavors do the caramels come in?',
+    a: 'Vanilla, chocolate, and mango — all Thai FDA-approved microdose caramels, up to 1.6mg THC per piece.',
+  },
+  {
+    q: 'Are these caramels vegan?',
+    a: "No — Baked's vanilla, chocolate, and mango caramels are vegetarian, not vegan. For a vegan option, see our coconut caramels.",
+  },
+  {
+    q: 'Can I use these in coffee?',
+    a: "Yes — they're designed to dissolve into coffee or any hot drink, which is why cafes carry them as a light, easy menu addition.",
+  },
+];
+
+const structuredData = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: 'Baked Brand Microdose Caramels',
+    description,
+    brand: { '@type': 'Brand', name: 'Baked Brand' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: '

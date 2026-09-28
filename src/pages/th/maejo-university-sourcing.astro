@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { lineUrl } from '../../data/navigation';
+
+const title = 'แหล่งที่มาใบกัญชา: มหาวิทยาลัยแม่โจ้ | Baked Brand';
+const description =
+  'Baked Brand ใช้ใบกัญชาสดจากโครงการปลูกกัญชาของมหาวิทยาลัยแม่โจ้ เชียงใหม่ แต่เพียงผู้เดียว ตรวจสอบย้อนกลับได้ทุกขั้นตอน';
+
+const structuredData = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name: title,
+    description,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'หน้าแรก', item: 'https://bakedthailand.com/' },
+      { '@type': 'ListItem', position: 2, name: 'แหล่งที่มา: มหาวิทยาลัยแม่โจ้', item: 'https://bakedthailand.com/th/maejo-university-sourcing/' },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} lang="th">
+  <Fragment slot="head">
+    {structuredData.map((sd) => <script type="application/ld+json" set:html={JSON.stringify(sd)} />)}
+  </Fragment>
+
+  <section class="bk-article-hero">
+    <p class="bk-eyebrow">ที่มาของวัตถุดิบ</p>
+    <h1>ใบก�

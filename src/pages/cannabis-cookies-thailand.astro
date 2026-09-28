@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { lineOrderUrl, shopeeUrl } from '../data/navigation';
+
+const title = 'Cannabis Cookies Thailand | Thai FDA-Approved | Baked Brand';
+const description =
+  "Baked Brand's chocolate chip cannabis cookies — Thailand's first Thai FDA-approved THC microdose cookie. Up to 1.6mg THC per piece, lab-tested, delivered nationwide.";
+
+const faqs = [
+  {
+    q: 'Are Baked Brand cookies vegan?',
+    a: "No — Baked's cannabis cookies are vegetarian, not vegan (they're made with real butter). If you need a vegan option, see our coconut caramels.",
+  },
+  {
+    q: 'How much THC is in each cookie?',
+    a: 'Up to 1.6mg THC per cookie — a lab-tested microdose, not a strong recreational dose.',
+  },
+  {
+    q: 'Are these cookies legal in Thailand?',
+    a: "Yes. Baked's cookies are Thai FDA-approved and unaffected by the 2026 crackdown on unlicensed recreational cannabis shops.",
+  },
+];
+
+const structuredData = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: 'Baked Brand Cannabis Cookies',
+    description,
+    image: 'https://bakedthailand.com/images/soft-cookies.png',
+    brand: { '@type': 'Brand', name: 'Baked Brand' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Bre
