@@ -38,6 +38,66 @@ const otherCities = geoPages.filter((p) => p.slug !== page.slug);
   </div>
 </div>
 
-{page.localStockists && page.localStockists.length > 0 && (
-  <section class="bk-local-stockists">
-    <h2>Find Us In {pag
+<!-- Product internal link band -->
+<div class="bk-product-band">
+  <div class="bk-product-band-inner">
+    <div>
+      <p class="bk-eyebrow">The product</p>
+      <strong>Baked Brand Microdose THC Cookie — Original Chocolate Chip</strong>
+      <p>Full-spectrum infusion from Maejo University. Up to 1.6mg THC per cookie. Thailand's first FDA-approved cannabis cookie.</p>
+    </div>
+    <a href="/edibles/microdose-thc-cookie/" class="bk-cta-secondary">See the cookie &rarr;</a>
+  </div>
+</div>
+
+<section class="bk-cities">
+  <h2>Baked in Other Cities</h2>
+  <ul class="bk-city-list">
+    {otherCities.map((city) => (
+      <li><a href={`/${city.slug}/`}>{city.city}</a></li>
+    ))}
+  </ul>
+</section>
+
+<style>
+  .bk-product-band {
+    background: var(--bk-green-pale, #f0f7f2);
+    border-top: 1px solid var(--bk-border, #cddbd2);
+    border-bottom: 1px solid var(--bk-border, #cddbd2);
+    padding: 32px 0;
+    margin: 48px 0;
+  }
+  .bk-product-band-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .bk-product-band-inner strong {
+    display: block;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--bk-text, #1e2e23);
+    margin-bottom: 4px;
+  }
+  .bk-product-band-inner p {
+    font-size: 14px;
+    color: var(--bk-text-mid, #3d5244);
+    margin: 0;
+    max-width: 480px;
+    line-height: 1.55;
+  }
+  .bk-product-band-inner .bk-eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--bk-green, #335940);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 6px;
+  }
+</style>

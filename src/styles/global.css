@@ -16,3 +16,34 @@ img {
 a {
   color: inherit;
 }
+
+/* Product spotlight band (homepage) */
+.bk-product-spotlight {
+  background: #f0f7f2;
+  border-top: 1px solid #cddbd2;
+  border-bottom: 1px solid #cddbd2;
+  padding: 32px 0;
+}
+.bk-product-spotlight-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.bk-product-spotlight-inner strong {
+  display: block;
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.bk-product-spotlight-inner p {
+  font-size: 14px;
+  opacity: 0.75;
+  margin: 0;
+  max-width: 480px;
+  line-height: 1.55;
+}

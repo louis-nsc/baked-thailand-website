@@ -1,0 +1,970 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Baked Brand Microdose THC Cookie | Full-Spectrum | Thailand';
+const description =
+  "Thailand's first FDA-approved microdose cannabis cookie — 1.6mg full-spectrum THC, nitrogen-flushed packaging, sourced from Maejo University. Order direct via LINE.";
+
+const lineUrl = 'https://page.line.me/baked';
+
+const faqs = [
+  {
+    q: 'Will one microdose cookie get me too high?',
+    a: 'At up to 1.6mg THC per cookie, Baked is a microdose edible formulated for low-dose consumers. Most first-time users feel a mild, manageable uplift. Effects vary by body weight, metabolism, and tolerance — always start with one and wait at least 60 minutes before considering a second.',
+  },
+  {
+    q: 'How long does it take to feel the effects?',
+    a: 'Edibles take 30–60 minutes to absorb through the digestive system, though a full stomach can delay this further. Effects typically last 2–4 hours. Unlike smoking, the onset is gradual — do not eat more before the first has had time to work.',
+  },
+  {
+    q: "What's the difference between full spectrum and distillate?",
+    a: "Distillate is a highly processed extract that isolates THC and removes most other plant compounds. Full-spectrum products preserve the natural compound profile of the plant, including cannabinoids, terpenes, and flavonoids. We make a full-spectrum infusion using fan leaves from Maejo University and use that infusion in every cookie. We don't use distillate.",
+  },
+  {
+    q: 'Is this product legal in Thailand?',
+    a: "Yes. Baked holds Thai FDA registration No. 50-2-03459-6-0017 and complies with Thailand's regulations on cannabis-infused food products, including the 1.6mg THC per unit limit. We are Thailand's first FDA-approved cannabis cookie.",
+  },
+  {
+    q: 'Can I mix this with alcohol?',
+    a: "We strongly advise against combining cannabis edibles with alcohol. Both substances affect the central nervous system and their combination can amplify effects unpredictably.",
+  },
+  {
+    q: 'Who should not eat this product?',
+    a: "This product is not suitable for: anyone under 20 years of age, pregnant or breastfeeding women, people with a history of psychosis or severe anxiety, or anyone taking medications that interact with cannabis. If you are unsure, consult a healthcare professional before consuming.",
+  },
+];
+
+const structuredData = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: 'Baked Brand Microdose THC Cookie — Original Chocolate Chip',
+    description,
+    image: 'https://bakedthailand.com/images/cookies/cannabis-baked-30pack.jpg',
+    brand: { '@type': 'Brand', name: 'Baked Brand' },
+    offers: [
+      {
+        '@type': 'Offer',
+        price: '300',
+        priceCurrency: 'THB',
+        availability: 'https://schema.org/InStock',
+        description: '6-pack (฿50 per cookie)',
+      },
+      {
+        '@type': 'Offer',
+        price: '1450',
+        priceCurrency: 'THB',
+        availability: 'https://schema.org/InStock',
+        description: '30-pack display box (฿48 per cookie)',
+      },
+    ],
+    additionalProperty: [
+      { '@type': 'PropertyValue', name: 'THC per unit', value: 'Up to 1.6mg' },
+      { '@type': 'PropertyValue', name: 'FDA Registration', value: '50-2-03459-6-0017' },
+      { '@type': 'PropertyValue', name: 'Spectrum', value: 'Full spectrum' },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://bakedthailand.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Edibles', item: 'https://bakedthailand.com/edibles/' },
+      { '@type': 'ListItem', position: 3, name: 'Microdose THC Cookie', item: 'https://bakedthailand.com/edibles/microdose-thc-cookie/' },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <slot name="head" slot="head">
+    {structuredData.map((sd) => (
+      <script type="application/ld+json" set:html={JSON.stringify(sd)} />
+    ))}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Thasadith:ital,wght@0,400;0,700;1,400&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+      /* ═══════════════════════════════════════════════
+         MICRODOSE COOKIE PRODUCT PAGE
+         Baked Brand Design System — Deep Green / Gold
+         ═══════════════════════════════════════════════ */
+      :root {
+        --green:        #335940;
+        --green-deep:   #243f2d;
+        --green-mid:    #4a7a5e;
+        --gold:         #e8aa00;
+        --gold-light:   #f5c832;
+        --gold-pale:    #fdf4d4;
+        --dark:         #111a14;
+        --dark-mid:     #1c2d22;
+        --cream:        #fafaf7;
+        --cream-warm:   #f4f1e8;
+        --text:         #1e2e23;
+        --text-mid:     #3d5244;
+        --text-muted:   #6b8572;
+        --border:       #cddbd2;
+        --border-light: #e4ede7;
+      }
+
+      .pd-wrap *, .pd-wrap *::before, .pd-wrap *::after { box-sizing: border-box; }
+      .pd-wrap {
+        font-family: 'Noto Sans Thai', sans-serif;
+        color: var(--text);
+        font-size: 16px;
+        line-height: 1.6;
+      }
+      .pd-wrap h1, .pd-wrap h2, .pd-wrap h3 {
+        font-family: 'Thasadith', sans-serif;
+        font-weight: 700;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+      }
+      .pd-label {
+        font-family: 'Thasadith', sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--gold);
+        letter-spacing: 0.01em;
+        display: block;
+        margin-bottom: 10px;
+      }
+      .pd-label-green { color: var(--green-mid); }
+      .pd-label-light { color: var(--gold-light); }
+
+      /* ── BUTTONS ── */
+      .pd-btn {
+        display: inline-block;
+        font-family: 'Noto Sans Thai', sans-serif;
+        font-weight: 700;
+        font-size: 14px;
+        padding: 14px 32px;
+        border-radius: 6px;
+        border: none;
+        cursor: pointer;
+        transition: transform 0.18s, box-shadow 0.18s;
+        text-decoration: none;
+        letter-spacing: 0.01em;
+      }
+      .pd-btn:hover { transform: translateY(-1px); }
+      .pd-btn-gold { background: var(--gold); color: var(--dark); }
+      .pd-btn-gold:hover { background: var(--gold-light); box-shadow: 0 6px 20px rgba(232,170,0,0.4); color: var(--dark); }
+      .pd-btn-ghost { background: transparent; color: var(--cream); border: 1.5px solid rgba(255,255,255,0.3); }
+      .pd-btn-ghost:hover { border-color: rgba(255,255,255,0.7); color: var(--cream); }
+      .pd-btn-outline { background: transparent; color: var(--green); border: 1.5px solid var(--green); }
+      .pd-btn-outline:hover { background: var(--green); color: var(--cream); }
+
+      /* ── HERO ── */
+      .pd-hero {
+        background: var(--dark);
+        min-height: 680px;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .pd-hero::before {
+        content: '';
+        position: absolute;
+        right: -160px; top: 50%;
+        transform: translateY(-50%);
+        width: 720px; height: 720px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(51,89,64,0.45) 0%, transparent 68%);
+        pointer-events: none;
+      }
+      .pd-hero-inner {
+        max-width: 1240px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 100px 56px;
+        display: flex;
+        align-items: center;
+        gap: 72px;
+        position: relative;
+        z-index: 1;
+      }
+      .pd-hero-text { flex: 1 1 420px; }
+      .pd-hero-eyebrow {
+        font-family: 'Thasadith', sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--gold);
+        margin-bottom: 24px;
+        display: block;
+      }
+      .pd-hero-h1 {
+        font-size: clamp(52px, 7vw, 88px);
+        color: var(--cream);
+        margin: 0 0 20px;
+        line-height: 0.95;
+      }
+      .pd-hero-h1 span { color: var(--gold); }
+      .pd-flavor-tag {
+        display: inline-block;
+        font-size: 12px;
+        font-weight: 700;
+        font-family: 'Thasadith', sans-serif;
+        color: var(--dark);
+        background: var(--gold);
+        padding: 4px 14px;
+        border-radius: 20px;
+        letter-spacing: 0.03em;
+        margin: -4px 0 24px;
+      }
+      .pd-hero-body {
+        font-size: 17px;
+        color: rgba(250,250,247,0.65);
+        line-height: 1.65;
+        margin: 0 0 40px;
+        max-width: 400px;
+      }
+      .pd-specs {
+        display: flex;
+        margin-bottom: 40px;
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 6px;
+        overflow: hidden;
+        max-width: 480px;
+      }
+      .pd-spec {
+        flex: 1;
+        padding: 14px 18px;
+        border-right: 1px solid rgba(255,255,255,0.08);
+      }
+      .pd-spec:last-child { border-right: none; }
+      .pd-spec-label {
+        font-size: 10px;
+        color: rgba(250,250,247,0.3);
+        display: block;
+        margin-bottom: 4px;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+      }
+      .pd-spec-val {
+        font-family: 'Thasadith', sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--cream);
+      }
+      .pd-hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+      .pd-hero-visual {
+        flex: 0 0 460px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+      .pd-hero-img {
+        width: 100%;
+        max-width: 440px;
+        border-radius: 16px;
+        object-fit: cover;
+        display: block;
+        filter: drop-shadow(0 24px 64px rgba(0,0,0,0.6));
+      }
+      .pd-price-tag {
+        position: absolute;
+        bottom: 20px; right: 0;
+        background: var(--gold);
+        color: var(--dark);
+        font-family: 'Thasadith', sans-serif;
+        font-weight: 700;
+        font-size: 13px;
+        padding: 8px 18px;
+        border-radius: 4px;
+        white-space: nowrap;
+      }
+
+      /* ── TRUST BAR ── */
+      .pd-trust { background: var(--cream); border-bottom: 1px solid var(--border-light); }
+      .pd-trust-inner {
+        max-width: 1240px;
+        margin: 0 auto;
+        padding: 0 56px;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .pd-trust-item {
+        flex: 1 1 180px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 20px 24px;
+        border-right: 1px solid var(--border-light);
+      }
+      .pd-trust-item:last-child { border-right: none; }
+      .pd-trust-icon {
+        width: 36px; height: 36px;
+        background: var(--green);
+        border-radius: 6px;
+        display: flex; align-items: center; justify-content: center;
+        flex-shrink: 0;
+      }
+      .pd-trust-icon svg { width: 18px; height: 18px; stroke: #fff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+      .pd-trust-title { font-weight: 700; font-size: 13px; color: var(--text); display: block; margin-bottom: 2px; }
+      .pd-trust-sub { font-size: 11px; color: var(--text-muted); }
+
+      /* ── GALLERY ── */
+      .pd-gallery { background: var(--cream-warm); padding: 88px 0; }
+      .pd-gallery-inner { max-width: 1240px; margin: 0 auto; padding: 0 56px; }
+      .pd-gallery-head { text-align: center; margin-bottom: 48px; }
+      .pd-gallery-head h2 { font-size: clamp(28px, 3.5vw, 40px); color: var(--text); margin: 8px 0 0; }
+      .pd-events-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        grid-template-rows: 380px;
+        gap: 12px;
+      }
+      .pd-event-cell { border-radius: 10px; overflow: hidden; }
+      .pd-event-cell img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s; }
+      .pd-event-cell:hover img { transform: scale(1.03); }
+      .pd-product-photos { background: var(--cream-warm); padding: 80px 0; }
+      .pd-photo-grid {
+        display: grid;
+        grid-template-columns: 1fr 300px;
+        grid-template-rows: 320px;
+        gap: 12px;
+      }
+      .pd-photo-cell { border-radius: 10px; overflow: hidden; }
+      .pd-photo-cell img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s; }
+      .pd-photo-cell:hover img { transform: scale(1.03); }
+      .pd-photo-side { grid-column: 2; display: flex; flex-direction: column; gap: 12px; }
+      .pd-photo-side .pd-photo-cell { flex: 1; }
+
+      /* ── SECTION ── */
+      .pd-section { max-width: 1240px; margin: 0 auto; padding: 96px 56px; }
+      .pd-section-head { margin-bottom: 52px; }
+      .pd-section-head h2 { font-size: clamp(28px, 3.5vw, 44px); color: var(--text); margin: 8px 0 14px; }
+      .pd-section-head p { font-size: 17px; color: var(--text-mid); line-height: 1.65; max-width: 560px; margin: 0; }
+
+      /* ── PRICING ── */
+      .pd-pricing-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 760px; margin: 0 auto; }
+      .pd-price-card {
+        background: #fff;
+        border: 1.5px solid var(--border);
+        border-radius: 10px;
+        padding: 36px 32px;
+        position: relative;
+        transition: border-color 0.2s, box-shadow 0.2s;
+      }
+      .pd-price-card:hover { border-color: var(--green-mid); box-shadow: 0 4px 24px rgba(51,89,64,0.1); }
+      .pd-price-card.featured { border-color: var(--gold); box-shadow: 0 4px 32px rgba(232,170,0,0.15); }
+      .pd-price-badge {
+        position: absolute; top: -11px; left: 50%; transform: translateX(-50%);
+        background: var(--gold); color: var(--dark);
+        font-size: 10px; font-weight: 700;
+        font-family: 'Thasadith', sans-serif;
+        padding: 4px 16px; border-radius: 20px; white-space: nowrap; letter-spacing: 0.04em;
+      }
+      .pd-price-qty { font-family: 'Thasadith', sans-serif; font-size: 80px; font-weight: 700; color: var(--text); line-height: 0.9; margin-bottom: 4px; }
+      .pd-price-unit { font-size: 12px; color: var(--text-muted); font-weight: 600; margin-bottom: 20px; letter-spacing: 0.03em; }
+      .pd-price-amount { font-family: 'Thasadith', sans-serif; font-size: 32px; font-weight: 700; color: var(--green); }
+      .pd-price-per { font-size: 13px; color: var(--text-muted); margin-top: 2px; margin-bottom: 24px; }
+      .pd-price-divider { border: none; border-top: 1px solid var(--border-light); margin: 24px 0; }
+      .pd-price-feat { font-size: 14px; color: var(--text-mid); display: flex; gap: 8px; align-items: flex-start; margin-bottom: 8px; line-height: 1.4; }
+      .pd-price-check { color: var(--green); font-weight: 700; flex-shrink: 0; }
+      .pd-price-cta {
+        display: block; width: 100%; margin-top: 24px;
+        background: var(--dark); color: var(--cream);
+        padding: 13px 20px; border-radius: 6px;
+        font-size: 14px; font-weight: 700; border: none; cursor: pointer;
+        font-family: 'Noto Sans Thai', sans-serif;
+        text-align: center; text-decoration: none;
+        transition: background 0.2s;
+      }
+      .pd-price-card.featured .pd-price-cta { background: var(--gold); color: var(--dark); }
+      .pd-price-cta:hover { background: var(--green); color: var(--cream); }
+      .pd-price-card.featured .pd-price-cta:hover { background: var(--gold-light); color: var(--dark); }
+      .pd-wholesale {
+        margin-top: 32px;
+        background: var(--cream-warm);
+        border: 1.5px solid var(--border);
+        border-radius: 10px;
+        padding: 28px 36px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        flex-wrap: wrap;
+      }
+      .pd-wholesale strong { font-family: 'Thasadith', sans-serif; font-size: 18px; color: var(--text); display: block; margin-bottom: 4px; }
+      .pd-wholesale span { font-size: 14px; color: var(--text-mid); max-width: 540px; display: block; line-height: 1.55; }
+
+      /* ── DARK SECTION ── */
+      .pd-dark { background: var(--dark); padding: 96px 0; position: relative; overflow: hidden; }
+      .pd-dark::after {
+        content: '';
+        position: absolute; top: -100px; right: -100px;
+        width: 500px; height: 500px; border-radius: 50%;
+        background: radial-gradient(circle, rgba(51,89,64,0.3) 0%, transparent 65%);
+        pointer-events: none;
+      }
+      .pd-dark-inner { max-width: 1240px; margin: 0 auto; padding: 0 56px; position: relative; }
+      .pd-dark h2 { color: var(--cream); font-size: clamp(28px, 3.5vw, 44px); margin: 8px 0 16px; }
+      .pd-dark p.intro { font-size: 17px; color: rgba(250,250,247,0.6); line-height: 1.65; max-width: 580px; margin: 0 0 52px; }
+
+      /* Compare table */
+      .pd-compare { width: 100%; border-collapse: separate; border-spacing: 0; }
+      .pd-compare thead th { padding: 16px 24px; text-align: left; font-family: 'Thasadith', sans-serif; font-size: 13px; font-weight: 700; }
+      .pd-compare thead th:first-child { color: rgba(250,250,247,0.3); width: 26%; }
+      .pd-compare thead th.col-dis { color: rgba(250,250,247,0.4); background: rgba(255,255,255,0.03); border-radius: 8px 8px 0 0; }
+      .pd-compare thead th.col-baked { color: var(--gold); background: rgba(232,170,0,0.08); border-radius: 8px 8px 0 0; border-top: 2px solid rgba(232,170,0,0.4); }
+      .pd-compare tbody td { padding: 14px 24px; font-size: 14px; border-bottom: 1px solid rgba(255,255,255,0.05); line-height: 1.5; vertical-align: top; }
+      .pd-compare tbody td:first-child { color: rgba(250,250,247,0.5); font-weight: 600; }
+      .pd-compare tbody td.col-dis { background: rgba(255,255,255,0.025); color: rgba(250,250,247,0.4); }
+      .pd-compare tbody td.col-baked { background: rgba(232,170,0,0.05); color: var(--cream); border-left: 1px solid rgba(232,170,0,0.15); border-right: 1px solid rgba(232,170,0,0.15); }
+      .pd-compare tbody tr:last-child td.col-dis { border-radius: 0 0 8px 8px; border-bottom: none; }
+      .pd-compare tbody tr:last-child td.col-baked { border-radius: 0 0 8px 8px; border-bottom: 2px solid rgba(232,170,0,0.4); }
+      .icon-yes { color: var(--gold); }
+      .icon-no { color: rgba(250,250,247,0.2); }
+      .pd-entourage {
+        margin-top: 48px;
+        background: rgba(232,170,0,0.07);
+        border: 1px solid rgba(232,170,0,0.2);
+        border-radius: 10px;
+        padding: 36px;
+        max-width: 680px;
+      }
+      .pd-entourage h3 { font-size: 20px; color: var(--gold-light); margin: 0 0 12px; }
+      .pd-entourage p { font-size: 15px; color: rgba(250,250,247,0.65); line-height: 1.7; margin: 0; }
+
+      /* ── SOURCING ── */
+      .pd-sourcing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+      .pd-sourcing-text h2 { font-size: clamp(28px, 3.5vw, 40px); margin: 8px 0 20px; }
+      .pd-sourcing-text p { font-size: 16px; color: var(--text-mid); line-height: 1.65; margin: 0 0 20px; }
+      .pd-sourcing-quote {
+        font-family: 'Thasadith', sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--text);
+        line-height: 1.4;
+        border-left: 3px solid var(--gold);
+        padding-left: 20px;
+        margin: 28px 0;
+        font-style: italic;
+      }
+      .pd-sourcing-stats { display: flex; flex-direction: column; gap: 24px; }
+      .pd-stat-row { display: flex; gap: 16px; align-items: flex-start; }
+      .pd-stat-icon {
+        width: 44px; height: 44px;
+        background: var(--green);
+        border-radius: 8px;
+        display: flex; align-items: center; justify-content: center;
+        flex-shrink: 0;
+      }
+      .pd-stat-icon svg { width: 20px; height: 20px; stroke: #fff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+      .pd-stat-title { font-weight: 700; font-size: 14px; color: var(--text); display: block; margin-bottom: 2px; }
+      .pd-stat-desc { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+
+      /* ── DOSING ── */
+      .pd-dosing-steps {
+        display: grid; grid-template-columns: repeat(4, 1fr);
+        gap: 2px; margin-top: 52px;
+        background: var(--border-light); border: 1px solid var(--border-light);
+        border-radius: 10px; overflow: hidden;
+      }
+      .pd-dose-step { background: #fff; padding: 32px 28px; }
+      .pd-dose-step:first-child { border-radius: 10px 0 0 10px; }
+      .pd-dose-step:last-child { border-radius: 0 10px 10px 0; }
+      .pd-dose-num { font-family: 'Thasadith', sans-serif; font-size: 44px; font-weight: 700; color: rgba(51,89,64,0.15); line-height: 1; margin-bottom: 14px; }
+      .pd-dose-title { font-family: 'Thasadith', sans-serif; font-weight: 700; font-size: 16px; color: var(--text); margin-bottom: 8px; }
+      .pd-dose-body { font-size: 14px; color: var(--text-mid); line-height: 1.6; }
+      .pd-dosing-note {
+        margin-top: 32px;
+        background: var(--cream-warm);
+        border-left: 3px solid var(--green);
+        border-radius: 0 8px 8px 0;
+        padding: 18px 24px;
+        font-size: 14px; color: var(--text-mid); line-height: 1.65; max-width: 700px;
+      }
+
+      /* ── PRESS ── */
+      .pd-press-logos { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 36px; }
+      .pd-press-chip {
+        border: 1px solid var(--border); border-radius: 6px; padding: 12px 24px;
+        color: var(--text-muted); background: #fff;
+        transition: border-color 0.2s, opacity 0.2s;
+        display: flex; align-items: center; justify-content: center; min-width: 100px;
+      }
+      .pd-press-chip:hover { border-color: var(--green-mid); opacity: 0.75; }
+      .pd-press-pull {
+        background: var(--cream-warm); border-radius: 10px; padding: 32px 40px;
+        border-left: 3px solid var(--gold); max-width: 600px;
+      }
+      .pd-press-pull blockquote { font-family: 'Thasadith', sans-serif; font-size: 20px; font-weight: 700; color: var(--text); line-height: 1.4; margin: 0 0 12px; font-style: italic; }
+      .pd-press-pull cite { font-size: 12px; color: var(--text-muted); font-style: normal; font-weight: 600; letter-spacing: 0.03em; }
+
+      /* ── REVIEWS ── */
+      .pd-reviews-score { display: flex; align-items: center; gap: 24px; margin-bottom: 48px; }
+      .pd-score-num { font-family: 'Thasadith', sans-serif; font-size: 56px; font-weight: 700; color: var(--gold); line-height: 1; }
+      .pd-score-stars { font-size: 20px; color: var(--gold); margin-bottom: 4px; }
+      .pd-score-desc { font-size: 13px; color: var(--text-muted); }
+      .pd-score-text { font-size: 15px; color: var(--text-mid); line-height: 1.65; max-width: 440px; }
+      .pd-review-featured {
+        background: var(--dark); border-radius: 12px; padding: 56px 64px;
+        position: relative; overflow: hidden;
+      }
+      .pd-review-featured::before {
+        content: ''; position: absolute; bottom: -60px; right: -60px;
+        width: 300px; height: 300px; border-radius: 50%;
+        background: radial-gradient(circle, rgba(51,89,64,0.25) 0%, transparent 65%);
+        pointer-events: none;
+      }
+      .pd-review-mark { font-family: 'Thasadith', sans-serif; font-size: 120px; color: var(--gold); line-height: 0.7; display: block; margin-bottom: 8px; opacity: 0.9; }
+      .pd-review-stars { font-size: 18px; color: var(--gold); letter-spacing: 2px; margin-bottom: 20px; }
+      .pd-review-text { font-family: 'Thasadith', sans-serif; font-size: clamp(22px, 2.5vw, 36px); font-weight: 700; color: var(--cream); line-height: 1.3; margin: 0 0 36px; max-width: 820px; }
+      .pd-review-attr { font-size: 12px; font-weight: 700; color: var(--gold-light); letter-spacing: 0.06em; }
+      .pd-review-attr-platform { color: rgba(250,250,247,0.3); font-weight: 400; margin-left: 12px; }
+
+      /* ── INGREDIENTS ── */
+      .pd-ingredients-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 44px; }
+      .pd-ingredient { background: #fff; border: 1px solid var(--border-light); border-radius: 8px; padding: 22px 16px; text-align: center; transition: border-color 0.2s; }
+      .pd-ingredient:hover { border-color: var(--gold); }
+      .pd-ingredient-emoji { font-size: 32px; margin-bottom: 8px; display: block; }
+      .pd-ingredient-name { font-size: 13px; font-weight: 700; color: var(--text); }
+      .pd-fda-row {
+        margin-top: 32px; background: var(--dark); border-radius: 10px; padding: 28px 36px;
+        display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+      }
+      .pd-fda-icon { font-size: 32px; }
+      .pd-fda-title { font-family: 'Thasadith', sans-serif; font-weight: 700; font-size: 17px; color: var(--cream); margin-bottom: 3px; }
+      .pd-fda-sub { font-size: 13px; color: rgba(250,250,247,0.5); }
+
+      /* ── FAQ ── */
+      .pd-faq-bg { background: var(--cream-warm); padding: 88px 0; }
+      .pd-faq-wrap { max-width: 1240px; margin: 0 auto; padding: 0 56px; }
+      .pd-faq-list { display: flex; flex-direction: column; gap: 6px; max-width: 780px; margin-top: 44px; }
+      .pd-faq-item { background: #fff; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; transition: border-color 0.15s; }
+      .pd-faq-item[open] { border-color: var(--green); }
+      .pd-faq-q {
+        display: flex; justify-content: space-between; align-items: center;
+        padding: 20px 24px;
+        font-weight: 600; font-size: 15px; color: var(--text);
+        cursor: pointer; list-style: none;
+        font-family: 'Noto Sans Thai', sans-serif;
+        line-height: 1.4;
+      }
+      .pd-faq-q::-webkit-details-marker { display: none; }
+      .pd-faq-chev { flex-shrink: 0; margin-left: 20px; }
+      .pd-faq-chev svg { width: 18px; height: 18px; stroke: var(--green); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; transition: transform 0.2s; }
+      .pd-faq-item[open] .pd-faq-chev svg { transform: rotate(180deg); }
+      .pd-faq-a { padding: 0 24px 20px; font-size: 15px; color: var(--text-mid); line-height: 1.7; }
+
+      /* ── CTA ── */
+      .pd-cta {
+        background: var(--green); padding: 96px 56px; text-align: center;
+        position: relative; overflow: hidden;
+      }
+      .pd-cta::before {
+        content: ''; position: absolute; top: -50%; left: 50%; transform: translateX(-50%);
+        width: 900px; height: 900px; border-radius: 50%;
+        border: 1px solid rgba(232,170,0,0.15); pointer-events: none;
+      }
+      .pd-cta h2 { font-size: clamp(32px, 5vw, 56px); color: var(--cream); margin: 0 0 16px; position: relative; }
+      .pd-cta p { font-size: 18px; color: rgba(250,250,247,0.75); margin: 0 auto 44px; max-width: 480px; position: relative; }
+      .pd-cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; position: relative; }
+      .pd-cta-note { margin-top: 28px; font-size: 13px; color: rgba(250,250,247,0.55); position: relative; }
+
+      /* ── INTERNAL LINKS BAND ── */
+      .pd-city-band { background: var(--cream-warm); border-top: 1px solid var(--border-light); padding: 48px 0; }
+      .pd-city-band-inner { max-width: 1240px; margin: 0 auto; padding: 0 56px; }
+      .pd-city-band-inner p { font-size: 14px; color: var(--text-muted); margin: 0 0 16px; font-weight: 600; }
+      .pd-city-links { display: flex; gap: 10px; flex-wrap: wrap; }
+      .pd-city-link {
+        font-size: 13px; font-weight: 700;
+        color: var(--green); border: 1px solid var(--border);
+        padding: 8px 18px; border-radius: 20px;
+        text-decoration: none; transition: all 0.15s;
+        background: #fff;
+      }
+      .pd-city-link:hover { background: var(--green); color: var(--cream); border-color: var(--green); }
+
+      /* ── RESPONSIVE ── */
+      @media (max-width: 900px) {
+        .pd-hero-inner { padding: 64px 24px; gap: 48px; flex-wrap: wrap; }
+        .pd-hero-visual { flex: 0 0 300px; }
+        .pd-hero-h1 { font-size: clamp(44px, 10vw, 68px); }
+        .pd-section { padding: 64px 24px; }
+        .pd-trust-inner { padding: 0 24px; }
+        .pd-gallery-inner { padding: 0 24px; }
+        .pd-events-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
+        .pd-events-grid .pd-event-cell { height: 260px; }
+        .pd-photo-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
+        .pd-photo-grid .pd-photo-cell { height: 220px; }
+        .pd-photo-side { grid-column: 1; display: grid; grid-template-columns: 1fr 1fr; }
+        .pd-pricing-grid { grid-template-columns: 1fr; }
+        .pd-sourcing-grid { grid-template-columns: 1fr; gap: 40px; }
+        .pd-dosing-steps { grid-template-columns: 1fr 1fr; }
+        .pd-ingredients-grid { grid-template-columns: repeat(2, 1fr); }
+        .pd-dark-inner { padding: 0 24px; }
+        .pd-cta { padding: 72px 24px; }
+        .pd-faq-wrap { padding: 0 24px; }
+        .pd-review-featured { padding: 40px 32px; }
+        .pd-city-band-inner { padding: 0 24px; }
+      }
+      @media (max-width: 600px) {
+        .pd-dosing-steps { grid-template-columns: 1fr; }
+        .pd-sourcing-grid { grid-template-columns: 1fr; }
+      }
+    </style>
+  </slot>
+
+  <div class="pd-wrap">
+
+    <!-- HERO -->
+    <section class="pd-hero">
+      <div class="pd-hero-inner">
+        <div class="pd-hero-text">
+          <span class="pd-hero-eyebrow">Thailand's first FDA-approved microdose cannabis cookie</span>
+          <h1 class="pd-hero-h1">Baked Brand<br><span>Microdose Cookie.</span></h1>
+          <p class="pd-flavor-tag">Original — Chocolate Chip</p>
+          <p class="pd-hero-body">Full-spectrum. Responsibly dosed. Thailand's original microdose cannabis cookie, made with a full-spectrum infusion using fan leaves from a sativa-dominant hybrid developed by Maejo University. New flavours coming soon.</p>
+          <div class="pd-specs">
+            <div class="pd-spec">
+              <span class="pd-spec-label">THC per cookie</span>
+              <span class="pd-spec-val">1.6mg THC</span>
+            </div>
+            <div class="pd-spec">
+              <span class="pd-spec-label">Net weight</span>
+              <span class="pd-spec-val">8g</span>
+            </div>
+            <div class="pd-spec">
+              <span class="pd-spec-label">Spectrum</span>
+              <span class="pd-spec-val">Full spectrum</span>
+            </div>
+            <div class="pd-spec">
+              <span class="pd-spec-label">Onset</span>
+              <span class="pd-spec-val">30–60 min</span>
+            </div>
+          </div>
+          <div class="pd-hero-ctas">
+            <a href={lineUrl} target="_blank" rel="noopener noreferrer" class="pd-btn pd-btn-gold">Order Direct Now</a>
+            <a href="#learn" class="pd-btn pd-btn-ghost">Learn more</a>
+          </div>
+        </div>
+        <div class="pd-hero-visual">
+          <img src="/images/cookies/cannabis-baked-30pack.jpg" alt="Baked Cannabis Cookies 30-pack display box" class="pd-hero-img" width="440" height="440" fetchpriority="high" />
+          <div class="pd-price-tag">30-Pack Display Box · ฿1,450</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST BAR -->
+    <div class="pd-trust">
+      <div class="pd-trust-inner">
+        <div class="pd-trust-item">
+          <div class="pd-trust-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
+          <div><span class="pd-trust-title">Thailand's #1 Microdose Cookie</span><span class="pd-trust-sub">First FDA-approved cannabis cookie</span></div>
+        </div>
+        <div class="pd-trust-item">
+          <div class="pd-trust-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg></div>
+          <div><span class="pd-trust-title">Full-Spectrum Infusion</span><span class="pd-trust-sub">Fan leaves from Maejo University</span></div>
+        </div>
+        <div class="pd-trust-item">
+          <div class="pd-trust-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg></div>
+          <div><span class="pd-trust-title">Lab Tested &amp; Certified</span><span class="pd-trust-sub">FDA Reg. 50-2-03459-6-0017</span></div>
+        </div>
+        <div class="pd-trust-item">
+          <div class="pd-trust-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
+          <div><span class="pd-trust-title">Sold Across Thailand</span><span class="pd-trust-sub">Bangkok, Chiang Mai &amp; more</span></div>
+        </div>
+        <div class="pd-trust-item">
+          <div class="pd-trust-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg></div>
+          <div><span class="pd-trust-title">5-Star Reviews</span><span class="pd-trust-sub">Verified Shopee buyers</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EVENTS / LIFESTYLE GALLERY -->
+    <div class="pd-gallery">
+      <div class="pd-gallery-inner">
+        <div class="pd-gallery-head">
+          <span class="pd-label">Out and about</span>
+          <h2>Baked in the wild.</h2>
+        </div>
+        <div class="pd-events-grid">
+          <div class="pd-event-cell"><img src="/images/cookies/lifestyle-green.jpg" alt="People enjoying Baked cookies at an event" loading="lazy" width="800" height="380" /></div>
+          <div class="pd-event-cell"><img src="/images/cookies/lifestyle-plate.jpg" alt="Baked Brand vending at event" loading="lazy" width="380" height="380" /></div>
+          <div class="pd-event-cell"><img src="/images/cookies/cannabis-baked-box-packs.jpg" alt="Baked cookies event display" loading="lazy" width="380" height="380" /></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRODUCT PHOTOS -->
+    <div class="pd-product-photos">
+      <div class="pd-gallery-inner">
+        <div class="pd-gallery-head">
+          <span class="pd-label pd-label-green">The product</span>
+          <h2>What you'll receive.</h2>
+        </div>
+        <div class="pd-photo-grid">
+          <div class="pd-photo-cell"><img src="/images/cookies/cannabis-baked-box.jpg" alt="Baked cookies retail box display" loading="lazy" width="800" height="320" /></div>
+          <div class="pd-photo-side">
+            <div class="pd-photo-cell"><img src="/images/cookies/cannabis-baked-30pack.jpg" alt="Baked cookies 30-pack box" loading="lazy" width="300" height="150" /></div>
+            <div class="pd-photo-cell"><img src="/images/cookies/cannabis-baked-box-packs.jpg" alt="Baked cookies individual packs" loading="lazy" width="300" height="150" /></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRICING -->
+    <div class="pd-section" id="order">
+      <div class="pd-section-head">
+        <span class="pd-label pd-label-green">Pricing</span>
+        <h2>Simple, honest pricing.</h2>
+        <p>Order directly via LINE for the fastest service. Also available through select retail partners nationwide.</p>
+      </div>
+      <div class="pd-pricing-grid">
+        <div class="pd-price-card featured">
+          <div class="pd-price-badge">Most popular</div>
+          <div class="pd-price-qty">6</div>
+          <div class="pd-price-unit">cookies</div>
+          <div class="pd-price-amount">฿300</div>
+          <div class="pd-price-per">฿50 / cookie</div>
+          <hr class="pd-price-divider" />
+          <div class="pd-price-feat"><span class="pd-price-check">✓</span> Individually sealed and nitrogen-flushed for long-term freshness</div>
+          <div class="pd-price-feat"><span class="pd-price-check">✓</span> Up to 1.6mg full-spectrum THC</div>
+          <div class="pd-price-feat"><span class="pd-price-check">✓</span> Fan leaf from Maejo University</div>
+          <div class="pd-price-feat"><span class="pd-price-check">✓</span> Best value per cookie</div>
+          <a href={lineUrl} target="_blank" rel="noopener noreferrer" class="pd-price-cta">Order now</a>
+        </div>
+        <div class="pd-price-card">
+          <div class="pd-price-qty">30</div>
+          <div class="pd-price-unit">cookies</div>
+          <div class="pd-price-amount">฿1,450</div>
+          <div class="pd-price-per">฿48 / cookie</div>
+          <hr class="pd-price-divider" />
+          <div class="pd-price-feat"><span class="pd-price-check">✓</span> Individually sealed and nitrogen-flushed for long-term freshness</div>
+          <div class="pd-price-feat"><span class="pd-price-check">✓</span> Up to 1.6mg full-spectrum THC</div>
+          <div class="pd-price-feat"><span class="pd-price-check">✓</span> Fan leaf from Maejo University</div>
+          <div class="pd-price-feat"><span class="pd-price-check">✓</span> Best value per cookie</div>
+          <a href={lineUrl} target="_blank" rel="noopener noreferrer" class="pd-price-cta">Order now</a>
+        </div>
+      </div>
+      <div class="pd-wholesale">
+        <div>
+          <strong>Become an authorised Baked retailer</strong>
+          <span>We work with select shops, dispensaries and wellness stores. Reach out on LINE to enquire about wholesale pricing and stocking.</span>
+        </div>
+        <a href={lineUrl} target="_blank" rel="noopener noreferrer" class="pd-btn pd-btn-outline">Enquire about wholesale</a>
+      </div>
+    </div>
+
+    <!-- FULL SPECTRUM -->
+    <div id="learn" class="pd-dark">
+      <div class="pd-dark-inner">
+        <span class="pd-label pd-label-light">Know your edible</span>
+        <h2>Not all microdose THC edibles are the same.</h2>
+        <p class="intro">Most microdose THC edibles on the Thai market use isolated THC distillate, a highly processed extract that strips out everything but THC. We make a full-spectrum infusion using cannabis fan leaves from Maejo University, which preserves the plant's natural compound profile. Here's what that actually means:</p>
+        <table class="pd-compare" role="table" aria-label="Full spectrum vs distillate comparison">
+          <thead>
+            <tr>
+              <th></th>
+              <th class="col-dis">Distillate-based edibles</th>
+              <th class="col-baked">Baked (full spectrum)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Cannabinoid profile</td><td class="col-dis"><span class="icon-no">—</span> Primarily THC, minimal minor cannabinoid content</td><td class="col-baked"><span class="icon-yes">✓</span> THC with naturally occurring minor cannabinoids preserved via full-spectrum infusion</td></tr>
+            <tr><td>Terpenes</td><td class="col-dis"><span class="icon-no">—</span> Stripped during distillation</td><td class="col-baked"><span class="icon-yes">✓</span> Retained from the whole plant</td></tr>
+            <tr><td>Plant source</td><td class="col-dis"><span class="icon-no">—</span> Processed extract, origin often unclear</td><td class="col-baked"><span class="icon-yes">✓</span> Named source: Maejo University, Chiang Mai. Sativa-dominant hybrid.</td></tr>
+            <tr><td>Entourage effect</td><td class="col-dis"><span class="icon-no">—</span> None. Isolated compound only</td><td class="col-baked"><span class="icon-yes">✓</span> Yes, compounds work together via full-spectrum infusion</td></tr>
+            <tr><td>THC dose</td><td class="col-dis"><span class="icon-yes">✓</span> Measurable</td><td class="col-baked"><span class="icon-yes">✓</span> Up to 1.6mg, Thai FDA compliant</td></tr>
+          </tbody>
+        </table>
+        <div class="pd-entourage">
+          <h3>What is the entourage effect?</h3>
+          <p>Cannabis contains hundreds of compounds, including cannabinoids, terpenes, and flavonoids, that researchers believe interact synergistically. By making a full-spectrum infusion from whole fan leaves rather than refined distillate, we preserve that compound profile in every cookie. It's a deliberate choice, and we think an educated consumer deserves to know the difference.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SOURCING -->
+    <div class="pd-section">
+      <div class="pd-sourcing-grid">
+        <div class="pd-sourcing-text">
+          <span class="pd-label pd-label-green">The source</span>
+          <h2>Grown at Maejo University, Chiang Mai.</h2>
+          <p>We source our cannabis fan leaves exclusively from Professor Dr. Arnat's team at Maejo University, the institution producing Thailand's most consistent, highest-quality cannabis. These leaves come from a sativa-dominant hybrid developed specifically by the Maejo team. We then use those leaves to make a full-spectrum infusion, which goes into every cookie.</p>
+          <div class="pd-sourcing-quote">We want consumers to trust the snacks we produce. That starts with where the plants come from.</div>
+          <p>Maejo University is one of Thailand's leading agricultural research institutions and home to some of the country's most rigorous cannabis cultivation programs. We partnered with them early because consistency and traceability matter.</p>
+          <a href={lineUrl} target="_blank" rel="noopener noreferrer" class="pd-btn pd-btn-outline" style="margin-top:8px;">Ask us on LINE</a>
+        </div>
+        <div class="pd-sourcing-stats">
+          <div class="pd-stat-row">
+            <div class="pd-stat-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v1m0 16v1M4.22 4.22l.707.707m12.02 12.02l.707.707M1 12h2m18 0h2M4.22 19.78l.707-.707M18.364 5.636l.707-.707M12 7a5 5 0 100 10A5 5 0 0012 7z"/></svg></div>
+            <div><span class="pd-stat-title">Sativa-dominant hybrid</span><span class="pd-stat-desc">Developed by the Maejo University cannabis research team</span></div>
+          </div>
+          <div class="pd-stat-row">
+            <div class="pd-stat-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg></div>
+            <div><span class="pd-stat-title">Lab tested every batch</span><span class="pd-stat-desc">Independently verified THC content and safety profile</span></div>
+          </div>
+          <div class="pd-stat-row">
+            <div class="pd-stat-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg></div>
+            <div><span class="pd-stat-title">Full-spectrum infusion</span><span class="pd-stat-desc">Fan leaf compound profile preserved from field to cookie</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DOSING GUIDE -->
+    <div class="pd-dark">
+      <div class="pd-dark-inner">
+        <span class="pd-label pd-label-light">Dosing guide</span>
+        <h2>Your first time? Start here.</h2>
+        <p class="intro">Microdose THC edibles work differently from smoking. Effects take longer to feel and last longer once they begin. Follow these steps for a comfortable first experience.</p>
+        <div class="pd-dosing-steps">
+          <div class="pd-dose-step">
+            <div class="pd-dose-num">01</div>
+            <div class="pd-dose-title">Eat one cookie</div>
+            <p class="pd-dose-body">Each cookie contains up to 1.6mg of full-spectrum THC. Start with one — especially if you're new to edibles.</p>
+          </div>
+          <div class="pd-dose-step">
+            <div class="pd-dose-num">02</div>
+            <div class="pd-dose-title">Wait 30–60 minutes</div>
+            <p class="pd-dose-body">Edibles take time to absorb. Don't eat a second cookie before the first one has had time to work. This is the most common mistake.</p>
+          </div>
+          <div class="pd-dose-step">
+            <div class="pd-dose-num">03</div>
+            <div class="pd-dose-title">Assess how you feel</div>
+            <p class="pd-dose-body">Feel nothing after 60 minutes? A second cookie is a reasonable next step. Effects can be delayed by food.</p>
+          </div>
+          <div class="pd-dose-step">
+            <div class="pd-dose-num">04</div>
+            <div class="pd-dose-title">Enjoy</div>
+            <p class="pd-dose-body">Effects typically last 2–4 hours. Find a comfortable setting and enjoy the experience.</p>
+          </div>
+        </div>
+        <div class="pd-dosing-note">Do not drive or operate heavy machinery. Do not combine with alcohol. Not suitable for pregnant women, breastfeeding mothers, or anyone under 20 years of age.</div>
+      </div>
+    </div>
+
+    <!-- PRESS -->
+    <div class="pd-section">
+      <div class="pd-section-head">
+        <span class="pd-label pd-label-green">Press</span>
+        <h2>Featured in</h2>
+      </div>
+      <div class="pd-press-logos">
+        <div class="pd-press-chip"><span style="font-family:'Georgia',serif;font-weight:700;font-size:15px;letter-spacing:0.04em;">FORBES</span></div>
+        <div class="pd-press-chip"><span style="font-family:'Thasadith',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.08em;">HONEYSUCKLE</span></div>
+        <div class="pd-press-chip"><span style="font-family:'Thasadith',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.06em;color:#2a6b3c;">HIGH THAILAND</span></div>
+        <div class="pd-press-chip"><span style="font-family:'Georgia',serif;font-style:italic;font-size:13px;font-weight:400;">Travel Lemming</span></div>
+        <div class="pd-press-chip"><span style="font-family:'Thasadith',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.05em;">CM CITY LIFE</span></div>
+        <div class="pd-press-chip"><span style="font-family:'Thasadith',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.08em;">CNX MAG</span></div>
+      </div>
+      <div class="pd-press-pull">
+        <blockquote>"One of the best chocolate chip cookies I've come across in Thailand. Soft, gentle, chill, relaxed and focused."</blockquote>
+        <cite>Mendel Menachem, High Thailand</cite>
+      </div>
+    </div>
+
+    <!-- REVIEWS -->
+    <div class="pd-dark">
+      <div class="pd-dark-inner">
+        <span class="pd-label pd-label-light">What customers say</span>
+        <h2>Real people. Real results.</h2>
+        <div class="pd-reviews-score">
+          <div>
+            <div class="pd-score-num">5.0</div>
+            <div class="pd-score-stars">★★★★★</div>
+            <div class="pd-score-desc">Verified buyer reviews</div>
+          </div>
+          <p class="pd-score-text">Customers describe improved sleep, clearer focus, and a consistent experience they can trust.</p>
+        </div>
+        <div class="pd-review-featured">
+          <span class="pd-review-mark" aria-hidden="true">"</span>
+          <div class="pd-review-stars">★★★★★</div>
+          <p class="pd-review-text">Started with one at night and slept better than I have in months. Woke up feeling great, no grogginess. These are exactly what microdosing should be.</p>
+          <div>
+            <span class="pd-review-attr">Verified buyer</span>
+            <span class="pd-review-attr-platform">LINE order</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INGREDIENTS -->
+    <div class="pd-section">
+      <div class="pd-section-head">
+        <span class="pd-label pd-label-green">Ingredients</span>
+        <h2>What's inside.</h2>
+        <p>Simple, real ingredients. No artificial colours or preservatives.</p>
+      </div>
+      <div class="pd-ingredients-grid">
+        <div class="pd-ingredient"><span class="pd-ingredient-emoji" aria-hidden="true">🌾</span><span class="pd-ingredient-name">Wheat flour</span></div>
+        <div class="pd-ingredient"><span class="pd-ingredient-emoji" aria-hidden="true">🧈</span><span class="pd-ingredient-name">Butter</span></div>
+        <div class="pd-ingredient"><span class="pd-ingredient-emoji" aria-hidden="true">🍫</span><span class="pd-ingredient-name">Chocolate chips</span></div>
+        <div class="pd-ingredient"><span class="pd-ingredient-emoji" aria-hidden="true">🥚</span><span class="pd-ingredient-name">Egg</span></div>
+        <div class="pd-ingredient"><span class="pd-ingredient-emoji" aria-hidden="true">🌿</span><span class="pd-ingredient-name">Full-spectrum cannabis infusion</span></div>
+        <div class="pd-ingredient"><span class="pd-ingredient-emoji" aria-hidden="true">🍬</span><span class="pd-ingredient-name">Sugar</span></div>
+        <div class="pd-ingredient"><span class="pd-ingredient-emoji" aria-hidden="true">🌱</span><span class="pd-ingredient-name">Vanilla extract</span></div>
+        <div class="pd-ingredient"><span class="pd-ingredient-emoji" aria-hidden="true">🧂</span><span class="pd-ingredient-name">Baking soda &amp; salt</span></div>
+      </div>
+      <div class="pd-fda-row">
+        <span class="pd-fda-icon" aria-hidden="true">🏛️</span>
+        <div>
+          <div class="pd-fda-title">Thai FDA Registered</div>
+          <div class="pd-fda-sub">Registration No. 50-2-03459-6-0017 · Lab tested &amp; certified</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="pd-faq-bg">
+      <div class="pd-faq-wrap">
+        <span class="pd-label pd-label-green">FAQ</span>
+        <h2>Common questions.</h2>
+        <div class="pd-faq-list">
+          {faqs.map((faq) => (
+            <details class="pd-faq-item">
+              <summary class="pd-faq-q">
+                {faq.q}
+                <span class="pd-faq-chev"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></span>
+              </summary>
+              <p class="pd-faq-a">{faq.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="pd-cta">
+      <h2>Ready to get Baked?</h2>
+      <p>Order direct via LINE for the best price. We also ship nationwide.</p>
+      <div class="pd-cta-row">
+        <a href={lineUrl} target="_blank" rel="noopener noreferrer" class="pd-btn pd-btn-gold">Order Direct Now</a>
+      </div>
+      <p class="pd-cta-note">Available in Bangkok, Chiang Mai and nationwide. Also on Shopee, Lazada and Happylyfe.</p>
+    </div>
+
+    <!-- INTERNAL LINKS BAND -->
+    <div class="pd-city-band">
+      <div class="pd-city-band-inner">
+        <p>Find Baked near you</p>
+        <div class="pd-city-links">
+          <a href="/cannabis-edibles-bangkok/" class="pd-city-link">Bangkok</a>
+          <a href="/thc-edibles-chiang-mai/" class="pd-city-link">Chiang Mai</a>
+          <a href="/cannabis-edibles-pattaya/" class="pd-city-link">Pattaya</a>
+          <a href="/cannabis-edibles-in-phuket/" class="pd-city-link">Phuket</a>
+          <a href="/cannabis-edibles-koh-samui/" class="pd-city-link">Koh Samui</a>
+          <a href="/cannabis-edibles-koh-phangan/" class="pd-city-link">Koh Phangan</a>
+          <a href="/cannabis-edibles-koh-tao/" class="pd-city-link">Koh Tao</a>
+          <a href="/cannabis-edibles-hua-hin/" class="pd-city-link">Hua Hin</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</BaseLayout>
