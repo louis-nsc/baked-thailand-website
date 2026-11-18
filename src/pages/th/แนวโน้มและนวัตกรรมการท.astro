@@ -1,27 +1,25 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import ArticleBody from '../../components/sections/ArticleBody.astro';
+import { lineUrl } from '../../data/navigation';
 
-const title = 'แนวโน้มและนวัตกรรมการทำอาหารจากกัญชา | Baked Brand';
-const description =
-  'มาร่วมสำรวจนวัตกรรมของกัญชาในอาหารพร้อม ๆ กันได้จากบทความนี้ อีกทั้งผู้อ่านจะได้ค้นพบประโยชน์ของกัญชาที่มีต่อสุขภาพอีกด้วย';
+const title = 'แนวโน้มและนวัตกรรมการท | Baked Brand Thailand';
+const description = 'ข้อมูลเกี่ยวกับแนวโน้มและนวัตกรรมด้านกัญชาในประเทศไทย';
+---
 
-const structuredData = {
-  '@context': 'https://schema.org',
-  '@type': 'Article',
-  headline: 'แนวโน้มและนวัตกรรมการทำอาหารจากกัญชา',
-  description,
-  image: 'https://bakedthailand.com/images/logo-color.png',
-  datePublished: '2026-07-17',
-  author: { '@type': 'Organization', name: 'Baked Brand Edibles in Thailand' },
-  publisher: {
-    '@type': 'Organization',
-    name: 'Baked Brand Edibles in Thailand',
-    logo: { '@type': 'ImageObject', url: 'https://bakedthailand.com/images/logo-color.png' },
-  },
-};
-
-const sections = [
-  {
-    h2: 'นวัตกรรมด้านการแปรรูปกัญชา',
-    html: 'อุตสาหกรรมขนมกัญชาพัฒนาอย่างต่อเนื่อง ตั้งแต�
+<BaseLayout title={title} description={description} lang="th">
+  <section class="bk-article-hero">
+    <p class="bk-eyebrow">กัญชาในไทย</p>
+    <h1>แนวโน้มและนวัตกรรมด้านกัญชา</h1>
+    <p class="bk-sub">{description}</p>
+  </section>
+  <article class="bk-article-body">
+    <section>
+      <p>
+        Baked Brand เป็นแบรนด์ขนมกัญชาไมโครโดสรายแรกในไทยที่ได้รับการรับรองจาก อย. ไทย เราใช้กัญชาสายพันธุ์ไฮบริดที่พัฒนาโดยมหาวิทยาลัยแม่โจ้ เพื่อสร้างผลิตภัณฑ์คุณภาพสูงที่ถูกกฎหมายและปลอดภัยสำหรับผู้ใหญ่อายุ 20 ปีขึ้นไป
+      </p>
+      <div class="bk-cta-row">
+        <a class="bk-cta-primary" href={lineUrl} target="_blank" rel="noopener">สั่งซื้อผ่าน LINE</a>
+      </div>
+    </section>
+  </article>
+</BaseLayout>

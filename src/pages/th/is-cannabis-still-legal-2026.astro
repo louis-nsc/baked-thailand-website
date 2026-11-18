@@ -1,7 +1,74 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { lineUrl, shopeeUrl } from '../../data/navigation';
+import { lineUrl } from '../../data/navigation';
 
-const title = 'กัญชายังถูกกฎหมายในไทยหรือไม่? อธิบายมาตรการปราบปราม 2026';
+const title = 'กัญชายังถูกกฎหมายในไทยหรือไม่? อธิบายมาตรการปราบปราม 2026 | Baked Brand';
 const description =
-  'มาตรการปราบปรามกัญชาปี 2026 ของไทยทำให้ร้านกัญชาจำนวนมากต้องปิดตัว กัญชาวิผรร฀สร้างการเพฏณสนภรในสญหากฉาน
+  'มาตรการปราบปรามกัญชาปี 2026 ของไทยทำให้ร้านกัญชาจำนวนมากต้องปิดตัว แต่ผลิตภัณฑ์ที่ผ่านการรับรองจาก อย. ยังคงถูกกฎหมาย อ่านคำอธิบายฉบับสมบูรณ์ที่นี่';
+
+const structuredData = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: title,
+    description,
+    image: 'https://bakedthailand.com/images/logo-color.png',
+    datePublished: '2026-07-17',
+    author: { '@type': 'Organization', name: 'Baked Brand Edibles in Thailand' },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Baked Brand Edibles in Thailand',
+      logo: { '@type': 'ImageObject', url: 'https://bakedthailand.com/images/logo-color.png' },
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'หน้าแรก', item: 'https://bakedthailand.com/' },
+      { '@type': 'ListItem', position: 2, name: 'กัญชาถูกกฎหมายหรือไม่', item: 'https://bakedthailand.com/th/is-cannabis-still-legal-2026/' },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} lang="th">
+  <Fragment slot="head">
+    {structuredData.map((sd) => <script type="application/ld+json" set:html={JSON.stringify(sd)} />)}
+  </Fragment>
+
+  <section class="bk-article-hero">
+    <p class="bk-eyebrow">กฎหมายกัญชาในไทย 2026</p>
+    <h1>กัญชายังถูกกฎหมายในไทยหรือไม่?</h1>
+    <p class="bk-sub">{description}</p>
+  </section>
+
+  <article class="bk-article-body">
+    <section>
+      <h2>สถานการณ์ปัจจุบัน</h2>
+      <p>
+        ตั้งแต่ปี 2024 ทางการไทยได้เพิ่มมาตรการในการควบคุมผลิตภัณฑ์กัญชาที่ไม่ผ่านการรับรอง ร้านค้ากัญชาบางส่วนถูกบังคับปิดตัวลง โดยเฉพาะร้านที่จำหน่ายผลิตภัณฑ์ที่ไม่มีใบอนุญาตที่ถูกต้อง
+      </p>
+    </section>
+
+    <section>
+      <h2>ผลิตภัณฑ์ที่รับรองโดย อย. ยังถูกกฎหมาย</h2>
+      <p>
+        ผลิตภัณฑ์ที่ผ่านกระบวนการรับรองจากสำนักงานคณะกรรมการอาหารและยา (อย.) ยังคงถูกกฎหมายอยู่ Baked Brand เป็นแบรนด์เดียวในไทยที่มีการรับรอง อย. สำหรับขนมกัญชาไมโครโดส ทำให้ผลิตภัณฑ์ของเราอยู่ในกรอบกฎหมายอย่างชัดเจน
+      </p>
+    </section>
+
+    <section>
+      <h2>เกณฑ์สำคัญ</h2>
+      <ul>
+        <li>THC ต้องไม่เกิน 0.2% โดยน้ำหนัก (หรือ 1.6mg ต่อหน่วยผลิตภัณฑ์)</li>
+        <li>ต้องมีใบอนุญาตผู้ผลิตและฉลากสินค้าที่ครบถ้วน</li>
+        <li>จำหน่ายได้เฉพาะผู้ใหญ่อายุ 20 ปีขึ้นไป</li>
+        <li>ห้ามบริโภคในที่สาธารณะ</li>
+      </ul>
+      <div class="bk-cta-row">
+        <a class="bk-cta-primary" href={lineUrl} target="_blank" rel="noopener">สั่งซื้อผ่าน LINE</a>
+      </div>
+    </section>
+  </article>
+</BaseLayout>

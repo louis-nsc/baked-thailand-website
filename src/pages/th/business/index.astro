@@ -6,7 +6,7 @@ const title = 'พันธมิตรทางธุรกิจ Baked Brand |
 const description =
   'เสนอขนมกัญชาไมโครโดสที่ผ่านการรับรองจาก อย. ให้ลูกค้าของคุณ โดยไม่ต้องกังวลเรื่องใบอนุญาต เหมาะสำหรับคาเฟ่ ร้านอาหาร บาร์ และร้านค้าทั่วไทย';
 
-const venueTypes = [
+const venueLinks = [
   { label: 'คาเฟ่', href: '/th/business/cafes/' },
   { label: 'ร้านอาหาร', href: '/th/business/restaurants/' },
   { label: 'บาร์', href: '/th/business/bars/' },
@@ -20,4 +20,61 @@ const structuredData = [
     '@context': 'https://schema.org',
     '@type': 'Service',
     serviceType: 'ขายส่งขนมกัญชาไมโครโดส',
-    provider: { '@type': 'LocalBusiness', name: 'Baked Brand Edible
+    provider: { '@type': 'LocalBusiness', name: 'Baked Brand Edibles Thailand' },
+    description,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'หน้าแรก', item: 'https://bakedthailand.com/' },
+      { '@type': 'ListItem', position: 2, name: 'สำหรับธุรกิจ', item: 'https://bakedthailand.com/th/business/' },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} lang="th">
+  <Fragment slot="head">
+    {structuredData.map((sd) => <script type="application/ld+json" set:html={JSON.stringify(sd)} />)}
+  </Fragment>
+
+  <section class="bk-article-hero">
+    <p class="bk-eyebrow">สำหรับธุรกิจ</p>
+    <h1>พันธมิตรทางธุรกิจ Baked Brand</h1>
+    <p class="bk-sub">
+      ขายส่งขนมกัญชาไมโครโดสที่ผ่านการรับรองจาก อย. โดยไม่ต้องกังวลเรื่องใบอนุญาต
+    </p>
+  </section>
+
+  <article class="bk-article-body">
+    <section>
+      <h2>ทำไมต้องร่วมงานกับ Baked Brand?</h2>
+      <p>
+        Baked Brand เป็นแบรนด์ขนมกัญชาไมโครโดสรายแรกในไทยที่ได้รับการรับรองจากสำนักงานคณะกรรมการอาหารและยา (อย.) อย่างเป็นทางการ ผลิตภัณฑ์ทุกชิ้นมี THC ไม่เกิน 1.6mg ต่อชิ้น ผ่านการทดสอบในห้องปฏิบัติการ และติดฉลากครบถ้วนตามกฎหมาย
+      </p>
+      <p>
+        พันธมิตรธุรกิจของเราสามารถนำสินค้าไปวางจำหน่ายหรือเสนอให้ลูกค้าได้ทันที โดยไม่ต้องขอใบอนุญาตเพิ่มเติม เพราะเราถือใบอนุญาตผู้ผลิตไว้แล้ว
+      </p>
+    </section>
+
+    <section>
+      <h2>เหมาะสำหรับธุรกิจประเภทใด?</h2>
+      <ul>
+        {venueLinks.map((v) => (
+          <li><a href={v.href}>{v.label}</a></li>
+        ))}
+      </ul>
+    </section>
+
+    <section>
+      <h2>ติดต่อเราเพื่อขอข้อมูล</h2>
+      <p>
+        สนใจเป็นพันธมิตรกับ Baked Brand? ติดต่อเราผ่าน LINE เพื่อรับข้อมูลราคาขายส่ง ขั้นต่ำในการสั่งซื้อ และเงื่อนไขความร่วมมือ
+      </p>
+      <div class="bk-cta-row">
+        <a class="bk-cta-primary" href={lineUrl} target="_blank" rel="noopener">ติดต่อผ่าน LINE</a>
+      </div>
+    </section>
+  </article>
+</BaseLayout>

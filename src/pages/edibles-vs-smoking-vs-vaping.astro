@@ -32,4 +32,18 @@ const sections = [
   },
   {
     h2: 'No smoke, no vapor',
-    html: 'Edibles avoid inhaling anything at all, which some people prefer for health or discr
+    html: 'Edibles avoid inhaling anything at all, which some people prefer for health or discretion reasons. No smoke, no vapor, no smell.',
+  },
+];
+---
+
+<BaseLayout title={title} description={description} structuredData={structuredData} canonicalUrl={`https://bakedthailand.com/${title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')}/`}>
+  <ArticleBody
+    eyebrow="THAI FDA APPROVED"
+    h1={title}
+    sub="Thailand's only Thai FDA-approved microdose THC edibles. Up to 1.6mg THC per piece, lab-tested, made in our own factory."
+    sections={sections}
+    ctaLabel="Order on LINE"
+    shopeeLabel="Learn More"
+  />
+</BaseLayout>

@@ -9,7 +9,7 @@ const structuredData = [
   {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    serviceType: `ขายส่งขนมกัญชาไมโครโดสสำหรับ${venue.label}`,
+    serviceType: 'ขายส่งขนมกัญชาไมโครโดสสำหรับตลาดและซูเปอร์มาร์เก็ต',
     provider: { '@type': 'LocalBusiness', name: 'Baked Brand Edibles in Thailand' },
     description: venue.description,
   },
@@ -19,16 +19,15 @@ const structuredData = [
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'หน้าแรก', item: 'https://bakedthailand.com/' },
       { '@type': 'ListItem', position: 2, name: 'สำหรับธุรกิจ', item: 'https://bakedthailand.com/th/business/' },
-      { '@type': 'ListItem', position: 3, name: venue.label, item: `https://bakedthailand.com/th/business/${venue.slug}/` },
+      { '@type': 'ListItem', position: 3, name: 'ตลาดและซูเปอร์มาร์เก็ต', item: 'https://bakedthailand.com/th/business/markets-and-supermarkets/' },
     ],
   },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-      {
-        '@type': 'Question',
-        name: 'มีขั้นต่ำในการสั่งซื้อหรือไม่?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'ขั้นต่ำในการสั่งซื้อหรือไมโ'���q�^
+];
+---
+
+<BaseLayout title={venue.title} description={venue.description} lang="th">
+  <Fragment slot="head">
+    {structuredData.map((sd) => <script type="application/ld+json" set:html={JSON.stringify(sd)} />)}
+  </Fragment>
+  <VenuePageBody venue={venue} />
+</BaseLayout>

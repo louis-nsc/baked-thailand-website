@@ -1,21 +1,123 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import FeaturedIn from '../../components/patterns/FeaturedIn.astro';
-import StockistList from '../../components/patterns/StockistList.astro';
-import { lineOrderUrl, shopeeUrl } from '../../data/navigation';
+import { lineUrl } from '../../data/navigation';
 
-// Title/H1 deliberately echo the live page's proven title (which earns real
-// clicks for "คุกกี้กัญชา" per GSC) rather than a fresh rewrite - protect the
-// winner, don't just change it.
-const title = 'คุกกี้กัญชา & ขนมกัญชาไมโครโดส อย.รับรอง | Baked Brand';
+const title = 'คุกกี้กัญชา & ขนมกัญชา อย.รับรอง | Baked Brand – ไมโครโดสที่ไว้ใจได้';
 const description =
   'Baked Brand ผลิตขนมกัญชาไมโครโดสคุณภาพสูง ได้รับการรับรองจาก อย. ครอบคลุมทั้งคุกกี้กัญชาและคาราเมลกัญชา ทำจากใบกัญชาจากมหาวิทยาลัยแม่โจ้ ส่งทั่วประเทศไทย';
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Baked Brand',
+  url: 'https://bakedthailand.com/th/thai/',
+  description,
+  image: 'https://bakedthailand.com/images/logo-color.png',
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'customer service',
+    url: 'https://page.line.me/baked',
+  },
+};
 ---
 
-<BaseLayout title={title} description={description} lang="th">
+<BaseLayout
+  title={title}
+  description={description}
+  structuredData={structuredData}
+  canonicalUrl="https://bakedthailand.com/th/thai/"
+  lang="th"
+>
   <section class="bk-hero">
     <div>
-      <p class="bk-eyebrow">ผ่านการรับรองจาก อย. ไทย &middot; 1.6mg THC</p>
-      <h1>Baked Brand — ขนมกัญชา อย.รับรอง ไมโครโดสที่ไว้ใจได้</h1>
-      <p class="bk-sub">
-        คุกกี้และค�
+      <p class="bk-eyebrow">ผ่านการรับรองจาก อย. ไทย</p>
+      <h1>Baked Brand - ขนมกัญชา อย.รับรอง — ไมโครโดสที่คุณไว้ใจได้</h1>
+      <p class="bk-sub">คุกกี้กัญชา คาราเมลกัญชา และอีกมากมาย</p>
+      <div class="bk-cta-row">
+        <a class="bk-cta-primary" href={lineUrl} target="_blank" rel="noopener">CONTACT US ON LINE OFFICIAL</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bk-section">
+    <div class="bk-container">
+      <p class="bk-section-lead">Treats You Can Trust</p>
+      <p>Baked Brand คือแบรนด์ขนมกัญชาไมโครโดสชั้นนำของประเทศไทย ผลิตจากใบกัญชาปลอดสารพิษจากมหาวิทยาลัยแม่โจ้ และได้รับการรับรองจากองค์การอาหารและยา (อย.) ไม่ว่าคุณกำลังมองหาคุกกี้กัญชา คาราเมลกัญชา เยลลี่กัญชา หรือขนมกัญชาชนิดอื่น Baked Brand คือทางเลือกที่ถูกกฎหมาย ปลอดภัย และไว้ใจได้ในประเทศไทย</p>
+    </div>
+  </section>
+
+  <section class="bk-section bk-section--alt">
+    <div class="bk-container">
+      <h2>ผลิตภัณฑ์ของ Baked Brand</h2>
+      <p>Baked Brand ผลิตขนมกัญชาคุณภาพสูงหลากหลายชนิด โดยใช้ใบกัญชาแห้งปลอดสารพิษจากมหาวิทยาลัยแม่โจ้ ผ่านกระบวนการผลิตเฉพาะทางที่ได้รับการรับรองจาก อย.</p>
+
+      <div class="bk-cards">
+        <div class="bk-card">
+          <h3>คุกกี้กัญชา ช็อคโกแลตชิพ</h3>
+          <p>คุกกี้กัญชาคลาสสิกของเรา หอม นุ่ม และแม่นยำในทุกมิลลิกรัม เริ่มต้นจากไมโครโดส 1.6 มิลลิกรัม THC ต่อชิ้น</p>
+        </div>
+        <div class="bk-card">
+          <h3>คุกกี้กัญชา ข้าวเหนียวมะม่วง</h3>
+          <p>ผสมมะม่วงแท้และเทอร์พีนไมร์ซีนเพื่อเพิ่มประสิทธิภาพของกัญชาอย่างเป็นธรรมชาติ รสชาติไทยแท้ในทุกคำ</p>
+        </div>
+        <div class="bk-card">
+          <h3>คาราเมลกัญชา</h3>
+          <p>ไลน์คาราเมลใหม่ล่าสุดของ Baked Brand ผ่านการรับรองจาก อย. มีให้เลือก 3 รสชาติ: วานิลลา, ช็อคโกแลต และมะม่วง เหมาะสำหรับรับประทานเองหรือละลายในกาแฟและเครื่องดื่มร้อน</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bk-section">
+    <div class="bk-container">
+      <h2>ขนมกัญชาในประเทศไทย: สิ่งที่คุณควรรู้</h2>
+      <p>ตามกฎหมายปัจจุบัน ประเทศไทยไม่อนุญาตให้จำหน่ายขนมกัญชาที่มีปริมาณ THC เกิน 0.2% โดยน้ำหนัก ดังนั้นผลิตภัณฑ์ที่มีฤทธิ์แรง เช่น เยลลี่ THC ความเข้มข้นสูง บราวนี่กัญชา และแคนดี้กัญชาที่เกินเกณฑ์นี้ จึงยังไม่ได้รับอนุญาตในขณะนี้ Baked Brand ปฏิบัติตามกฎหมายไทยอย่างเคร่งครัด และผลิตภัณฑ์ทุกชิ้นของเราอยู่ภายในกรอบที่ถูกกฎหมาย</p>
+      <p>อย่างไรก็ตาม ภายใต้กฎเกณฑ์ 0.2% ยังคงอนุญาตให้มีปริมาณ THC ที่มีนัยสำคัญได้ ตัวอย่างเช่น:</p>
+      <ul>
+        <li>คาราเมลหรือเยลลี่ขนาด 5 กรัม มี THC ได้ถึง 10 มิลลิกรัม</li>
+        <li>คุกกี้ขนาด 40 กรัม มี THC ได้ถึง 80 มิลลิกรัม</li>
+        <li>บราวนี่ขนาด 80 กรัม มี THC ได้ถึง 160 มิลลิกรัม</li>
+      </ul>
+      <p>ผู้บริโภคควรทราบถึงความเสี่ยงที่อาจเกิดขึ้น เช่น ปฏิกิริยากับยาที่รับประทานอยู่ หรือการเปลี่ยนแปลงของกฎระเบียบในอนาคต</p>
+    </div>
+  </section>
+
+  <section class="bk-section bk-section--alt">
+    <div class="bk-container">
+      <h2>การยืนยันตัวตนสำหรับขนมกัญชาในประเทศไทย</h2>
+      <p>กำลังมองหาขนมกัญชา อย.รับรองในประเทศไทยอยู่ใช่ไหม? สินค้าทุกประเภทของเราจำหน่ายเฉพาะผู้ที่มีอายุ 20 ปีขึ้นไปเท่านั้น จึงจำเป็นต้องผ่านการยืนยันตัวตนก่อนสั่งซื้อ</p>
+      <p>การยืนยันตัวตนทำได้ง่ายๆ ผ่านการโทรศัพท์สั้นๆ เพื่อยืนยันว่าคุณมีอายุถึงเกณฑ์ที่กฎหมายกำหนดในการสั่งซื้อขนมกัญชาในประเทศไทย</p>
+      <div class="bk-cta-row">
+        <a class="bk-cta-primary" href={lineUrl} target="_blank" rel="noopener">CONTACT US ON LINE OFFICIAL</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bk-section">
+    <div class="bk-container">
+      <h2>ตัวเลือกขายส่งสำหรับธุรกิจ</h2>
+      <p>Baked Brand มีตัวเลือกขายส่งผลิตภัณฑ์กัญชา อย.รับรองสำหรับธุรกิจทุกประเภท ไม่ว่าจะเป็นร้านขายยา คาเฟ่ ร้านอาหาร บาร์ ดิสเพนซารี ซูเปอร์มาร์เก็ต หรือธุรกิจอื่นๆ Baked Brand คือวิธีที่ถูกกฎหมายในการมอบประสบการณ์กัญชาที่ลูกค้าของคุณสามารถควบคุมได้เองในทุกคำ หรือทุกจิบ</p>
+    </div>
+  </section>
+
+  <section class="bk-section bk-section--alt">
+    <div class="bk-container">
+      <h2>พื้นที่จัดส่ง</h2>
+      <p>Baked Brand จัดส่งคุกกี้กัญชาและขนมกัญชาชนิดอื่นๆ ทั่วประเทศไทย รวมถึง:</p>
+      <p><strong>เชียงใหม่ | กรุงเทพฯ | พัทยา | ภูเก็ต | เกาะสมุย | หัวหิน | กระบี่</strong> และเมืองอื่นๆ ทั่วประเทศ</p>
+      <p>เราเชื่อมั่นว่าขนมกัญชาไมโครโดสคุณภาพสูงของเราจะมอบรอยยิ้มให้คุณในดินแดนแห่งรอยยิ้ม!</p>
+    </div>
+  </section>
+
+  <section class="bk-section">
+    <div class="bk-container">
+      <h2>เกี่ยวกับ Baked Brand</h2>
+      <p>Baked Brand ก่อตั้งขึ้นในปี 2022 โดยมีเป้าหมายหลักคือการผลิตขนมกัญชาคุณภาพสูงที่ช่วยให้ผู้บริโภคใหม่ได้สัมผัสประสบการณ์ THC อย่างนุ่มนวลและปลอดภัย และมอบไมโครโดสจากใบกัญชาที่อร่อยและมีคุณภาพให้กับผู้ที่มีประสบการณ์แล้ว</p>
+      <p>Baked Brand คือแบรนด์ขนมกัญชา THC แรกที่วางจำหน่ายในร้านขายยาในประเทศไทย และเราตั้งใจผลักดันให้ขนมกัญชาไมโครโดสเป็นเรื่องปกติในสังคม เพราะเราเชื่อว่าสินค้าเหล่านี้ควรหาซื้อได้ทั่วไป ไม่ว่าจะเป็นคาเฟ่ โรงภาพยนตร์ ร้านขายยา ร้านอาหาร บาร์ และสถานที่สังสรรค์อื่นๆ</p>
+      <p>ใบกัญชาอินทรีย์ของเราได้มาจากมหาวิทยาลัยแม่โจ้ และใช้เนยแท้ในกระบวนการผลิต เพื่อให้ได้คุณภาพสูงสุดและรสชาติที่อร่อยในทุกคำ</p>
+      <div class="bk-cta-row">
+        <a class="bk-cta-primary" href={lineUrl} target="_blank" rel="noopener">สั่งซื้อผ่าน LINE OFFICIAL</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

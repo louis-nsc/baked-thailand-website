@@ -31,4 +31,21 @@ const structuredData = [
 
   <section class="bk-article-hero">
     <p class="bk-eyebrow">ที่มาของวัตถุดิบ</p>
-    <h1>ใบก�
+    <h1>ใบก�ame: title, item: `https://bakedthailand.com/th/${title}/` },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} structuredData={structuredData} lang="th">
+  <section class="bk-hero">
+    <div>
+      <p class="bk-eyebrow">ผ่านการรับรองจาก อย. ไทย</p>
+      <h1>{title}</h1>
+      <p class="bk-sub">{description}</p>
+      <div class="bk-cta-row">
+        <a class="bk-cta-primary" href="https://page.line.me/baked" target="_blank" rel="noopener">สั่งซื้อผ่าน LINE</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

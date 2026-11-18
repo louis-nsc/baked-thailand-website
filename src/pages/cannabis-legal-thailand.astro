@@ -1,16 +1,109 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { lineUrl, shopeeUrl } from '../data/navigation';
+import ArticleBody from '../components/sections/ArticleBody.astro';
 
-const title = 'Is Cannabis Still Legal in Thailand? 2026 Crackdown Explained';
+const title = 'Is Cannabis Legal in Thailand? THC Edibles & Current Law | Baked Brand';
 const description =
-  "Thailand's 2026 crackdown shut down thousands of cannabis shops — but Baked's Thai FDA-approved microdose edibles remain 100% legal.";
+  'Is cannabis legal in Thailand in 2026? Full breakdown of current Thai cannabis law, what\'s permitted for edibles, THC limits, and how Baked Brand operates within the legal framework.';
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Is Cannabis Legal in Thailand? A Guide to Current Law for THC Edibles',
+  description,
+  image: 'https://bakedthailand.com/images/logo-color.png',
+  datePublished: '2026-01-01',
+  author: { '@type': 'Organization', name: 'Baked Brand Edibles in Thailand' },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Baked Brand Edibles in Thailand',
+    logo: { '@type': 'ImageObject', url: 'https://bakedthailand.com/images/logo-color.png' },
+  },
+};
 
 const sections = [
   {
-    h2: "What's Actually Restricted vs. What's Legal",
-    html: "Recreational cannabis flower, high-potency edibles, vapes, and extracts like rosin and hash — all sold through unlicensed shops — are what's being targeted. Thai FDA-approved microdose edibles — like Baked's cookies and caramels, formulated at up to 1.6mg THC per piece and lab-tested every batch — are produced under Thailand's medical/approved-product framework, not the recreational market the crackdown is aimed at, and remain unaffected. That distinction is the whole story: it's not about THC being newly illegal, it's about which supply chains and product categories are compliant.",
+    h2: 'The current legal status of cannabis in Thailand',
+    html: `<p>Thailand removed cannabis from its narcotics list in June 2022, making it the first country in Southeast Asia to do so. That change opened the door to legal cultivation, processing, and sale of cannabis products, including food products containing THC.</p>
+<p>However, recreational cannabis use has never been explicitly legalised. The 2022 change was focused on medicinal and economic uses, and the regulatory framework has been evolving (and tightening) since. As of 2026, the Thai government has moved to restrict recreational cannabis use more explicitly, while maintaining pathways for approved commercial products.</p>
+<p>The key distinction for consumers is this: cannabis products with Thai FDA approval are legal to sell and purchase. Unapproved products, including most of what you'll find in dispensaries without clear labelling, exist in a greyer space.</p>`,
   },
   {
-    h2: 'What Changed in the July 2026 Crackdown',
-    html: "On July 7, 2026, Thailand's Public Health Ministry moved forward with a crackdown on illicit cannabis shops — targeting over 6,000 outlets with expired or fake licenses, backed by a new GPS-based tracking system. Since a June 2025 reclassification, roughly 40% of Thailand's cannabis shops (7,297 of 18,433) have already closed. Most of the closures are shops that let licenses lapse
+    h2: 'Thailand\'s 2024-2026 crackdown: what changed',
+    html: `<p>In late 2023 and into 2024, the Thai government signalled a shift toward tighter cannabis regulation. Under Prime Minister Srettha Thavisin and subsequently Paetongtarn Shinawatra, there were moves to reclassify cannabis as a narcotic while carving out exceptions for approved medical and commercial uses.</p>
+<p>As of 2026, the practical outcome for consumers is:</p>
+<ul>
+<li>Recreational cannabis smoking in public remains prohibited and increasingly enforced</li>
+<li>Cannabis dispensaries without proper licensing face greater scrutiny</li>
+<li>THC-infused food products require Thai FDA approval to be sold legally</li>
+<li>Products meeting microdose standards and holding FDA approval remain fully legal</li>
+</ul>
+<p>The Thai FDA's approval process for edible cannabis products has not changed. Products meeting the dosage requirements (below 0.2% THC by weight) and manufactured in approved facilities can still receive approval and be sold legally as food products.</p>`,
+  },
+  {
+    h2: 'THC limits for food products in Thailand',
+    html: `<p>Under Thai food law, cannabis-infused food products must contain no more than 0.2% THC by weight. This translates to:</p>
+<ul>
+<li>A 5g product: up to 10mg THC</li>
+<li>A 10g product: up to 20mg THC</li>
+<li>A 40g product (a typical cookie): up to 80mg THC</li>
+</ul>
+<p>Baked Brand operates well within these limits. Our Chocolate Chip Cookie contains up to 1.6mg THC per piece, our Cannabis Caramels the same. This is a deliberate choice: microdosing is our product philosophy, not just regulatory compliance. The goal is a subtle, manageable experience, not the maximum legal dose.</p>`,
+  },
+  {
+    h2: 'What "Thai FDA approved" actually means',
+    html: `<p>Thai FDA approval for a food product containing cannabis means:</p>
+<ul>
+<li>The manufacturer holds a valid food production licence</li>
+<li>The product has been independently tested for THC content, contaminants, and safety</li>
+<li>The product label accurately reflects what's in the product</li>
+<li>The THC content complies with legal limits</li>
+<li>The product can be legally sold as a food item in Thailand</li>
+</ul>
+<p>Baked Brand's Chocolate Chip Cookie holds Thai FDA approval, making it the only baked THC edible in Thailand with this status. Our Cannabis Caramels also hold approval. No other edible manufacturer in Thailand currently holds equivalent approval for THC-infused products.</p>`,
+  },
+  {
+    h2: 'Is it legal to buy THC edibles as a tourist in Thailand?',
+    html: `<p>Tourists in Thailand can legally purchase Thai FDA-approved THC edibles, subject to the same conditions as locals: age verification (20+ required), purchase from approved sources only, and consumption in private rather than public spaces.</p>
+<p>Attempting to bring THC edibles out of Thailand to your home country is a separate matter entirely and is almost universally illegal, including for products that are legal in Thailand. Thai customs and foreign customs authorities treat cannabis-derived products very differently, and the fact that an edible holds Thai FDA approval provides no legal protection in another jurisdiction. Do not attempt to travel internationally with THC edibles.</p>`,
+  },
+  {
+    h2: 'Public consumption and enforcement',
+    html: `<p>Consuming cannabis in public places in Thailand is not permitted and enforcement has increased since 2024. This applies to smoking and vaping cannabis, and by extension to consuming edibles in public in a way that constitutes "intoxicated public behaviour".</p>
+<p>Practically speaking, consuming a 1.6mg microdose edible in a public setting is unlikely to produce detectable intoxication, but the legal framework does not carve out an exception based on dose. The safest approach is to consume edibles in private settings.</p>`,
+  },
+  {
+    h2: 'Frequently Asked Questions',
+    html: `<h3>Is cannabis legal in Thailand in 2026?</h3>
+<p>Cannabis occupies a complex legal position in Thailand. It was removed from the narcotics list in 2022, making many uses legal, but the regulatory framework has been tightening. Thai FDA-approved cannabis food products (edibles) remain legal to sell and purchase. Recreational smoking in public is not permitted. The legal landscape continues to evolve, so checking current Thai FDA and government guidance is always advisable.</p>
+
+<h3>Can I buy cannabis edibles in Thailand legally?</h3>
+<p>Yes, provided you are 20 or older and purchase from a Thai FDA-approved source. Baked Brand's Chocolate Chip Cookie and Cannabis Caramels are Thailand's only Thai FDA-approved THC edibles, available for purchase and delivery nationwide.</p>
+
+<h3>Can I travel with Thai cannabis edibles?</h3>
+<p>No. Thai FDA approval has no standing outside Thailand. Attempting to carry THC edibles across international borders is illegal in virtually every destination and carries serious criminal penalties. Do not attempt it.</p>
+
+<h3>What's the difference between CBD and THC in Thailand?</h3>
+<p>CBD (cannabidiol) and THC (delta-9-tetrahydrocannabinol) are both cannabinoids found in cannabis but have very different regulatory and psychoactive profiles. THC is psychoactive and subject to strict dosage limits in Thai food products. CBD is not psychoactive and is regulated differently. Baked Brand's products contain THC (up to 1.6mg per piece) rather than CBD.</p>
+
+<h3>Are cannabis dispensaries legal in Thailand?</h3>
+<p>Cannabis shops and dispensaries have operated legally under various frameworks since 2022, but the regulatory environment has become more stringent. Dispensaries selling THC flower or smoke-able products face the most uncertainty. Dispensaries selling Thai FDA-approved edibles are on firmer legal ground, as the product approval itself provides a clear legal basis for sale.</p>`,
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  structuredData={structuredData}
+  canonicalUrl="https://bakedthailand.com/cannabis-legal-thailand/"
+>
+  <ArticleBody
+    eyebrow="THAI FDA APPROVED"
+    h1="Is Cannabis Legal in Thailand? A Guide to Current Law"
+    sub="Thailand has one of Southeast Asia's most evolved cannabis regulatory frameworks, but it's also one of the most rapidly changing. Here's what you need to know about the legal status of cannabis, THC edibles, and FDA-approved products in Thailand in 2026."
+    sections={sections}
+    ctaLabel="Order on LINE"
+    shopeeLabel="Learn About Our Products"
+  />
+</BaseLayout>

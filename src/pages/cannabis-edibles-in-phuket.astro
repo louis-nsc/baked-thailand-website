@@ -4,7 +4,7 @@ import GeoPageBody from '../components/sections/GeoPageBody.astro';
 import FeaturedIn from '../components/patterns/FeaturedIn.astro';
 import { geoPages } from '../data/geoPages';
 
-const page = geoPages.find((p) => p.slug === 'cannabis-edibles-in-phuket')!;
+const page = geoPages.find((p) => p.slug === 'cannabis-edibles-phuket')!;
 
 const structuredData = [
   {
@@ -38,4 +38,21 @@ const structuredData = [
       {
         '@type': 'Question',
         name: `Is it legal to order this in ${page.city}?`,
-        acceptedAnswer: {
+        acceptedAnswer: {          '@type': 'Answer',
+          text: `Baked Brand products hold Thai FDA approval, so yes — ordering and delivery in ${page.city} is fully legal for adults aged 20 and over.`,
+        },
+      },
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title={page.title}
+  description={page.description}
+  structuredData={structuredData}
+  canonicalUrl={`https://bakedthailand.com/${page.slug}/`}
+>
+  <GeoPageBody page={page} />
+  <FeaturedIn />
+</BaseLayout>

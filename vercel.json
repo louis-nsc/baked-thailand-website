@@ -58,3 +58,67 @@
     {
       "source": "/th",
       "destination": "/th/thai/",
+      "permanent": true
+    },
+    {
+      "source": "/where-to-buy-souvenirs-in-bangkok",
+      "destination": "/cannabis-edibles-bangkok/",
+      "permanent": true
+    },
+    {
+      "source": "/where-to-buy-souvenirs-in-bangkok/",
+      "destination": "/cannabis-edibles-bangkok/",
+      "permanent": true
+    },
+    {
+      "source": "/what-to-eat-at-one-bangkok",
+      "destination": "/cannabis-edibles-bangkok/",
+      "permanent": true
+    },
+    {
+      "source": "/what-to-eat-at-one-bangkok/",
+      "destination": "/cannabis-edibles-bangkok/",
+      "permanent": true
+    },
+    {
+      "source": "/where-to-get-dubai-chocolate-bangkok",
+      "destination": "/cannabis-edibles-bangkok/",
+      "permanent": true
+    },
+    {
+      "source": "/where-to-get-dubai-chocolate-bangkok/",
+      "destination": "/cannabis-edibles-bangkok/",
+      "permanent": true
+    },
+    {
+      "source": "/how-to-use-metro-bangkok",
+      "destination": "/cannabis-edibles-bangkok/",
+      "permanent": true
+    },
+    {
+      "source": "/how-to-use-metro-bangkok/",
+      "destination": "/cannabis-edibles-bangkok/",
+      "permanent": true
+    },
+    {
+      "source": "/where-to-shop-for-clothes-in-bangkok",
+      "destination": "/cannabis-edibles-bangkok/",
+      "permanent": true
+    },
+    {
+      "source": "/where-to-shop-for-clothes-in-bangkok/",
+      "destination": "/cannabis-edibles-bangkok/",
+      "permanent": true
+    },
+    {
+      "source": "/how-to-sneak-edibles-on-plane",
+      "destination": "/microdose-edibles-legal-in-thailand/",
+      "permanent": true
+    },
+    {
+      "source": "/how-to-sneak-edibles-on-plane/",
+      "destination": "/microdose-edibles-legal-in-thailand/",
+      "permanent": true
+    }
+  ]
+}

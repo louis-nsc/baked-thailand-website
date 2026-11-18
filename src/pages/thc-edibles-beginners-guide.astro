@@ -4,7 +4,7 @@ import ArticleBody from '../components/sections/ArticleBody.astro';
 
 const title = 'THC Edibles for Beginners: What to Expect | Baked Brand';
 const description =
-  'Trying THC edibles for the first time? Here’s what makes edibles different from smoking, how much to take, and what to expect from Baked’s microdose cookies.';
+  "Trying THC edibles for the first time? Here's what makes edibles different from smoking, how much to take, and what to expect from Baked's microdose cookies.";
 
 const structuredData = {
   '@context': 'https://schema.org',
@@ -23,13 +23,27 @@ const structuredData = {
 
 const sections = [
   {
-    h2: 'Edibles feel different because they are different',
-    html: 'Unlike smoking or vaping, where the onset is rapid and you can gauge the effect quickly, edibles take 45–90 minutes to kick in and last much longer. That delay is the single biggest thing beginners get wrong.',
+    h2: "Edibles feel different because they are different",
+    html: "Unlike smoking or vaping, where the onset is rapid and you can gauge the effect quickly, edibles take 45--90 minutes to kick in and last much longer. That delay is the single biggest thing beginners get wrong.",
   },
   {
-    h2: 'Start with a real microdose',
-    html: 'One Baked cookie is up to 1.6mg THC — a measured, lab-tested microdose. Wait at least two hours before considering more, even if you don’t feel anything right away.',
+    h2: "Start with a real microdose",
+    html: "One Baked cookie is up to 1.6mg THC -- a measured, lab-tested microdose. Wait at least two hours before considering more, even if you don't feel anything right away.",
   },
   {
-    h2: 'Is it legal to try in Thailand?',
-    html: 'Yes — Baked’s cookies and c
+    h2: "Is it legal to try in Thailand?",
+    html: "Yes -- Baked cookies and caramels are Thailand's only Thai FDA-approved microdose edibles. Legal for adults aged 20 and over.",
+  },
+];
+---
+
+<BaseLayout title={title} description={description} structuredData={structuredData} canonicalUrl={`https://bakedthailand.com/${title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')}/`}>
+  <ArticleBody
+    eyebrow="THAI FDA APPROVED"
+    h1={title}
+    sub="Thailand's only Thai FDA-approved microdose THC edibles. Up to 1.6mg THC per piece, lab-tested, made in our own factory."
+    sections={sections}
+    ctaLabel="Order on LINE"
+    shopeeLabel="Learn More"
+  />
+</BaseLayout>

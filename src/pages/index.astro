@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import FeaturedIn from '../components/patterns/FeaturedIn.astro';
 import StockistList from '../components/patterns/StockistList.astro';
-import { lineUrl, shopeeUrl } from '../data/navigation';
+import { lineUrl } from '../data/navigation';
 
 const title = "Baked Brand — Thailand's No. 1 THC Microdose Edibles";
 const description =
@@ -21,7 +21,7 @@ const description =
       </p>
       <div class="bk-actions">
         <a class="bk-cta" href={lineUrl} target="_blank" rel="noopener">Chat on LINE &rarr;</a>
-        <a class="bk-cta-secondary" href={shopeeUrl} target="_blank" rel="noopener">Order on Shopee</a>
+        <a class="bk-cta-secondary" href={lineUrl} target="_blank" rel="noopener">Order on LINE</a>
       </div>
     </div>
     <div class="bk-hero-art">
@@ -48,4 +48,12 @@ const description =
   </div>
 
   <div class="bk-trust">
-    <span class=
+    <span class="bk-trust-item">Thai FDA Approved</span>
+    <span class="bk-trust-item">Lab Tested</span>
+    <span class="bk-trust-item">Own Factory</span>
+    <span class="bk-trust-item">Thailand's Original</span>
+  </div>
+
+  <FeaturedIn />
+  <StockistList />
+</BaseLayout>

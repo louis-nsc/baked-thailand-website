@@ -32,4 +32,22 @@ const sections = [
   },
   {
     h2: 'Why this matters more than usual right now',
-    html: 'Roug
+    html: 'Roughly since mid-2024, Thai authorities have been cracking down on unregulated cannabis products. Buying from an FDA-approved source is the clearest way to stay on the right side of these changes.',
+  },
+  {
+    h2: 'Dosage guide for first-timers',
+    html: 'Start with half a piece (about 0.8mg THC) and wait 90 minutes before having more. Effects from edibles take longer to arrive than smoking, and last longer once they do.',
+  },
+];
+---
+
+<BaseLayout title={title} description={description} structuredData={structuredData} canonicalUrl={`https://bakedthailand.com/${title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')}/`}>
+  <ArticleBody
+    eyebrow="THAI FDA APPROVED"
+    h1={title}
+    sub="Thailand's only Thai FDA-approved microdose THC edibles. Up to 1.6mg THC per piece, lab-tested, made in our own factory."
+    sections={sections}
+    ctaLabel="Order on LINE"
+    shopeeLabel="Learn More"
+  />
+</BaseLayout>

@@ -32,4 +32,18 @@ const sections = [
   },
   {
     h2: 'How to avoid it',
-    html: 'Start with a true microdose — one Baked cookie is
+    html: 'Start with a true microdose — one Baked cookie is up to 1.6mg THC, a good starting point. Wait at least 90 minutes before considering more. If you have already taken too much, rest somewhere comfortable, drink water, and remember the feeling will pass.',
+  },
+];
+---
+
+<BaseLayout title={title} description={description} structuredData={structuredData} canonicalUrl={`https://bakedthailand.com/${title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')}/`}>
+  <ArticleBody
+    eyebrow="THAI FDA APPROVED"
+    h1={title}
+    sub="Thailand's only Thai FDA-approved microdose THC edibles. Up to 1.6mg THC per piece, lab-tested, made in our own factory."
+    sections={sections}
+    ctaLabel="Order on LINE"
+    shopeeLabel="Learn More"
+  />
+</BaseLayout>

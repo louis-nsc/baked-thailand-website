@@ -31,4 +31,19 @@ const sections = [
     html: 'Whether you\'ve eaten recently, your metabolism, and the dose itself all affect how quickly you feel an edible. Taking one on an empty stomach may work faster; taking one after a meal may be slower and gentler.',
   },
   {
-    h2: 'Don\'t do
+    h2: 'What not to do',
+    html: 'Do not take a second piece because you do not feel anything yet. The most common mistake with edibles is redosing too early. Wait at least 90 minutes before considering more.',
+  },
+];
+---
+
+<BaseLayout title={title} description={description} structuredData={structuredData} canonicalUrl={`https://bakedthailand.com/${title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')}/`}>
+  <ArticleBody
+    eyebrow="THAI FDA APPROVED"
+    h1={title}
+    sub="Thailand's only Thai FDA-approved microdose THC edibles. Up to 1.6mg THC per piece, lab-tested, made in our own factory."
+    sections={sections}
+    ctaLabel="Order on LINE"
+    shopeeLabel="Learn More"
+  />
+</BaseLayout>

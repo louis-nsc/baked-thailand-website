@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { lineOrderUrl, shopeeUrl } from '../data/navigation';
+import { lineOrderUrl } from '../data/navigation';
 
 const title = 'Cannabis Cookies Thailand | Thai FDA-Approved | Baked Brand';
 const description =
@@ -41,4 +41,24 @@ const structuredData = [
   },
   {
     '@context': 'https://schema.org',
-    '@type': 'Bre
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://bakedthailand.com/' },
+      { '@type': 'ListItem', position: 2, name: title, item: `https://bakedthailand.com/${title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')}/` },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} structuredData={structuredData}>
+  <section class="bk-hero">
+    <div>
+      <p class="bk-eyebrow">Thai FDA Approved &middot; Up to 1.6mg THC</p>
+      <h1>{title}</h1>
+      <p class="bk-sub">{description}</p>
+      <div class="bk-cta-row">
+        <a class="bk-cta-primary" href={lineOrderUrl} target="_blank" rel="noopener">Order on LINE</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

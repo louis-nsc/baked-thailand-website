@@ -32,4 +32,18 @@ const sections = [
   },
   {
     h2: 'Is either legal in Thailand?',
-    html: 'CBD
+    html: 'CBD products are widely available and legal in Thailand. THC products are more tightly regulated — Baked is currently the only brand with Thai FDA approval for microdose THC edibles, making our products clearly legal for adults aged 20 and over.',
+  },
+];
+---
+
+<BaseLayout title={title} description={description} structuredData={structuredData} canonicalUrl={`https://bakedthailand.com/${title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')}/`}>
+  <ArticleBody
+    eyebrow="THAI FDA APPROVED"
+    h1={title}
+    sub="Thailand's only Thai FDA-approved microdose THC edibles. Up to 1.6mg THC per piece, lab-tested, made in our own factory."
+    sections={sections}
+    ctaLabel="Order on LINE"
+    shopeeLabel="Learn More"
+  />
+</BaseLayout>

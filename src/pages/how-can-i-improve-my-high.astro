@@ -32,4 +32,18 @@ const sections = [
   },
   {
     h2: 'Give it time',
-    html: 'Edibles take 45–90 minutes t
+    html: 'Edibles take 45 to 90 minutes to kick in. Resist the urge to take more early. The most common issue people report is taking a second dose because they did not feel anything yet, then feeling too much an hour later.',
+  },
+];
+---
+
+<BaseLayout title={title} description={description} structuredData={structuredData} canonicalUrl={`https://bakedthailand.com/${title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')}/`}>
+  <ArticleBody
+    eyebrow="THAI FDA APPROVED"
+    h1={title}
+    sub="Thailand's only Thai FDA-approved microdose THC edibles. Up to 1.6mg THC per piece, lab-tested, made in our own factory."
+    sections={sections}
+    ctaLabel="Order on LINE"
+    shopeeLabel="Learn More"
+  />
+</BaseLayout>

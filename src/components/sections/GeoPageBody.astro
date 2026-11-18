@@ -1,5 +1,5 @@
 ---
-import { lineOrderUrl, shopeeUrl } from '../../data/navigation';
+import { lineOrderUrl } from '../../data/navigation';
 import { geoPages, type GeoPage } from '../../data/geoPages';
 
 interface Props {
@@ -16,7 +16,7 @@ const otherCities = geoPages.filter((p) => p.slug !== page.slug);
   <p class="bk-sub">{page.intro}</p>
   <div class="bk-actions">
     <a class="bk-cta" href={lineOrderUrl} target="_blank" rel="noopener">Order on LINE &rarr;</a>
-    <a class="bk-cta-secondary" href={shopeeUrl} target="_blank" rel="noopener">Order on Shopee</a>
+    <a class="bk-cta-secondary" href={lineUrl} target="_blank" rel="noopener">Order on LINE</a>
   </div>
 </section>
 

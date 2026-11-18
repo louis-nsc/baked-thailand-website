@@ -39,4 +39,21 @@ const structuredData = [
         '@type': 'Question',
         name: `Is it legal to order this in ${page.city}?`,
         acceptedAnswer: {
-   
+             '@type': 'Answer',
+          text: `Baked Brand products hold Thai FDA approval, so yes — ordering and delivery in ${page.city} is fully legal for adults aged 20 and over.`,
+        },
+      },
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title={page.title}
+  description={page.description}
+  structuredData={structuredData}
+  canonicalUrl={`https://bakedthailand.com/${page.slug}/`}
+>
+  <GeoPageBody page={page} />
+  <FeaturedIn />
+</BaseLayout>

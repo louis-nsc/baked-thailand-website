@@ -24,11 +24,26 @@ const structuredData = {
 const sections = [
   {
     h2: 'Common causes',
-    html: 'A headache after edibles is usually linked to taking more than your tolerance handles, dehydration, or eating on an empty stomach. THC’s effect on blood vessels may also play a role for some people.',
+    html: "A headache after edibles is usually linked to taking more than your tolerance handles, dehydration, or eating on an empty stomach. THC’s effect on blood vessels may also play a role for some people.",
   },
   {
     h2: 'How to reduce the risk',
     html: 'Start low — one Baked cookie is up to 1.6mg THC, a microdose — stay hydrated, and avoid eating on a very empty stomach. Wait at least two hours before considering more; edibles take longer to kick in than most people expect. <a href="/microdosing-guide/">Read the full microdosing guide &rarr;</a>',
   },
   {
-    h2: 'When to se
+    h2: "When to seek help",
+    html: "If headaches are severe or persistent after a small dose, stop use and speak to a doctor. Cannabis affects everyone differently -- if edibles consistently cause discomfort, they may not be right for you.",
+  },
+];
+---
+
+<BaseLayout title={title} description={description} structuredData={structuredData} canonicalUrl={`https://bakedthailand.com/${title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')}/`}>
+  <ArticleBody
+    eyebrow="THAI FDA APPROVED"
+    h1={title}
+    sub="Thailand's only Thai FDA-approved microdose THC edibles. Up to 1.6mg THC per piece, lab-tested, made in our own factory."
+    sections={sections}
+    ctaLabel="Order on LINE"
+    shopeeLabel="Learn More"
+  />
+</BaseLayout>

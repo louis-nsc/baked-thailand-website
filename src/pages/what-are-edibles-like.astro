@@ -32,4 +32,26 @@ const sections = [
   },
   {
     h2: 'Start low, especially the first time',
-    html: 'However experienced you are with smoking, start low with edibles and wait before t
+    html: 'However experienced you are with smoking, start low with edibles and wait before taking more. The delay is the most common reason people overconsume.',
+  },
+  {
+    h2: 'Common first-time experiences',
+    html: 'Relaxation, mild mood lift, and reduced anxiety are the most reported effects from a microdose. Some people also report improved focus or creativity.',
+  },
+  {
+    h2: 'What it is not',
+    html: 'A microdose edible is not a recreational dose. At 1.6mg THC, most adults will feel a subtle effect that does not impair daily functioning. This is intentional.',
+  },
+];
+---
+
+<BaseLayout title={title} description={description} structuredData={structuredData} canonicalUrl={`https://bakedthailand.com/${title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')}/`}>
+  <ArticleBody
+    eyebrow="THAI FDA APPROVED"
+    h1={title}
+    sub="Thailand's only Thai FDA-approved microdose THC edibles. Up to 1.6mg THC per piece, lab-tested, made in our own factory."
+    sections={sections}
+    ctaLabel="Order on LINE"
+    shopeeLabel="Learn More"
+  />
+</BaseLayout>

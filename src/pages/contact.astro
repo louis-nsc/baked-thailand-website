@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ContactForm from '../components/interactive/ContactForm';
 import { business } from '../data/business';
-import { lineUrl, lineOrderUrl, shopeeUrl } from '../data/navigation';
+import { lineUrl, lineOrderUrl } from '../data/navigation';
 
 const title = 'Contact Baked Brand | Baked Brand Edibles in Thailand';
 const description =
@@ -38,4 +38,6 @@ const structuredData = [
     <p class="bk-eyebrow">Get In Touch</p>
     <h1>Contact Baked Brand</h1>
     <p class="bk-sub">We usually reply fastest on LINE — for orders, wholesale questions, or anything else.</p>
-    <
+    <a class="bk-cta-primary" href="https://page.line.me/baked" target="_blank" rel="noopener">Chat on LINE</a>
+  </section>
+</BaseLayout>

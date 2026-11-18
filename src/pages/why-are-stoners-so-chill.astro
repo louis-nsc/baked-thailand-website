@@ -32,4 +32,18 @@ const sections = [
   },
   {
     h2: 'Baked\'s take on it',
-    html: 'Our cookies and 
+    html: 'Our cookies and caramels contain up to 1.6mg THC per piece — a measured microdose designed for a subtle, easy effect. The kind of calm that fits into a normal day.',
+  },
+];
+---
+
+<BaseLayout title={title} description={description} structuredData={structuredData} canonicalUrl={`https://bakedthailand.com/${title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')}/`}>
+  <ArticleBody
+    eyebrow="THAI FDA APPROVED"
+    h1={title}
+    sub="Thailand's only Thai FDA-approved microdose THC edibles. Up to 1.6mg THC per piece, lab-tested, made in our own factory."
+    sections={sections}
+    ctaLabel="Order on LINE"
+    shopeeLabel="Learn More"
+  />
+</BaseLayout>

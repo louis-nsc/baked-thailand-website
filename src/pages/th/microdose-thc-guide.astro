@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { lineUrl, shopeeUrl } from '../../data/navigation';
+import { lineUrl } from '../../data/navigation';
 
 const title = 'กัญชาไมโครโดสคืออะไร? คู่มือสำหรับผู้เริ่มต้น | Baked Brand';
 const description =
@@ -26,4 +26,21 @@ const structuredData = [
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'หน้าแรก', item: 'https://bakedthailand.com/' },
-      { '@type': 'ListItem', position: 2, n
+      { '@type': 'ListItem', position: 2, name: title, item: `https://bakedthailand.com/th/${title}/` },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} structuredData={structuredData} lang="th">
+  <section class="bk-hero">
+    <div>
+      <p class="bk-eyebrow">ผ่านการรับรองจาก อย. ไทย</p>
+      <h1>{title}</h1>
+      <p class="bk-sub">{description}</p>
+      <div class="bk-cta-row">
+        <a class="bk-cta-primary" href="https://page.line.me/baked" target="_blank" rel="noopener">สั่งซื้อผ่าน LINE</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

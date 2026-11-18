@@ -32,4 +32,18 @@ const sections = [
   },
   {
     h2: 'Why microdosing works for most people',
-    html: 'A measured, lab-tested microd
+    html: 'A measured, lab-tested microdose removes the guesswork. You know exactly what is in each piece, so you can build a consistent routine without trial and error.',
+  },
+];
+---
+
+<BaseLayout title={title} description={description} structuredData={structuredData} canonicalUrl={`https://bakedthailand.com/${title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')}/`}>
+  <ArticleBody
+    eyebrow="THAI FDA APPROVED"
+    h1={title}
+    sub="Thailand's only Thai FDA-approved microdose THC edibles. Up to 1.6mg THC per piece, lab-tested, made in our own factory."
+    sections={sections}
+    ctaLabel="Order on LINE"
+    shopeeLabel="Learn More"
+  />
+</BaseLayout>

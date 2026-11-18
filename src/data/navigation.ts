@@ -14,5 +14,4 @@ export const primaryNavTh = [
 ];
 
 export const lineUrl = 'https://page.line.me/baked';
-export const lineOrderUrl = 'https://lin.ee/mOp7X59';
-export const shopeeUrl = 'https://shopee.co.th/baked_thailand';
+export const lineOrderUrl = 'https://page.line.me/baked';

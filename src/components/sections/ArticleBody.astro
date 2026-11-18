@@ -1,5 +1,5 @@
 ---
-import { lineUrl, shopeeUrl } from '../../data/navigation';
+import { lineUrl } from '../../data/navigation';
 
 interface Section {
   h2: string;
@@ -16,7 +16,7 @@ interface Props {
   showShopee?: boolean;
 }
 
-const { eyebrow, h1, sub, sections, ctaLabel = 'Chat on LINE', shopeeLabel = 'Order on Shopee', showShopee = true } = Astro.props;
+const { eyebrow, h1, sub, sections, ctaLabel = 'Chat on LINE', shopeeLabel = 'Order on LINE', showShopee = true } = Astro.props;
 ---
 
 <section class="bk-article-hero">
@@ -36,7 +36,7 @@ const { eyebrow, h1, sub, sections, ctaLabel = 'Chat on LINE', shopeeLabel = 'Or
 
 <div class="bk-cta-band">
   <a class="bk-cta" href={lineUrl} target="_blank" rel="noopener">{ctaLabel} &rarr;</a>
-  {showShopee && <a class="bk-cta-secondary" href={shopeeUrl} target="_blank" rel="noopener">{shopeeLabel}</a>}
+  {showShopee && <a class="bk-cta-secondary" href={lineUrl} target="_blank" rel="noopener">{shopeeLabel}</a>}
 </div>
 
 <style>

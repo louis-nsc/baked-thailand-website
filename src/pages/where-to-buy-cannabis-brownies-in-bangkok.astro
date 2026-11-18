@@ -1,20 +1,96 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleBody from '../components/sections/ArticleBody.astro';
+import { lineUrl } from '../data/navigation';
 
-const title = 'Cannabis Brownies in Bangkok — What’s Available | Baked';
+const title = 'Where to Buy Cannabis Brownies in Bangkok | Baked Brand Thailand';
 const description =
-  "Looking for cannabis brownies in Bangkok? What to know about buying edibles safely, plus Baked's Thai FDA-approved cookies, delivered to Bangkok.";
+  'Looking for cannabis brownies in Bangkok? Find out what\'s legal, what\'s available, and where to order Thai FDA-approved THC edibles delivered in Bangkok.';
 
-const faqs = [
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Where to Buy Cannabis Brownies in Bangkok',
+  description,
+  image: 'https://bakedthailand.com/images/logo-color.png',
+  datePublished: '2026-01-01',
+  author: { '@type': 'Organization', name: 'Baked Brand Edibles in Thailand' },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Baked Brand Edibles in Thailand',
+    logo: { '@type': 'ImageObject', url: 'https://bakedthailand.com/images/logo-color.png' },
+  },
+};
+
+const sections = [
   {
-    q: 'How strong are cannabis brownies typically?',
-    a: "Homemade or unlicensed brownies vary widely since dosing usually isn't verified. As a general guide: 5-15mg THC is a light starter dose, 20-50mg is a moderate dose for regular consumers, and anything above 100mg is a strong dose meant for experienced users only. Without lab testing, there's no way to know which range you're actually getting.",
+    h2: 'Cannabis brownies in Bangkok: what\'s actually available',
+    html: `<p>Bangkok has a thriving market for cannabis products, but finding properly dosed, legal THC edibles is a different matter from buying a random brownie from a street stall. The reality is that most cannabis brownies sold informally in Bangkok contain unknown amounts of THC, unverified ingredients, and carry no Thai FDA approval.</p>
+<p>If you're looking for a reliable, legal, and properly dosed cannabis edible in Bangkok, the options are more limited than the marketing suggests. Thai FDA approval is the key distinction. It means the product has been independently tested, the THC content on the label matches what's inside, and the manufacturer operates within the legal framework. Without that approval, you're guessing at the dose every time.</p>`,
   },
   {
-    q: 'How long do cannabis brownies take to kick in?',
-    a: "Like other edibles, brownies typically take 45 to 90 minutes to kick in — much slower than smoking — and the effects last several hours. Wait at least two hours before considering more, since eating too soon after the first piece is the most common way people overdo it.",
+    h2: 'What Thai law says about cannabis brownies',
+    html: `<p>Under current Thai law, cannabis-infused food products must hold Thai FDA approval to be sold legally. Products must meet microdose limits, with THC content restricted to below 0.2% by weight of the product. That means a 40g brownie could legally contain up to 80mg THC, but a product at that potency wouldn't pass as a "microdose edible" and would not receive Thai FDA approval under current guidelines.</p>
+<p>Baked Brand's Thai FDA-approved Chocolate Chip Cookie contains up to 1.6mg THC per piece. That's the approved benchmark for microdose edibles in Thailand. Cannabis brownies sold without FDA approval may contain far higher doses with no quality control, which creates genuine risk for anyone unfamiliar with how edibles work.</p>
+<p>For the full picture on the legal status of THC edibles in Thailand, see our <a href="/cannabis-legal-thailand/">guide to cannabis regulations in Thailand</a>.</p>`,
   },
   {
-    q: 'Are cannabis brownies legal in Bangkok?',
-    a: "Cannabis edibles are legal in Thailand within the medical/approved-product framework, and buyers must be at least 20 years old. The 2026 crackdown targets unlicensed sellers with expired or fake licenses — not the legality of edibles themselves. Always check for lab-testing be
+    h2: 'Why most Bangkok cannabis brownies aren\'t FDA-approved',
+    html: `<p>Getting Thai FDA approval for a cannabis food product requires manufacturing in a licensed facility, independent lab testing of each batch, accurate nutritional and cannabinoid labelling, and compliance with dosage limits. Most informal cannabis brownie operations, the ones selling online or through cannabis shops without clear approval documentation, do not meet these requirements.</p>
+<p>That's not necessarily because the products are dangerous, but because the approval process is rigorous and expensive, and many operators haven't pursued it. The result is a Bangkok market full of unapproved products marketed as "CBD brownies" or "cannabis cookies" with vague dosage claims and no accountability.</p>`,
+  },
+  {
+    h2: 'Baked Brand: Bangkok\'s FDA-approved alternative',
+    html: `<p>If what you're looking for is a cannabis edible in Bangkok that you can actually trust, the closest thing to a "cannabis brownie" in the approved market is Baked Brand's Chocolate Chip Cookie. It's a cookie, not a brownie, but it's the only baked THC edible in Thailand that holds Thai FDA approval.</p>
+<p>Each piece contains up to 1.6mg THC, manufactured in our own licensed factory in Chiang Mai from full-spectrum cannabis leaf infused into real butter. The THC content is tested, labelled accurately, and consistent batch to batch. For anyone who wants to know exactly what they're taking before they take it, that consistency matters.</p>
+<p>We also produce Cannabis Caramels in Mango, Vanilla, and Chocolate flavours, all Thai FDA approved, all at the same 1.6mg THC per piece dosage.</p>`,
+  },
+  {
+    h2: 'How to order THC edibles in Bangkok',
+    html: `<p>Baked Brand delivers to Bangkok. Orders are placed via LINE Official, with age verification required (20+ only as per Thai law). Delivery is typically same-day or next-day depending on location and order time.</p>
+<p>Payment can be made via bank transfer, PromptPay, or cash on delivery in supported areas. The ordering process includes a brief age verification call to confirm you meet Thailand's legal requirements for purchasing THC edibles.</p>
+<ul>
+<li>Minimum age: 20 years</li>
+<li>Age verification: required before order confirmation</li>
+<li>Delivery: Bangkok-wide</li>
+<li>Payment: bank transfer, PromptPay, or cash on delivery</li>
+</ul>`,
+  },
+  {
+    h2: 'Dosage guide for first-time edible users in Bangkok',
+    html: `<p>If you've never tried a THC edible before, start with one piece (up to 1.6mg THC) and wait at least 90 minutes before considering a second. Edibles work differently from smoking or vaping: the onset is slower because THC must be absorbed through the digestive system, but the effects last longer once they begin.</p>
+<p>The most common mistake first-timers make is assuming the edible "isn't working" after 30 to 45 minutes and taking more. At 1.6mg, the effect should be subtle: mild relaxation, a gentle mood shift, possibly a soft reduction in tension. If you feel nothing after 90 minutes, one more piece is a reasonable next step.</p>
+<p>For a detailed guide to microdose edibles, see our <a href="/microdosing-guide/">complete microdosing guide</a> and <a href="/thc-edibles-dosage-guide/">THC edibles dosage guide</a>.</p>`,
+  },
+  {
+    h2: 'Frequently Asked Questions',
+    html: `<h3>Are cannabis brownies legal in Bangkok?</h3>
+<p>Cannabis-infused baked goods require Thai FDA approval to be sold legally in Thailand. Most cannabis brownies sold informally in Bangkok do not hold this approval. Baked Brand's Chocolate Chip Cookie is a Thai FDA-approved baked THC edible available for delivery in Bangkok.</p>
+
+<h3>Where can I buy safe cannabis edibles in Bangkok?</h3>
+<p>The safest option is to order directly from a Thai FDA-approved manufacturer. Baked Brand delivers to Bangkok via LINE Official and requires age verification (20+) before confirming any order.</p>
+
+<h3>How strong are cannabis brownies in Bangkok?</h3>
+<p>Informal cannabis brownies sold in Bangkok often contain unknown doses of THC, sometimes significantly higher than the microdose range. Thai FDA-approved edibles like Baked Brand are limited to up to 1.6mg THC per piece, which is a beginner-appropriate microdose designed for subtle, manageable effects.</p>
+
+<h3>How long do cannabis edibles take to kick in?</h3>
+<p>Typically 30 to 90 minutes, though for some people it can take up to two hours. Wait the full 90 minutes before taking a second piece.</p>`,
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  structuredData={structuredData}
+  canonicalUrl="https://bakedthailand.com/where-to-buy-cannabis-brownies-in-bangkok/"
+>
+  <ArticleBody
+    eyebrow="THAI FDA APPROVED"
+    h1="Where to Buy Cannabis Brownies in Bangkok"
+    sub="Looking for cannabis brownies in Bangkok? Here's what's actually legal, what's available, and where to order a properly dosed THC edible with Thai FDA approval and delivery across the city."
+    sections={sections}
+    ctaLabel="Order on LINE"
+    shopeeLabel="View All Products"
+  />
+</BaseLayout>

@@ -46,4 +46,18 @@ export const POST: APIRoute = async ({ request }) => {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-  
+        from: 'Baked Brand Contact <noreply@bakedthailand.com>',
+      to: [CONTACT_DESTINATION_EMAIL],
+      subject: `New contact form message from ${name}`,
+      text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
+    }),
+  });
+
+  if (!resendRes.ok) {
+    const errorBody = await resendRes.text();
+    console.error('Resend error:', errorBody);
+    return new Response(JSON.stringify({ error: 'Failed to send email. Please try again or contact us via LINE.' }), { status: 500 });
+  }
+
+  return new Response(JSON.stringify({ success: true }), { status: 200 });
+};

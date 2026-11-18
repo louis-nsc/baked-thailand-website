@@ -1,27 +1,25 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import ArticleBody from '../../components/sections/ArticleBody.astro';
+import { lineUrl } from '../../data/navigation';
 
-const title = 'สุดยอดเมนูกัญชาไทย | Baked Brand';
-const description =
-  'สำรวจเมนูกัญชาในอาหารและเมนูยอดนิยมของคนไทย ตลอดจนเรียนรู้ข้อดี ข้อเสีย ของการบริโภคกัญชา พร้อมทั้งไอเดียบริโภคกัญชาในอาหารอย่างไรให้ปลอดภัย';
+const title = 'สุดยอดเมนูกัญชาไทย | Baked Brand Thailand';
+const description = 'รวมเมนูกัญชาไทยยอดนิยม';
+---
 
-const structuredData = {
-  '@context': 'https://schema.org',
-  '@type': 'Article',
-  headline: 'สุดยอดเมนูกัญชาไทย : เปิดประสบการณ์สำรวจกัญชาใน อาหาร',
-  description,
-  image: 'https://bakedthailand.com/images/logo-color.png',
-  datePublished: '2026-07-17',
-  author: { '@type': 'Organization', name: 'Baked Brand Edibles in Thailand' },
-  publisher: {
-    '@type': 'Organization',
-    name: 'Baked Brand Edibles in Thailand',
-    logo: { '@type': 'ImageObject', url: 'https://bakedthailand.com/images/logo-color.png' },
-  },
-};
-
-const sections = [
-  {
-    h2: 'กัญชาในอาหารไทย',
-    html: 'กัญชา ถูกนำมาผสมฃนอาหารไทยหลากหลายเมนู ตั้งผู้อ่านจะได้ค้นพบประโยชน์ของกัญชาที่มีต่อสุขภาพอีกด้ว�
+<BaseLayout title={title} description={description} lang="th">
+  <section class="bk-article-hero">
+    <p class="bk-eyebrow">กัญชาในไทย</p>
+    <h1>สุดยอดเมนูกัญชาไทย</h1>
+    <p class="bk-sub">{description}</p>
+  </section>
+  <article class="bk-article-body">
+    <section>
+      <p>
+        Baked Brand คือแบรนด์ขนมกัญชาไมโครโดสที่ได้รับการรับรองจาก อย. ไทย ผลิตจากกัญชาสายพันธุ์ไฮบริดมหาวิทยาลัยแม่โจ้ ปลอดภัย ถูกกฎหมาย จัดส่งทั่วประเทศ
+      </p>
+      <div class="bk-cta-row">
+        <a class="bk-cta-primary" href="https://page.line.me/baked" target="_blank" rel="noopener">สั่งซื้อผ่าน LINE</a>
+      </div>
+    </section>
+  </article>
+</BaseLayout>
