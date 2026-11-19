@@ -7,21 +7,35 @@ export interface Stockist {
 
 export const stockists: Stockist[] = [
   {
-    name: 'Various Cafes',
+    name: 'Eve Pharmacy',
     city: 'Chiang Mai',
     photo: '/images/logo-color.png',
-    note: 'Ask at reception',
+    note: 'Ask for Baked Brand at the counter',
   },
   {
-    name: 'Select Dispensaries',
-    city: 'Bangkok',
+    name: 'Siam Green Cannabis Co',
+    city: 'Chiang Mai',
     photo: '/images/logo-color.png',
-    note: 'Thai FDA approved',
+    note: 'Multiple locations',
   },
   {
-    name: 'Boutique Hotels',
-    city: 'Phuket',
+    name: 'The Spot Cannabis Dispensary',
+    city: 'Chiang Mai',
     photo: '/images/logo-color.png',
-    note: 'Available at the bar',
+  },
+  {
+    name: 'Flying Tiger Cannabis Dispensary',
+    city: 'Chiang Mai',
+    photo: '/images/logo-color.png',
+  },
+  {
+    name: 'Leafers',
+    city: 'Chiang Mai',
+    photo: '/images/logo-color.png',
+  },
+  {
+    name: 'Cher Shop',
+    city: 'Chiang Mai',
+    photo: '/images/logo-color.png',
   },
 ];

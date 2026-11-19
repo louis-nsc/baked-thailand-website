@@ -1,0 +1,507 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { lineUrl } from '../../data/navigation';
+
+const title = 'Thai FDA-Approved Cannabis Edibles | Baked Brand Thailand';
+const description =
+  'Shop Baked Brand -- Thailand\'s first Thai FDA-approved microdose THC edibles. Cannabis cookies, caramels, and gummies. Up to 1.6mg THC per piece. Order via LINE.';
+
+const structuredData = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Baked Brand Edibles',
+    description,
+    url: 'https://bakedthailand.com/edibles/',
+    provider: {
+      '@type': 'Organization',
+      name: 'Baked Brand Edibles in Thailand',
+      url: 'https://bakedthailand.com',
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://bakedthailand.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Edibles', item: 'https://bakedthailand.com/edibles/' },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Are Baked Brand edibles legal in Thailand?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. Baked Brand holds Thai FDA registration for microdose THC edibles -- the first brand in Thailand to do so. Products are legal for adults aged 20 and over.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'How much THC is in each Baked product?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Each Baked cookie and caramel contains up to 1.6mg of full-spectrum THC -- a microdose level designed to deliver calm and relaxation without strong psychoactive effects.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'How long do edibles take to kick in?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Edibles typically take 45--90 minutes to take effect, sometimes up to 2 hours depending on your metabolism and whether you have eaten recently. Always wait at least 2 hours before considering a second dose.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What is the right starting dose for a first-timer?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Start with one piece (up to 1.6mg THC) and wait at least 2 hours before taking more. This low-and-slow approach lets you gauge your personal sensitivity without risk of overconsumption.',
+        },
+      },
+    ],
+  },
+];
+
+const products = [
+  {
+    name: 'Microdose THC Cookie',
+    slug: '/edibles/microdose-thc-cookie/',
+    image: '/images/logo-color.png',
+    badge: 'Best Seller',
+    thc: 'Up to 1.6mg THC',
+    desc: 'A soft, chocolate-chip cookie with up to 1.6mg full-spectrum THC. Nitrogen-flushed packaging keeps every cookie fresh. 35 kcal per cookie.',
+    available: true,
+  },
+  {
+    name: 'Cannabis Caramels',
+    slug: '/cannabis-caramels-thailand/',
+    image: '/images/logo-color.png',
+    badge: 'Available Now',
+    thc: 'Up to 1.6mg THC',
+    desc: 'Smooth, chewy caramels infused with full-spectrum THC. A discreet, travel-friendly way to microdose wherever you are.',
+    available: true,
+  },
+  {
+    name: 'Vegan Coconut Caramels',
+    slug: '/coconut-caramels-thailand/',
+    image: '/images/logo-color.png',
+    badge: 'Vegan',
+    thc: 'Up to 1.6mg THC',
+    desc: 'Dairy-free coconut caramels with the same precise microdose THC formula. Made for plant-based lifestyles.',
+    available: true,
+  },
+  {
+    name: 'Cannabis Gummies',
+    slug: '/edibles/cannabis-gummies/',
+    image: '/images/logo-color.png',
+    badge: 'Coming Soon',
+    thc: 'Up to 1.6mg THC',
+    desc: 'Fruit-flavoured gummies with a precise THC microdose -- the most popular edible format worldwide, coming to Baked Brand soon.',
+    available: false,
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  structuredData={structuredData}
+  canonicalUrl="https://bakedthailand.com/edibles/"
+>
+  <Fragment slot="head">
+    {structuredData.map((sd) => <script type="application/ld+json" set:html={JSON.stringify(sd)} />)}
+  </Fragment>
+
+  <!-- Hero -->
+  <section class="bk-hero">
+    <div class="bk-container">
+      <p class="bk-eyebrow">Thai FDA Approved</p>
+      <h1>Cannabis Edibles in Thailand</h1>
+      <p class="bk-sub">
+        Baked Brand makes Thailand's first Thai FDA-approved microdose THC edibles -- cookies, caramels, and more.
+        Up to 1.6mg THC per piece. Lab-tested. Made in Chiang Mai.
+      </p>
+      <a href={lineUrl} class="bk-btn" target="_blank" rel="noopener">Order on LINE</a>
+    </div>
+  </section>
+
+  <!-- Products Grid -->
+  <section class="bk-section" id="products">
+    <div class="bk-container">
+      <h2>Our Products</h2>
+      <p class="section-lead">Every Baked product carries Thai FDA registration and contains a precise, lab-tested microdose of full-spectrum THC.</p>
+
+      <div class="products-grid">
+        {products.map((p) => (
+          <a href={p.slug} class:list={['product-card', !p.available && 'coming-soon']}>
+            <div class="product-img">
+              <img src={p.image} alt={p.name} width="200" height="200" loading="lazy" />
+              <span class="product-badge">{p.badge}</span>
+            </div>
+            <div class="product-info">
+              <span class="product-thc">{p.thc}</span>
+              <h3>{p.name}</h3>
+              <p>{p.desc}</p>
+              <span class="product-link">{p.available ? 'View product →' : 'Learn more →'}</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- About Edibles in Thailand -->
+  <section class="bk-section bk-alt">
+    <div class="bk-container bk-prose">
+      <h2>Edibles in Thailand: What You Need to Know</h2>
+
+      <p>
+        Cannabis edibles became legal in Thailand following the 2022 decriminalisation, but Thai FDA-approved
+        microdose products like Baked Brand represent a new tier of quality and trust. Where street-market edibles
+        carry unknown THC concentrations, every Baked product carries a registration number and a guaranteed dose.
+      </p>
+
+      <h3>What are microdose edibles?</h3>
+      <p>
+        A microdose is a small, sub-psychoactive amount of THC -- typically 1--2.5mg per serving. At this level,
+        most people feel a gentle lift in mood, mild body relaxation, and reduced anxiety, without any impairment
+        to work, socialising, or daily activities. Baked products contain up to 1.6mg THC per piece -- right in
+        the microdose sweet spot.
+      </p>
+
+      <h3>Edibles vs. smoking or vaping</h3>
+      <p>
+        Edibles offer a precise, smoke-free, lung-friendly experience. The onset is slower -- 45 minutes to 2 hours
+        -- but the effects are longer-lasting (3--5 hours) and more consistent than inhaled cannabis. This makes
+        edibles a better fit for anyone who wants predictable, controllable results.
+      </p>
+
+      <h3>What to expect from your first edible</h3>
+      <p>
+        First-time users typically notice a gradual sense of calm and mild relaxation. Heavier body effects are
+        uncommon at 1.6mg. At this microdose level, most people describe the experience as "taking the edge off"
+        rather than feeling intoxicated.
+      </p>
+    </div>
+  </section>
+
+  <!-- Dosing Guidelines -->
+  <section class="bk-section" id="dosing">
+    <div class="bk-container">
+      <h2>Dosing Guidelines</h2>
+      <p class="section-lead">These guidelines apply to Baked Brand microdose edibles (up to 1.6mg THC per piece).</p>
+
+      <div class="dosing-grid">
+        <div class="dose-card">
+          <div class="dose-level beginner">Beginner</div>
+          <div class="dose-amount">1 piece</div>
+          <div class="dose-thc">Up to 1.6mg THC</div>
+          <p>Start here if you have never tried cannabis edibles before or have a low tolerance. Wait at least 2 hours before considering a second piece.</p>
+        </div>
+
+        <div class="dose-card">
+          <div class="dose-level moderate">Moderate</div>
+          <div class="dose-amount">1--2 pieces</div>
+          <div class="dose-thc">Up to 3.2mg THC</div>
+          <p>Suitable for occasional users familiar with edibles. Take the first piece, wait 90 minutes, then assess before taking a second.</p>
+        </div>
+
+        <div class="dose-card">
+          <div class="dose-level experienced">Experienced</div>
+          <div class="dose-amount">2--3 pieces</div>
+          <div class="dose-thc">Up to 4.8mg THC</div>
+          <p>For regular users with established tolerance. Even at this level, Baked remains a microdose product -- effects are relaxing rather than intoxicating.</p>
+        </div>
+      </div>
+
+      <div class="dosing-rules">
+        <h3>Always follow the low-and-slow rule</h3>
+        <ul>
+          <li><strong>Wait 2 hours</strong> before taking a second dose -- edibles can take longer than expected to kick in.</li>
+          <li><strong>Avoid alcohol</strong> alongside edibles -- it significantly intensifies THC effects.</li>
+          <li><strong>Eat something first</strong> -- taking edibles on an empty stomach leads to stronger, faster effects.</li>
+          <li><strong>Keep hydrated</strong> -- drink water before and after.</li>
+          <li><strong>Not for under-20s</strong> -- Baked products are for adults aged 20 and over in line with Thai law.</li>
+          <li><strong>Not for pregnant or breastfeeding women</strong> or people on prescription medication without medical advice.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bk-section bk-alt" id="faq">
+    <div class="bk-container">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        {structuredData[2].mainEntity.map((item: any) => (
+          <div class="faq-item">
+            <h3>{item.name}</h3>
+            <p>{item.acceptedAnswer.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bk-section bk-cta-section">
+    <div class="bk-container bk-center">
+      <h2>Ready to try?</h2>
+      <p>Order Baked Brand edibles direct via LINE. Same-day delivery in Chiang Mai, shipping across Thailand.</p>
+      <a href={lineUrl} class="bk-btn" target="_blank" rel="noopener">Order on LINE</a>
+      <p class="cta-note">Also available at <a href="/stockists/">select stockists</a> in Chiang Mai, Bangkok, and Phuket.</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Products grid */
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--cream, #fafaf5);
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 8px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .product-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  }
+
+  .product-card.coming-soon {
+    opacity: 0.85;
+  }
+
+  .product-img {
+    position: relative;
+    background: var(--green, #2d5a27);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    aspect-ratio: 4/3;
+  }
+
+  .product-img img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+  }
+
+  .product-badge {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background: var(--gold, #c9a84c);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 0.2em 0.6em;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+
+  .product-info {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    flex: 1;
+  }
+
+  .product-thc {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--green, #2d5a27);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .product-info h3 {
+    font-size: 1.1rem;
+    margin: 0;
+    color: var(--dark, #1a1a1a);
+  }
+
+  .product-info p {
+    font-size: 0.875rem;
+    color: #555;
+    margin: 0;
+    flex: 1;
+  }
+
+  .product-link {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--green, #2d5a27);
+    margin-top: 0.5rem;
+  }
+
+  /* Section lead */
+  .section-lead {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 0;
+    max-width: 640px;
+  }
+
+  /* Dosing grid */
+  .dosing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+
+  .dose-card {
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .dose-level {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.2em 0.7em;
+    border-radius: 4px;
+    display: inline-block;
+    width: fit-content;
+  }
+
+  .dose-level.beginner { background: #e8f5e3; color: #2d6e24; }
+  .dose-level.moderate { background: #fff3cd; color: #856404; }
+  .dose-level.experienced { background: #fde8cc; color: #8a4a00; }
+
+  .dose-amount {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--dark, #1a1a1a);
+    margin-top: 0.25rem;
+  }
+
+  .dose-thc {
+    font-size: 0.8rem;
+    color: var(--green, #2d5a27);
+    font-weight: 600;
+  }
+
+  .dose-card p {
+    font-size: 0.875rem;
+    color: #555;
+    margin: 0.5rem 0 0;
+  }
+
+  /* Dosing rules */
+  .dosing-rules {
+    background: var(--cream, #fafaf5);
+    border-left: 4px solid var(--green, #2d5a27);
+    padding: 1.5rem 2rem;
+    border-radius: 0 8px 8px 0;
+    margin-top: 2rem;
+  }
+
+  .dosing-rules h3 {
+    margin: 0 0 1rem;
+    font-size: 1rem;
+    color: var(--dark, #1a1a1a);
+  }
+
+  .dosing-rules ul {
+    margin: 0;
+    padding-left: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .dosing-rules li {
+    font-size: 0.9rem;
+    color: #444;
+    line-height: 1.5;
+  }
+
+  /* FAQ */
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    padding-bottom: 1.5rem;
+  }
+
+  .faq-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .faq-item h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem;
+    color: var(--dark, #1a1a1a);
+  }
+
+  .faq-item p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.6;
+  }
+
+  /* CTA */
+  .bk-cta-section {
+    background: var(--green, #2d5a27);
+    color: #fff;
+  }
+
+  .bk-cta-section h2,
+  .bk-cta-section p {
+    color: #fff;
+  }
+
+  .cta-note {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    opacity: 0.85;
+  }
+
+  .cta-note a {
+    color: var(--gold, #c9a84c);
+  }
+
+  @media (max-width: 600px) {
+    .products-grid,
+    .dosing-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
