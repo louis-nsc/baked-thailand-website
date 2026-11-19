@@ -41,4 +41,9 @@ const canonicalURL = canonicalUrl ? new URL(canonicalUrl) : new URL(Astro.url.pa
     <slot name="head" />
   </head>
   <body>
-    <Nav lang=
+    <Nav lang={lang} />
+    <slot />
+    <Footer lang={lang} />
+    <FloatingOrderWidget lang={lang} />
+  </body>
+</html>
