@@ -199,6 +199,16 @@
       "source": "/cannabis-cookies-thailand/",
       "destination": "/edibles/microdose-thc-cookie/",
       "permanent": true
+    },
+    {
+      "source": "/thc-edibles-dosage-guide",
+      "destination": "/cannabis-edibles-dosage-thailand/",
+      "permanent": true
+    },
+    {
+      "source": "/thc-edibles-dosage-guide/",
+      "destination": "/cannabis-edibles-dosage-thailand/",
+      "permanent": true
     }
   ]
 }

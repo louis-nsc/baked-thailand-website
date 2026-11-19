@@ -15,7 +15,7 @@ export const geoPages: GeoPage[] = [
     h1: 'Cannabis Edibles Delivery Bangkok',
     title: 'Cannabis Edibles Bangkok Delivery | Baked Brand Thailand',
     description:
-      "Baked Brand's Thai FDA-approved THC microdose cookies, delivered to your hotel or home in Bangkok. Free delivery on orders 1,000 THB+, Cash on Delivery available.",
+      "Order cannabis edibles in Bangkok with same-day delivery. Thai FDA-approved THC microdose cookies by Baked Brand. Free delivery 1,000 THB+, Cash on Delivery available.",
     intro:
       "Baked ships our Thai FDA-approved microdose cookies and caramels straight to Bangkok -- hotel or home, free delivery on orders 1,000 THB+, Cash on Delivery available.",
     localStockists: ['KQ Dispensary'],
@@ -26,7 +26,7 @@ export const geoPages: GeoPage[] = [
     h1: 'Cannabis Edibles Made in Chiang Mai -- Delivered Across Thailand',
     title: 'Cannabis Edibles Chiang Mai -- Locally Made, FDA-Approved | Baked',
     description:
-      "Baked Brand is made in Chiang Mai -- Thai FDA-approved THC microdose cookies and caramels, sourced exclusively from Maejo University. Order for delivery.",
+      "THC edibles made in Chiang Mai — Baked Brand's Thai FDA-approved microdose cookies and caramels, sourced from Maejo University. Same-day delivery city-wide.",
     intro:
       "Chiang Mai is not just a delivery destination for Baked -- it's where every cookie and caramel is made. Our factory is here, our cannabis comes from Maejo University, and delivery across the city is same-day.",
     localStockists: ['Fuel Coffee', 'Mao Cafe', 'Rx Cafe'],
@@ -37,7 +37,7 @@ export const geoPages: GeoPage[] = [
     h1: 'Cannabis Edibles Phuket Delivery',
     title: 'Cannabis Edibles in Phuket | Thai FDA-Approved | Baked Brand',
     description:
-      "Thai FDA-approved THC microdose cookies and caramels delivered to your hotel or villa in Phuket. Up to 1.6mg THC per piece, lab-tested.",
+      "Cannabis edibles in Phuket — Thai FDA-approved THC microdose cookies and caramels delivered to your hotel or villa. Up to 1.6mg THC per piece, lab-tested.",
     intro:
       "Baked ships to Phuket -- Patong, Kata, Karon, and beyond. Thai FDA-approved microdose edibles delivered to your hotel or villa.",
   },
@@ -47,7 +47,7 @@ export const geoPages: GeoPage[] = [
     h1: 'Cannabis Edibles Pattaya Delivery',
     title: 'Cannabis Edibles Pattaya | Thai FDA-Approved | Baked Brand',
     description:
-      "Thai FDA-approved THC microdose cookies and caramels delivered to Pattaya. Up to 1.6mg THC per piece, legally sold to adults aged 20+.",
+      "Cannabis edibles in Pattaya — Thai FDA-approved THC microdose cookies delivered to your hotel. Up to 1.6mg THC per piece, legally sold to adults aged 20+.",
     intro:
       "Order Baked Brand to Pattaya -- hotel delivery, Cash on Delivery available. Thai FDA-approved microdose edibles, up to 1.6mg THC per piece.",
   },
@@ -57,7 +57,7 @@ export const geoPages: GeoPage[] = [
     h1: 'Cannabis Edibles Koh Samui Delivery',
     title: 'Cannabis Edibles Koh Samui | Thai FDA-Approved | Baked Brand',
     description:
-      "Thai FDA-approved THC microdose cookies and caramels delivered to Koh Samui. Up to 1.6mg THC per piece, lab-tested.",
+      "Cannabis edibles in Koh Samui — Thai FDA-approved THC microdose cookies and caramels delivered to your villa or hotel. Up to 1.6mg THC, lab-tested and FDA-approved.",
     intro:
       "Baked ships to Koh Samui -- Chaweng, Lamai, Bophut, and other areas. Thai FDA-approved microdose edibles at your villa or hotel.",
   },
@@ -67,7 +67,7 @@ export const geoPages: GeoPage[] = [
     h1: 'Cannabis Edibles Koh Phangan Delivery',
     title: 'Cannabis Edibles Koh Phangan | Thai FDA-Approved | Baked Brand',
     description:
-      "Thai FDA-approved THC microdose edibles delivered to Koh Phangan. Up to 1.6mg THC per piece, legally sold to adults aged 20+.",
+      "Cannabis edibles in Koh Phangan — Thai FDA-approved THC microdose cookies and caramels delivered island-wide. Up to 1.6mg THC per piece, legally sold to adults 20+.",
     intro:
       "Order Baked Brand to Koh Phangan. Thai FDA-approved microdose cookies and caramels, delivered island-wide.",
   },
@@ -77,7 +77,7 @@ export const geoPages: GeoPage[] = [
     h1: 'Cannabis Edibles Koh Tao Delivery',
     title: 'Cannabis Edibles Koh Tao | Thai FDA-Approved | Baked Brand',
     description:
-      "Thai FDA-approved THC microdose edibles delivered to Koh Tao. Up to 1.6mg THC per piece.",
+      "Cannabis edibles in Koh Tao — Thai FDA-approved THC microdose cookies delivered to your bungalow or hotel. Up to 1.6mg THC per piece, clearly labeled and lab-tested.",
     intro:
       "Order Baked Brand microdose edibles to Koh Tao. Thai FDA-approved, clearly labeled, delivered to your bungalow or hotel.",
   },
@@ -87,7 +87,7 @@ export const geoPages: GeoPage[] = [
     h1: 'Cannabis Edibles Krabi Delivery',
     title: 'Buy Cannabis Edibles in Krabi | Thai FDA-Approved | Baked Brand',
     description:
-      "Thai FDA-approved THC microdose cookies and caramels delivered to Krabi. Up to 1.6mg THC per piece, lab-tested.",
+      "Buy cannabis edibles in Krabi — Thai FDA-approved THC microdose cookies and caramels delivered to Ao Nang or Railay. Up to 1.6mg THC per piece, lab-tested.",
     intro:
       "Order Baked Brand to Krabi -- Ao Nang, Railay, Koh Lanta area. Thai FDA-approved microdose edibles delivered to your hotel.",
   },
@@ -97,7 +97,7 @@ export const geoPages: GeoPage[] = [
     h1: 'Cannabis Edibles Koh Lanta Delivery',
     title: 'Cannabis Edibles Koh Lanta | Thai FDA-Approved | Baked Brand',
     description:
-      "Thai FDA-approved THC microdose edibles delivered to Koh Lanta. Up to 1.6mg THC per piece.",
+      "Cannabis edibles in Koh Lanta — Thai FDA-approved THC microdose cookies and caramels delivered to your resort or bungalow. Up to 1.6mg THC per piece, lab-tested.",
     intro:
       "Baked Brand delivers to Koh Lanta. Thai FDA-approved microdose cookies and caramels, delivered to your resort or bungalow.",
   },
@@ -107,7 +107,7 @@ export const geoPages: GeoPage[] = [
     h1: 'Cannabis Edibles Koh Phi Phi Delivery',
     title: 'Cannabis Edibles Koh Phi Phi | Thai FDA-Approved | Baked Brand',
     description:
-      "Thai FDA-approved THC microdose edibles delivered to Koh Phi Phi. Up to 1.6mg THC per piece.",
+      "Cannabis edibles in Koh Phi Phi — Thai FDA-approved THC microdose cookies and caramels delivered to the island. Up to 1.6mg THC per piece, legally sold to adults 20+.",
     intro:
       "Order Baked Brand to Koh Phi Phi. Thai FDA-approved microdose cookies and caramels delivered to the island.",
   },
@@ -117,7 +117,7 @@ export const geoPages: GeoPage[] = [
     h1: 'Cannabis Edibles Hua Hin Delivery',
     title: 'Cannabis Edibles Hua Hin | Thai FDA-Approved | Baked Brand',
     description:
-      "Thai FDA-approved THC microdose edibles delivered to Hua Hin. Up to 1.6mg THC per piece.",
+      "Cannabis edibles in Hua Hin — Thai FDA-approved THC microdose cookies and caramels delivered to your hotel or residence. Up to 1.6mg THC per piece, lab-tested.",
     intro:
       "Order Baked Brand to Hua Hin. Thai FDA-approved microdose cookies and caramels, delivered to your hotel or residence.",
   },
@@ -127,7 +127,7 @@ export const geoPages: GeoPage[] = [
     h1: 'Cannabis Edibles Koh Chang Delivery',
     title: 'Cannabis Edibles Koh Chang | Thai FDA-Approved | Baked Brand',
     description:
-      "Thai FDA-approved THC microdose edibles delivered to Koh Chang. Up to 1.6mg THC per piece.",
+      "Cannabis edibles in Koh Chang — Thai FDA-approved THC microdose cookies and caramels delivered island-wide. Up to 1.6mg THC per piece, legally sold to adults aged 20+.",
     intro:
       "Order Baked Brand to Koh Chang. Thai FDA-approved microdose cookies and caramels, delivered island-wide.",
   },

@@ -10,10 +10,11 @@ interface Props {
   description: string;
   ogImage?: string;
   lang?: 'en' | 'th';
+  canonicalUrl?: string;
 }
 
-const { title, description, ogImage = '/og-default.jpg', lang = 'en' } = Astro.props;
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const { title, description, ogImage = '/og-default.jpg', lang = 'en', canonicalUrl } = Astro.props;
+const canonicalURL = canonicalUrl ? new URL(canonicalUrl) : new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>

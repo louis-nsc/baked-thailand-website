@@ -1,0 +1,161 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = "404 — This Page Wandered Off | Baked Brand Thailand";
+const description = "Looks like this page took an edible and vanished. Find your way back to Baked Brand's THC microdose cookies and cannabis edibles.";
+---
+
+<BaseLayout title={title} description={description}>
+  <main class="not-found">
+
+    <div class="container">
+      <div class="leaf-art" aria-hidden="true">
+        <img src="/images/logo-color.png" alt="" width="80" height="80" />
+      </div>
+
+      <h1>
+        You waited 90 minutes.<br />
+        <span class="accent">Nothing happened.</span>
+      </h1>
+
+      <p class="sub">
+        Just like your first edible — this page doesn't seem to exist.<br />
+        Don't panic. It happens to everyone.
+      </p>
+
+      <p class="tip">
+        In the meantime, we suggest starting with one cookie,<br class="hide-mobile" />
+        waiting a full 90 minutes, and trying again.
+      </p>
+
+      <div class="actions">
+        <a href="/" class="btn btn-primary">Take Me Home</a>
+        <a href="/edibles/" class="btn btn-outline">Shop Edibles</a>
+      </div>
+
+      <div class="error-code">404</div>
+    </div>
+
+  </main>
+</BaseLayout>
+
+<style>
+  .not-found {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 1.5rem;
+    text-align: center;
+    background: var(--cream, #f9f6f0);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    max-width: 540px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .leaf-art {
+    margin-bottom: 1.5rem;
+    opacity: 0.18;
+    display: flex;
+    justify-content: center;
+  }
+
+  .leaf-art img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+  }
+
+  h1 {
+    font-family: 'Thasadith', serif;
+    font-size: clamp(1.9rem, 5vw, 2.75rem);
+    color: var(--dark, #1a1a1a);
+    line-height: 1.25;
+    margin: 0 0 1rem;
+  }
+
+  .accent {
+    color: var(--green, #2d5a27);
+  }
+
+  .sub {
+    font-size: 1.05rem;
+    color: #555;
+    line-height: 1.65;
+    margin: 0 0 1.25rem;
+  }
+
+  .tip {
+    font-size: 0.9rem;
+    color: #888;
+    line-height: 1.6;
+    margin: 0 0 2.5rem;
+    font-style: italic;
+  }
+
+  @media (max-width: 480px) {
+    .hide-mobile {
+      display: none;
+    }
+  }
+
+  .actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.7rem 1.6rem;
+    border-radius: 7px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: opacity 0.15s, background 0.15s;
+  }
+
+  .btn-primary {
+    background: var(--green, #2d5a27);
+    color: var(--cream, #f9f6f0);
+  }
+
+  .btn-primary:hover {
+    opacity: 0.85;
+  }
+
+  .btn-outline {
+    background: transparent;
+    border: 2px solid var(--green, #2d5a27);
+    color: var(--green, #2d5a27);
+  }
+
+  .btn-outline:hover {
+    background: var(--green, #2d5a27);
+    color: var(--cream, #f9f6f0);
+  }
+
+  .error-code {
+    font-family: 'Thasadith', serif;
+    font-size: clamp(6rem, 20vw, 10rem);
+    font-weight: 700;
+    color: var(--green, #2d5a27);
+    opacity: 0.06;
+    line-height: 1;
+    position: absolute;
+    bottom: -1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+  }
+</style>

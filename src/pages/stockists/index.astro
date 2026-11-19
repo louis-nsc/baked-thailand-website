@@ -1,0 +1,240 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { stockists } from '../../data/stockists';
+
+const title = 'Where to Buy Baked Brand | Stockists Thailand';
+const description = 'Find Baked Brand THC cannabis cookies at dispensaries and pharmacies across Thailand. Currently available in Chiang Mai — more locations coming soon.';
+---
+
+<BaseLayout title={title} description={description}>
+  <main class="stockists-page">
+
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">Where to Find Us</div>
+        <h1>Stockists</h1>
+        <p class="lead">
+          Baked Brand is currently available at select dispensaries and pharmacies in Chiang Mai.
+          More cities coming soon.
+        </p>
+      </div>
+    </section>
+
+    <section class="stockist-list">
+      <div class="container">
+        <h2 class="city-label">Chiang Mai</h2>
+        <ul class="cards">
+          {stockists.map((s) => (
+            <li class="card">
+              <div class="card-logo">
+                <img src="/images/logo-color.png" alt="Baked Brand logo" width="48" height="48" loading="lazy" />
+              </div>
+              <div class="card-body">
+                <strong>{s.name}</strong>
+                {s.note && <span class="note">{s.note}</span>}
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <section class="coming-soon">
+      <div class="container">
+        <div class="banner">
+          <span class="banner-icon">🌿</span>
+          <div>
+            <h2>More locations on the way</h2>
+            <p>We're expanding to Bangkok, Phuket, Koh Samui, and beyond. Want to stock Baked Brand at your dispensary or pharmacy?</p>
+            <a href="/wholesale-thc-edibles-thailand/" class="btn">Become a Stockist</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="order-online">
+      <div class="container">
+        <p>Can't find us near you? <strong>Order online</strong> for delivery across Thailand.</p>
+        <a href="/buy-thc-edibles-thailand/" class="btn btn-outline">Shop Online</a>
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>
+
+<style>
+  .stockists-page {
+    padding-bottom: 4rem;
+  }
+
+  .hero {
+    background: var(--green);
+    color: var(--cream);
+    padding: 4rem 1.5rem 3rem;
+    text-align: center;
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+  }
+
+  .hero h1 {
+    font-family: 'Thasadith', serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    color: var(--cream);
+    margin: 0 0 1rem;
+  }
+
+  .lead {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .stockist-list {
+    padding: 3rem 0 2rem;
+  }
+
+  .city-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--green);
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+  }
+
+  .cards {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    border: 1.5px solid #e5e0d4;
+    border-radius: 10px;
+    background: #fdfcf8;
+  }
+
+  .card-logo {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card-logo img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .card-body strong {
+    font-size: 1rem;
+    color: var(--dark);
+  }
+
+  .note {
+    font-size: 0.85rem;
+    color: #666;
+  }
+
+  .coming-soon {
+    padding: 2.5rem 0;
+  }
+
+  .banner {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    background: var(--green);
+    color: var(--cream);
+    border-radius: 14px;
+    padding: 2rem;
+  }
+
+  .banner-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+
+  .banner h2 {
+    font-family: 'Thasadith', serif;
+    font-size: 1.5rem;
+    color: var(--cream);
+    margin: 0 0 0.5rem;
+  }
+
+  .banner p {
+    font-size: 0.95rem;
+    opacity: 0.9;
+    margin: 0 0 1.25rem;
+    line-height: 1.6;
+  }
+
+  .btn {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--dark);
+    padding: 0.6rem 1.4rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: opacity 0.15s;
+  }
+
+  .btn:hover {
+    opacity: 0.85;
+  }
+
+  .btn-outline {
+    background: transparent;
+    border: 2px solid var(--green);
+    color: var(--green);
+  }
+
+  .btn-outline:hover {
+    background: var(--green);
+    color: var(--cream);
+    opacity: 1;
+  }
+
+  .order-online {
+    padding: 2rem 0;
+    text-align: center;
+  }
+
+  .order-online p {
+    margin-bottom: 1rem;
+    color: var(--dark);
+  }
+</style>

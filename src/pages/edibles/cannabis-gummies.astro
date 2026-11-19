@@ -69,7 +69,7 @@ const structuredData = [
 ];
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} canonicalUrl="https://bakedthailand.com/edibles/cannabis-gummies/">
   <slot name="head" slot="head">
     {structuredData.map((sd) => (
       <script type="application/ld+json" set:html={JSON.stringify(sd)} />
