@@ -14,8 +14,9 @@ const langSwitchLabel = lang === 'th' ? 'EN' : 'ไทย';
 
 <header class="bk-header">
   <a class="bk-brand" href={homeHref} aria-label="Baked home">
-    <img src="/images/logo-white.png" alt="Baked" width="1024" height="1024" style="height:40px;width:auto;" />
+    <img src="/images/logo-white.png" alt="Baked" width="1024" height="1024" class="bk-logo" />
   </a>
+
   <button
     class="bk-nav-toggle"
     type="button"
@@ -25,6 +26,7 @@ const langSwitchLabel = lang === 'th' ? 'EN' : 'ไทย';
   >
     <span class="bk-nav-toggle-bars" aria-hidden="true"></span>
   </button>
+
   <nav class="bk-nav" id="bk-primary-nav" aria-label="Primary">
     <ul>
       {nav.map((item) => (
@@ -32,9 +34,12 @@ const langSwitchLabel = lang === 'th' ? 'EN' : 'ไทย';
       ))}
     </ul>
   </nav>
+
   <div class="bk-header-actions">
     <a class="bk-lang-switch" href={langSwitchHref}>{langSwitchLabel}</a>
-    <a class="bk-cta" href={lineUrl} target="_blank" rel="noopener">{lang === 'th' ? 'แชททาง LINE' : 'Chat on LINE'}</a>
+    <a class="bk-cta" href={lineUrl} target="_blank" rel="noopener">
+      {lang === 'th' ? 'แชททาง LINE' : 'Chat on LINE'}
+    </a>
   </div>
 </header>
 
@@ -44,12 +49,176 @@ const langSwitchLabel = lang === 'th' ? 'EN' : 'ไทย';
     align-items: center;
     justify-content: space-between;
     gap: 24px;
-    padding: 18px 32px;
+    padding: 14px 32px;
     background: var(--forest);
     color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
   }
+
   .bk-brand {
     display: flex;
     align-items: center;
+    flex-shrink: 0;
   }
-  .bk-brand
+
+  .bk-logo {
+    height: 56px;
+    width: auto;
+    display: block;
+  }
+
+  /* Hamburger toggle — hidden on desktop */
+  .bk-nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    color: #fff;
+  }
+
+  .bk-nav-toggle-bars,
+  .bk-nav-toggle-bars::before,
+  .bk-nav-toggle-bars::after {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: currentColor;
+    border-radius: 2px;
+    position: relative;
+    transition: transform 0.2s;
+  }
+  .bk-nav-toggle-bars::before,
+  .bk-nav-toggle-bars::after {
+    content: '';
+    position: absolute;
+    left: 0;
+  }
+  .bk-nav-toggle-bars::before { top: -6px; }
+  .bk-nav-toggle-bars::after  { top:  6px; }
+
+  /* Primary nav */
+  .bk-nav ul {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .bk-nav a {
+    display: block;
+    padding: 6px 10px;
+    color: rgba(255,255,255,0.82);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: color 0.15s, background 0.15s;
+    white-space: nowrap;
+  }
+
+  .bk-nav a:hover {
+    color: #fff;
+    background: rgba(255,255,255,0.1);
+  }
+
+  /* Right-side actions */
+  .bk-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+
+  .bk-lang-switch {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: color 0.15s, background 0.15s;
+  }
+
+  .bk-lang-switch:hover {
+    color: #fff;
+    background: rgba(255,255,255,0.1);
+  }
+
+  .bk-cta {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    background: var(--gold, #c89b3c);
+    color: #fff;
+    font-size: 0.88rem;
+    font-weight: 700;
+    border-radius: 6px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: opacity 0.15s;
+  }
+
+  .bk-cta:hover {
+    opacity: 0.88;
+  }
+
+  /* Mobile */
+  @media (max-width: 860px) {
+    .bk-nav-toggle {
+      display: block;
+      order: 3;
+    }
+
+    .bk-nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--forest);
+      padding: 12px 24px 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .bk-nav.is-open {
+      display: block;
+    }
+
+    .bk-nav ul {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2px;
+    }
+
+    .bk-nav a {
+      font-size: 1rem;
+      padding: 10px 8px;
+    }
+
+    .bk-header-actions {
+      order: 2;
+    }
+
+    .bk-lang-switch {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  const toggle = document.querySelector('.bk-nav-toggle');
+  const nav = document.querySelector('.bk-nav');
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!expanded));
+      nav.classList.toggle('is-open');
+    });
+  }
+</script>
